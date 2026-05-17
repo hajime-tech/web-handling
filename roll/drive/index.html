@@ -12,6 +12,8 @@
         <meta name="author" content="はじめ">
       
       
+        <link rel="canonical" href="https://hajime-tech.github.io/web-handling/roll/drive/">
+      
       
         <link rel="prev" href="../nip/">
       
@@ -48,8 +50,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans JP";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -64,10 +66,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -90,7 +94,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
     <a href="../.." title="ウェブハンドリング技術解説" class="md-header__button md-logo" aria-label="ウェブハンドリング技術解説" data-md-component="logo">
       
@@ -120,7 +124,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="ダークモードに切替"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切替" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="ライトモードに切替"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切替" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -143,11 +173,18 @@
       </label>
       <nav class="md-search__options" aria-label="検索">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="共有" aria-label="共有" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -165,15 +202,157 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/hajime-tech/web-handling" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hajime-tech/web-handling
+  </div>
+</a>
+      </div>
+    
   </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ホーム
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../basics/overview/" class="md-tabs__link">
+          
+  
+  
+  基礎知識
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tension/theory/" class="md-tabs__link">
+          
+  
+  
+  テンション制御
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../mechanics/" class="md-tabs__link">
+          
+  
+  
+  ロール・搬送系の力学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../steering/mechanism/" class="md-tabs__link">
+          
+  
+  
+  蛇行制御
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../trouble/wrinkle/" class="md-tabs__link">
+          
+  
+  
+  トラブルシューティング
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
   
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -187,8 +366,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="ウェブハンドリング技術解説" class="md-nav__button md-logo" aria-label="ウェブハンドリング技術解説" data-md-component="logo">
       
@@ -198,6 +379,18 @@
     </a>
     ウェブハンドリング技術解説
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hajime-tech/web-handling" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hajime-tech/web-handling
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -239,19 +432,19 @@
     
     
       
-        
+      
         
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -346,6 +539,9 @@
     
     
     
+      
+      
+        
       
     
     
@@ -495,19 +691,19 @@
     
     
       
-        
+      
         
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -669,6 +865,9 @@
     
       
         
+        
+      
+      
         
       
     
@@ -1091,19 +1290,19 @@
     
     
       
-        
+      
         
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1234,19 +1433,19 @@
     
     
       
-        
+      
         
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -1613,18 +1812,21 @@
                   
 
 
+  
+  
 
-<h1 id="_1">駆動系の設計</h1>
+
+<h1 id="_1">駆動系の設計<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>ライン速度・張力・蛇行・巻取品質の全てが、駆動系の設計で決まる。
 モータ・減速機・ロール構成・トルク制御・同期制御の選定は、ウェブハンドリング装置設計の核心である。</p>
-<h2 id="1">1. 駆動の役割</h2>
+<h2 id="1">1. 駆動の役割<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>ロールの駆動には三つの目的がある。</p>
 <ol>
 <li><strong>ライン速度を作る</strong>：マスタドライブが基準速度を決定。</li>
 <li><strong>テンションゾーンを分離する</strong>：駆動分離度の高いロールでゾーン間張力を独立化。</li>
 <li><strong>巻取／巻出にトルクを供給する</strong>：巻径変化と慣性に追従。</li>
 </ol>
-<h2 id="2">2. 積極駆動と消極駆動</h2>
+<h2 id="2">2. 積極駆動と消極駆動<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>『スリッター・リワインダーの技術読本』第1章2節の整理にならい、駆動形態を分類する。</p>
 <table>
 <thead>
@@ -1653,7 +1855,7 @@
 </tbody>
 </table>
 <p>ライン中で <strong>どのロールを積極にするか／どこに駆動分離を入れるか</strong> がレイアウト設計の最初のステップ。</p>
-<h2 id="3">3. 標準的なライン構成</h2>
+<h2 id="3">3. 標準的なライン構成<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart LR
     UW[巻出&lt;br/&gt;トルク制御] --&gt; ID1[アイドラ]
     ID1 --&gt; D1[ドライブ1&lt;br/&gt;マスタ]
@@ -1668,8 +1870,8 @@
 <li><strong>ニップ</strong>：駆動分離を確実にしたい工程の前後に配置。</li>
 <li><strong>巻取</strong>：トルク制御＋テーパテンション。</li>
 </ul>
-<h2 id="4">4. アクチュエータの選定</h2>
-<h3 id="_2">モータの種類</h3>
+<h2 id="4">4. アクチュエータの選定<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="_2">モータの種類<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1712,7 +1914,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_3">ブレーキ・クラッチ</h3>
+<h3 id="_3">ブレーキ・クラッチ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>巻出側で低コストに張力を出す場合、ブレーキを使う。</p>
 <table>
 <thead>
@@ -1741,7 +1943,7 @@
 </tbody>
 </table>
 <p>『スリッター・リワインダーの技術読本』第1章 6節「フリクション」、7節「力、動力」に詳しい。</p>
-<h3 id="_4">減速機</h3>
+<h3 id="_4">減速機<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>遊星減速機</strong>：高精度、低バックラッシ。サーボに多用。</li>
 <li><strong>平歯車減速機</strong>：堅牢、大容量、コスト低。</li>
@@ -1749,7 +1951,7 @@
 <li><strong>直動カップリング（ダイレクトドライブ）</strong>：バックラッシゼロ、剛性高。</li>
 </ul>
 <p>巻取・巻出側はバックラッシが張力変動として現れるため、低バックラッシ化が品質に直結。</p>
-<h2 id="5">5. 駆動トルクの計算</h2>
+<h2 id="5">5. 駆動トルクの計算<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>ロール駆動に必要なトルク <span class="arithmatex">\(\tau\)</span> は：</p>
 <div class="arithmatex">\[
 \tau = T \cdot R + J \frac{d\omega}{dt} + \tau_\text{loss}
@@ -1776,7 +1978,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_5">巻取機の慣性</h3>
+<h3 id="_5">巻取機の慣性<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>巻取径が大きくなると慣性 <span class="arithmatex">\(J\)</span> が急増する：</p>
 <div class="arithmatex">\[
 J = \frac{\pi}{2} \rho w \left(R^4 - R_0^4\right)
@@ -1786,26 +1988,26 @@ J = \frac{\pi}{2} \rho w \left(R^4 - R_0^4\right)
 → <span class="arithmatex">\(J = (\pi/2) \cdot 800 \cdot 1 \cdot (0.5^4 - 0.05^4) \approx 78\,\text{kg·m}^2\)</span></p>
 <p>これを加速度 <span class="arithmatex">\(1\,\text{rad/s}^2\)</span> で立ち上げるのに必要な慣性トルクは 78 N·m。
 ライン加速度を上げたい場合、巻取モータの容量はこの慣性トルクで決まる。</p>
-<h3 id="_6">慣性補償（フィードフォワード）</h3>
+<h3 id="_6">慣性補償（フィードフォワード）<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>加減速時に巻取モータが追従できないと張力が大きく振れる。巻径センサ＋速度微分から <strong>慣性補償トルク</strong> を加算する制御が標準的：</p>
 <div class="arithmatex">\[
 \tau_\text{ref} = T_\text{set} R + J(R) \dot\omega + \tau_\text{loss}
 \]</div>
-<h2 id="6">6. 同期制御</h2>
+<h2 id="6">6. 同期制御<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p>複数ドライブ間の速度同期は、ライン全体の張力安定性を決定する。</p>
-<h3 id="_7">方式</h3>
+<h3 id="_7">方式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>電子ギア（Electronic Gear）</strong>：マスタエンコーダパルスをスレーブが追従。</li>
 <li><strong>電子カム</strong>：位相同期、巻取の段ズレ防止。</li>
 <li><strong>EtherCAT / Mechatrolink-IV / SERCOS-III</strong>：分散制御で μs オーダー同期。</li>
 </ul>
-<h3 id="_8">速度補正</h3>
+<h3 id="_8">速度補正<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>張力 FB により各ドライブの速度比を微調整：</p>
 <div class="arithmatex">\[
 V_\text{slave} = V_\text{master} \cdot (1 + \Delta) + \text{tension PID 出力}
 \]</div>
 <p><span class="arithmatex">\(\Delta\)</span> は工程要求（塗工延伸など）からの目標速度比。</p>
-<h2 id="7">7. 巻径推定と巻径補正</h2>
+<h2 id="7">7. 巻径推定と巻径補正<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <p>巻取／巻出のトルク制御は、巻径 <span class="arithmatex">\(R\)</span> の関数として指令を計算する。
 推定方法：</p>
 <ol>
@@ -1823,7 +2025,7 @@ V_\text{slave} = V_\text{master} \cdot (1 + \Delta) + \text{tension PID 出力}
    R = \frac{V}{\omega}
    $$</p>
 <p>静止状態や低速で誤差大、フィルタが必要。</p>
-<h2 id="8">8. ハードウェアの安全設計</h2>
+<h2 id="8">8. ハードウェアの安全設計<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1858,19 +2060,19 @@ V_\text{slave} = V_\text{master} \cdot (1 + \Delta) + \text{tension PID 出力}
 </tr>
 </tbody>
 </table>
-<h2 id="9">9. 設計チェックリスト</h2>
+<h2 id="9">9. 設計チェックリスト<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
 <p>新規ライン／改造時：</p>
-<ul>
-<li>[ ] 最大／最小ライン速度、加減速度（時定数）は？</li>
-<li>[ ] 各ゾーンの張力範囲、ターンダウン比は？</li>
-<li>[ ] 最大巻径、コア径、最大重量、ライダ荷重は？</li>
-<li>[ ] テーパテンションの要否と範囲</li>
-<li>[ ] 同期方式と通信プロトコル</li>
-<li>[ ] 安全カテゴリ（PLd, SIL2 等）</li>
-<li>[ ] エンジニアリングツール／PLC ベンダの社内資産</li>
-<li>[ ] 将来のライン速度アップ余裕</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 最大／最小ライン速度、加減速度（時定数）は？</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 各ゾーンの張力範囲、ターンダウン比は？</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 最大巻径、コア径、最大重量、ライダ荷重は？</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> テーパテンションの要否と範囲</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 同期方式と通信プロトコル</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 安全カテゴリ（PLd, SIL2 等）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> エンジニアリングツール／PLC ベンダの社内資産</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 将来のライン速度アップ余裕</li>
 </ul>
-<h2 id="_9">参考文献</h2>
+<h2 id="_9">参考文献<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li>『スリッター・リワインダーの技術読本』第1章「基礎」（積極・消極駆動、ニップ、フリクション、力・動力）.</li>
 <li>橋本 巨『入門 ウェブハンドリング』第6章「ウェブの張力制御」, 加工技術研究会, 2010.</li>
@@ -1893,6 +2095,8 @@ V_\text{slave} = V_\text{master} \cdot (1 + \Delta) + \text{tension PID 出力}
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1910,10 +2114,27 @@ V_\text{slave} = V_\text{master} \cdot (1 + \Delta) + \text{tension PID 出力}
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 はじめ — ウェブハンドリング技術解説
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/hajime-tech/web-handling" target="_blank" rel="noopener" title="GitHub リポジトリ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -1931,7 +2152,7 @@ V_\text{slave} = V_\text{master} \cdot (1 + \Delta) + \text{tension PID 出力}
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.tracking", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

@@ -12,6 +12,8 @@
         <meta name="author" content="はじめ">
       
       
+        <link rel="canonical" href="https://hajime-tech.github.io/web-handling/roll/micro-groove/">
+      
       
         <link rel="prev" href="../drive/">
       
@@ -48,8 +50,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans JP";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -64,10 +66,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -90,7 +94,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
     <a href="../.." title="ウェブハンドリング技術解説" class="md-header__button md-logo" aria-label="ウェブハンドリング技術解説" data-md-component="logo">
       
@@ -120,7 +124,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="ダークモードに切替"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切替" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="ライトモードに切替"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切替" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -143,11 +173,18 @@
       </label>
       <nav class="md-search__options" aria-label="検索">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="共有" aria-label="共有" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -165,15 +202,157 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/hajime-tech/web-handling" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hajime-tech/web-handling
+  </div>
+</a>
+      </div>
+    
   </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ホーム
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../basics/overview/" class="md-tabs__link">
+          
+  
+  
+  基礎知識
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tension/theory/" class="md-tabs__link">
+          
+  
+  
+  テンション制御
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../mechanics/" class="md-tabs__link">
+          
+  
+  
+  ロール・搬送系の力学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../steering/mechanism/" class="md-tabs__link">
+          
+  
+  
+  蛇行制御
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../trouble/wrinkle/" class="md-tabs__link">
+          
+  
+  
+  トラブルシューティング
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
   
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -187,8 +366,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="ウェブハンドリング技術解説" class="md-nav__button md-logo" aria-label="ウェブハンドリング技術解説" data-md-component="logo">
       
@@ -198,6 +379,18 @@
     </a>
     ウェブハンドリング技術解説
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hajime-tech/web-handling" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hajime-tech/web-handling
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -239,19 +432,19 @@
     
     
       
-        
+      
         
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -346,6 +539,9 @@
     
     
     
+      
+      
+        
       
     
     
@@ -495,19 +691,19 @@
     
     
       
-        
+      
         
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -669,6 +865,9 @@
     
       
         
+        
+      
+      
         
       
     
@@ -1152,19 +1351,19 @@
     
     
       
-        
+      
         
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1295,19 +1494,19 @@
     
     
       
-        
+      
         
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -1735,11 +1934,14 @@
                   
 
 
+  
+  
 
-<h1 id="_1">マイクログルーブローラの理解と設計</h1>
+
+<h1 id="_1">マイクログルーブローラの理解と設計<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p><strong>マイクログルーブローラ（micro-groove roller）</strong> は、ローラ表面に <strong>μm 〜 数百 μm オーダー</strong> の微細な円周方向溝を加工したロールで、ウェブとローラ間に巻き込まれる空気膜を効果的に排除し、高速搬送下でもトラクションを確保するために用いられる。
 本ページでは橋本『ウェブハンドリングの基礎理論と応用』第9章3節および疋田・橋本（日本機械学会論文集 2011）に基づき、原理・理論・設計指針・実機適用例を整理する。</p>
-<h2 id="1">1. なぜ必要か：高速搬送と空気同伴問題</h2>
+<h2 id="1">1. なぜ必要か：高速搬送と空気同伴問題<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>ウェブ搬送速度を上げると、ロール表面とウェブの間に空気が同伴され、<strong>有効摩擦係数 <span class="arithmatex">\(\mu_\text{eff}\)</span> が急減</strong> する。
 これは空気膜厚さ <span class="arithmatex">\(h_0\)</span> がロール・ウェブの合成粗さ <span class="arithmatex">\(\sigma\)</span> を超えると、混合潤滑状態 → 流体潤滑状態へと遷移し、トラクションが消滅するためである。</p>
 <pre class="mermaid"><code>flowchart LR
@@ -1753,7 +1955,7 @@ h_0 = 0.589\, R \left( \frac{6\eta U_w}{T/w} \right)^{2/3}
 \]</div>
 <p>ここで <span class="arithmatex">\(R\)</span> はロール半径、<span class="arithmatex">\(\eta\)</span> は空気粘度、<span class="arithmatex">\(U_w\)</span> はウェブ速度、<span class="arithmatex">\(T/w\)</span> は単位幅張力。
 速度の 2/3 乗で空気膜厚さが増大するため、対策なしには高速化に限界がある。</p>
-<h2 id="2">2. グルーブローラの分類</h2>
+<h2 id="2">2. グルーブローラの分類<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>橋本によりサイズで二分類されている。</p>
 <table>
 <thead>
@@ -1783,11 +1985,11 @@ h_0 = 0.589\, R \left( \frac{6\eta U_w}{T/w} \right)^{2/3}
     B --&gt; D[等価幅狭化&lt;br/&gt;わき漏れ促進]
     C --&gt; E[等価隙間理論&lt;br/&gt;能動的空気排除]</code></pre>
 <p>非透気性ウェブ（プラスチックフィルム等）では <strong>マイクログルーブが特に有効</strong>。</p>
-<h2 id="3">3. マイクログルーブの理論（橋本モデル）</h2>
-<h3 id="31">3.1 等価隙間の概念</h3>
+<h2 id="3">3. マイクログルーブの理論（橋本モデル）<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 等価隙間の概念<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
 <p>マイクログルーブローラを「平滑面ローラ＋等価隙間 <span class="arithmatex">\(h_e\)</span>」に置き換えて解析する（橋本『基礎理論と応用』第9章3節 図9-7）。
 グルーブ内の流れも空気潤滑膜として機能すると仮定し、巻き付き角領域では圧力勾配ゼロ・せん断流れ支配とする。</p>
-<h3 id="32">3.2 流量の保存</h3>
+<h3 id="32">3.2 流量の保存<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
 <p>ウェブ幅 <span class="arithmatex">\(w\)</span>、グルーブ数 <span class="arithmatex">\(n_g\)</span>、グルーブ断面積 <span class="arithmatex">\(S_g\)</span> とすると、</p>
 <p>平滑面相当の流量：</p>
 <div class="arithmatex">\[
@@ -1807,10 +2009,10 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
 \]</div>
 <p><strong>もし <span class="arithmatex">\(h'_0 &lt; 0\)</span> になればウェブはランド面に接触する</strong>（<span class="arithmatex">\(h'_0 = 0\)</span> として扱う）。
 すなわち、マイクログルーブの <strong>断面積 <span class="arithmatex">\(S_g\)</span> とピッチ <span class="arithmatex">\(b\)</span>（= <span class="arithmatex">\(w/n_g\)</span> 相当）の設計</strong> によって、空気膜厚さを能動的に減らすことができる。</p>
-<h3 id="33">3.3 有効摩擦係数</h3>
+<h3 id="33">3.3 有効摩擦係数<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
 <p>ウェブとローラ間の有効摩擦係数 <span class="arithmatex">\(\mu_\text{eff}\)</span> は、第4章で定式化された粗さ突起接触理論から計算される。
 <span class="arithmatex">\(h'_0 / \sigma\)</span>（合成粗さに対する隙間比）が小さいほど、突起接触割合が増えて <span class="arithmatex">\(\mu_\text{eff}\)</span> が大きくなる。</p>
-<h2 id="4">4. 設計パラメータと効果</h2>
+<h2 id="4">4. 設計パラメータと効果<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>実機設計で扱う主要パラメータ：</p>
 <table>
 <thead>
@@ -1854,22 +2056,22 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
 </tbody>
 </table>
 <p><strong>重要な設計上の知見</strong>（橋本『基礎理論と応用』第9章3節 図9-9, 9-10, 9-11, 9-12）：</p>
-<h3 id="41">4.1 ピッチの影響</h3>
+<h3 id="41">4.1 ピッチの影響<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>ピッチ <span class="arithmatex">\(b\)</span> を小さくする</strong> → グルーブ数 <span class="arithmatex">\(n_g\)</span> 増 → スリップ開始速度上昇</li>
 <li>同じ条件で、ピッチ 1.0 mm のローラはピッチ 5.0 mm に対しスリップ開始速度が <strong>2〜3 倍</strong> に向上する例あり</li>
 </ul>
-<h3 id="42">4.2 断面積の影響</h3>
+<h3 id="42">4.2 断面積の影響<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>グルーブ断面積 <span class="arithmatex">\(S_g\)</span> を大きくする</strong> → 同じピッチでもスリップ開始速度上昇</li>
 <li>形状（三角形・矩形・台形）は問わず、<strong>ピッチと断面積が同じなら効果は等価</strong></li>
 </ul>
-<h3 id="43">4.3 張力との関係</h3>
+<h3 id="43">4.3 張力との関係<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
 <ul>
 <li>ウェブ張力 <span class="arithmatex">\(T/w\)</span> が大きいほど、グルーブの効果は顕著に現れる</li>
 <li>低張力ウェブでは効果が限定的</li>
 </ul>
-<h2 id="5">5. しわとのトレードオフ</h2>
+<h2 id="5">5. しわとのトレードオフ<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>マイクログルーブは<strong>トラクション改善とは裏腹にしわを誘発しやすい</strong>。</p>
 <p>橋本『基礎理論と応用』第9章 図9-11 が示すように、</p>
 <ul>
@@ -1877,7 +2079,7 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
 <li>同時に <strong>しわ発生臨界張力は低下</strong> → しわが発生しやすい</li>
 </ul>
 <p>これは、グルーブによる接触不連続が CD 圧縮応力を局在化させ、座屈条件を満たしやすくするため。</p>
-<h3 id="_2">設計マップ（概念図）</h3>
+<h3 id="_2">設計マップ（概念図）<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>flowchart LR
     A[ピッチ小] --&gt;|◎| B[高トラクション]
     A --&gt;|×| C[しわリスク増]
@@ -1885,7 +2087,7 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
     D --&gt;|◎| F[しわ抑制]</code></pre>
 <p>設計は <strong>動作速度域とウェブ厚さで決まる最適点</strong> を狙うことになる。
 ウェブが薄いほど（<span class="arithmatex">\(h \le 25\,\mu m\)</span>）しわ発生臨界張力は急減するため、<strong>薄物ウェブには大きめのピッチ＋大きめの断面積</strong> が原則。</p>
-<h2 id="6">6. ロール表面処理の選択肢</h2>
+<h2 id="6">6. ロール表面処理の選択肢<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p>実機ローラの選択肢：</p>
 <table>
 <thead>
@@ -1929,7 +2131,7 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
 </tbody>
 </table>
 <p>マイクログルーブと粗面化（梨地、サテン仕上げ）は併用も可能。粗面のみでは効果が限定的なので、<strong>高速ラインでは旋削マイクログルーブが第一選択</strong> となる。</p>
-<h2 id="7">7. 適用判断フロー</h2>
+<h2 id="7">7. 適用判断フロー<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart TD
     A[搬送トラブル発生&lt;br/&gt;スリップ・蛇行] --&gt; B{速度依存?}
     B --&gt;|Yes 高速で悪化| C{ウェブ透気性?}
@@ -1939,24 +2141,24 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
     E --&gt; G{しわ感度?}
     G --&gt;|高| H[大ピッチ+大断面積]
     G --&gt;|低| I[小ピッチで最大効果]</code></pre>
-<h2 id="8">8. 実機適用の注意点</h2>
-<h3 id="81">8.1 グルーブの清掃</h3>
+<h2 id="8">8. 実機適用の注意点<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h3 id="81">8.1 グルーブの清掃<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
 <p>グルーブは塵・塗工剤・湿気で容易に目詰まりする。
 - 定期的なエアブロー清掃
 - 溶剤拭き取り（ロール表面材質と相性確認）
 - 目詰まりすると平滑ロール化し、効果が突然失われる</p>
-<h3 id="82">8.2 ウェブとの相性</h3>
+<h3 id="82">8.2 ウェブとの相性<a class="headerlink" href="#82" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>金属箔</strong>：薄物（&lt; 10 μm）はグルーブで微小エンボスを受ける可能性。形状を慎重に</li>
 <li><strong>塗工面接触</strong>：塗工層をマイクログルーブが転写しないか確認</li>
 <li><strong>光学フィルム</strong>：表面欠陥が問題になる場合は使用不可</li>
 </ul>
-<h3 id="83">8.3 ロール径との関係</h3>
+<h3 id="83">8.3 ロール径との関係<a class="headerlink" href="#83" title="Permanent link">&para;</a></h3>
 <p>空気膜厚さ式から分かるように、<strong><span class="arithmatex">\(h_0\)</span> はロール径 <span class="arithmatex">\(R\)</span> にほぼ比例</strong> する。
 小径ロールほど元々空気膜が薄いため、マイクログルーブの効果は <strong>中〜大径ロールでより顕著</strong>。</p>
-<h3 id="84">8.4 巻き付き角の確保</h3>
+<h3 id="84">8.4 巻き付き角の確保<a class="headerlink" href="#84" title="Permanent link">&para;</a></h3>
 <p><span class="arithmatex">\(\theta \ge 60°\)</span> 程度を確保しないと、グルーブによる流量制御が十分機能しない。</p>
-<h2 id="9">9. 設計手順（実用版）</h2>
+<h2 id="9">9. 設計手順（実用版）<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>ラインの最高速度と最低張力</strong> を確認</li>
 <li>平滑ロール想定で空気膜厚さ <span class="arithmatex">\(h_0\)</span> を計算</li>
@@ -1967,7 +2169,7 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
 <li>試作ロールで搬送試験 → スリップ開始速度・しわ発生限界を実測</li>
 <li>必要に応じてピッチ・断面積を反復調整</li>
 </ol>
-<h2 id="10">10. 計算例</h2>
+<h2 id="10">10. 計算例<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
 <p>PET 25 μm フィルム、ロール径 <span class="arithmatex">\(R = 55\)</span> mm、巻き付き角 60°、張力 <span class="arithmatex">\(T = 100\)</span> N/m、ライン速度 <span class="arithmatex">\(V = 5\)</span> m/s の条件で：</p>
 <p><strong>平滑ロール</strong>：
 $$
@@ -1977,7 +2179,7 @@ $$</p>
 <p><strong>マイクログルーブ</strong>（<span class="arithmatex">\(b_g = 200\)</span> μm、<span class="arithmatex">\(h_g = 100\)</span> μm、<span class="arithmatex">\(S_g = 0.01\)</span> mm²、ピッチ <span class="arithmatex">\(b = 2.5\)</span> mm、<span class="arithmatex">\(n_g = w/b\)</span>）：
 <span class="arithmatex">\(h'_0 = \tilde{h} - n_g S_g / w\)</span> で空気膜厚さを大幅減 → トラクション確保。</p>
 <p>ピッチを 1 mm まで詰めるとさらに改善するが、しわ発生臨界張力との兼ね合いで設計。</p>
-<h2 id="11">11. 参考文献</h2>
+<h2 id="11">11. 参考文献<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第9章「ウェブハンドリング基礎理論の拡張」、特に9.2節「マクログルーブローラを用いた場合の理論」、9.3節「マイクログルーブローラを用いた場合の理論」, 加工技術研究会.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第3章「ウェブ浮上量の予測理論」, 第4章「有効摩擦係数の予測理論」（基礎となる空気膜厚さ・摩擦係数モデル）.</li>
@@ -2002,6 +2204,8 @@ $$</p>
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -2019,10 +2223,27 @@ $$</p>
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 はじめ — ウェブハンドリング技術解説
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/hajime-tech/web-handling" target="_blank" rel="noopener" title="GitHub リポジトリ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -2040,7 +2261,7 @@ $$</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.tracking", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
