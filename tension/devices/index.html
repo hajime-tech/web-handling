@@ -1157,6 +1157,17 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -1933,6 +1944,17 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -2138,7 +2160,39 @@ R(t) = R_0 + \frac{V \cdot h \cdot t}{2\pi R(t)} \;\Longleftrightarrow\; R = \sq
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 通信プロトコルは？（EtherCAT, PROFINET, EtherNet/IP）</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> エンジニアリングツールの社内資産は？</li>
 </ul>
-<h2 id="_5">参考文献<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">理解度チェック<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>演習1: テンションセンサ容量選定</summary>
+<p>最大張力 500 N を見込むラインのテンションセンサ容量は何 N を選ぶべきか。理由とともに答えよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>750〜1500 N</strong>（想定最大の 1.5〜3 倍）。
+理由：加減速時の過渡応答や、外乱・突発張力ピークがあるため、最大張力ぎりぎりだと過負荷で破損する恐れがある。
+過負荷耐性は 150% 以上を要求するのが標準。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習2: アクチュエータ選定</summary>
+<p>巻取径が大きく変化する高張力フィルムラインで、巻出側の張力制御に最も適したアクチュエータは？
+(a) パウダブレーキ  (b) ヒステリシスブレーキ  (c) AC サーボモータ  (d) 空圧シリンダ</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>(c) AC サーボモータ</strong>。
+理由：トルク・速度・位置の高精度制御、巻径変化に応じた指令計算、加減速時の慣性補償が可能。
+パウダブレーキは安価だが応答遅・発熱大で大型ラインには不向き。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習3: 慣性補償の重要性</summary>
+<p>巻取機の慣性 <span class="arithmatex">\(J = 50\,kg \cdot m^2\)</span>、巻取径 <span class="arithmatex">\(R = 0.3\,m\)</span>、ライン加速度 <span class="arithmatex">\(\dot V = 0.5\,m/s^2\)</span> のとき、加速時の張力誤差を最小化するために必要な <strong>慣性補償トルク</strong> はいくらか。</p>
+<details class="success">
+<summary>解答</summary>
+<p>角加速度 <span class="arithmatex">\(\dot\omega = \dot V / R = 0.5/0.3 = 1.67\,rad/s^2\)</span>
+慣性トルク <span class="arithmatex">\(\tau_J = J \dot\omega = 50 \times 1.67 = 83.3\,N\cdot m\)</span>
+この大きさを <strong>フィードフォワード</strong>で加算しないと、加速時に張力が急変する。</p>
+</details>
+</details>
+<h2 id="_6">参考文献<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第6章「ウェブの張力制御」, 加工技術研究会, 2010.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第8章「ウェブ搬送・巻取時の張力制御」（8.1 はじめに、8.2 ウェブ搬送システムと張力制御、8.3 張力制御のための力学系のモデリング、8.4 ウェブの張力制御系、8.5 PID コントローラの基本事項、8.6 PID のウェブ張力制御系への適用）, 加工技術研究会.</li>

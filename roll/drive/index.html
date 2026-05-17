@@ -1228,6 +1228,17 @@
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -1789,6 +1800,17 @@
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -2072,7 +2094,39 @@ V_\text{slave} = V_\text{master} \cdot (1 + \Delta) + \text{tension PID 出力}
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> エンジニアリングツール／PLC ベンダの社内資産</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 将来のライン速度アップ余裕</li>
 </ul>
-<h2 id="_9">参考文献<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_9">理解度チェック<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>演習1: 巻取慣性の計算</summary>
+<p>紙ロール（<span class="arithmatex">\(\rho = 800\,kg/m^3\)</span>）、幅 <span class="arithmatex">\(w = 1.5\,m\)</span>、満巻半径 <span class="arithmatex">\(R = 0.6\,m\)</span>、コア半径 <span class="arithmatex">\(R_0 = 0.05\,m\)</span> の巻取慣性 <span class="arithmatex">\(J\)</span> [kg·m²] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(J = (\pi/2)\rho w (R^4 - R_0^4) = (\pi/2) \times 800 \times 1.5 \times (0.6^4 - 0.05^4)\)</span>
+<span class="arithmatex">\(= 1885 \times (0.1296 - 6.25 \times 10^{-6}) \approx 1885 \times 0.1296 \approx 244\,kg \cdot m^2\)</span>
+この巨大な慣性が加減速時の張力変動の主因となる。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習2: 巻径推定</summary>
+<p>搬送速度 <span class="arithmatex">\(V = 100\,m/min\)</span>、モータ角速度 <span class="arithmatex">\(\omega = 5\,rad/s\)</span> のとき、巻径 <span class="arithmatex">\(R\)</span> [m] を推定せよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(V = 100/60 = 1.667\,m/s\)</span>
+<span class="arithmatex">\(R = V/\omega = 1.667/5 = 0.333\,m\)</span>
+ただしこの計算は静止・低速で誤差大、実機ではフィルタリングが必須。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習3: アクチュエータ選定</summary>
+<p>巻出側で「低コスト・中容量・連続トルク制御」が要件のとき、選定すべきアクチュエータは？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>パウダブレーキ（粉体ブレーキ）</strong>。
+励磁電流でトルクを連続調整でき、巻出側のような「ブレーキ方向のみで OK」な用途で安価。
+ただし摩擦熱が出るので連続発熱・放熱設計が必要。応答も遅め（〜100 ms）。
+高精度・高応答が要件なら AC サーボに格上げする。</p>
+</details>
+</details>
+<h2 id="_10">参考文献<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <ul>
 <li>『スリッター・リワインダーの技術読本』第1章「基礎」（積極・消極駆動、ニップ、フリクション、力・動力）.</li>
 <li>橋本 巨『入門 ウェブハンドリング』第6章「ウェブの張力制御」, 加工技術研究会, 2010.</li>

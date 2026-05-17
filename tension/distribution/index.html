@@ -1118,6 +1118,17 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -1911,6 +1922,17 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -2075,7 +2097,40 @@ f_n = \frac{n}{2L}\sqrt{\frac{T}{m'}}
 </ul>
 <h3 id="d">(d) ライン全体での張力プロファイル設計<a class="headerlink" href="#d" title="Permanent link">&para;</a></h3>
 <p>塗工部の低張力、乾燥炉の中張力、巻取部のテーパ張力をライン全体で最適化。</p>
-<h2 id="_2">参考文献<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">理解度チェック<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>演習1: CD張力均一性指標</summary>
+<p>幅 1 m のウェブを CD 5 等分し、各セグメントの単位幅張力を測定したところ、
+<span class="arithmatex">\([95, 98, 102, 100, 105]\)</span> N/m を得た。平均 <span class="arithmatex">\(\bar{t}\)</span> と均一性指標 <span class="arithmatex">\(CV_t\)</span> [%] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p>平均：<span class="arithmatex">\(\bar{t} = (95+98+102+100+105)/5 = 100\,N/m\)</span>
+標準偏差：<span class="arithmatex">\(\sqrt{((95-100)^2 + (98-100)^2 + (102-100)^2 + (100-100)^2 + (105-100)^2)/5} = \sqrt{58/5} = \sqrt{11.6} \approx 3.41\)</span>
+<span class="arithmatex">\(CV_t = 3.41/100 \times 100 = 3.41\%\)</span>
+実用目標 5〜10% 以下を満たし、高品質塗工要求の 3% にも近い良好レベル。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習2: 直角方向進入性</summary>
+<p>下流ロールが片側 0.1 mm/m だけ傾いた状態でウェブが進入している。
+「ウェブはどう振る舞うか」を答えよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>ウェブは下流ロール軸に直角方向に進入しようとする</strong>（normal entry rule）。
+その結果、ロール傾きの方向にウェブが幅方向（CD）に移動し、<strong>蛇行が発生</strong>する。
+さらに、ロール手前で CD 圧縮応力が誘起され、超過するとトラフ→折れしわが生じる。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習3: しわ発生の物理</summary>
+<p>ウェブにしわ（座屈）が発生する根本的条件を1行で答えよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>ウェブ内に局所的な CD 圧縮応力が、薄板座屈臨界値を超えて発生したとき</strong>。
+引張だけが作用している場所にはしわは発生しない。すなわち「どこに局所圧縮が生まれているか」を考えるのが対策の原点。</p>
+</details>
+</details>
+<h2 id="_3">参考文献<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第6章「ウェブの張力制御」、第7章「ローラによるウェブの分離・蛇行メカニズム」, 加工技術研究会, 2010.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第2章7節「ウエブのトラッキング能力」、第6章「ウェブ搬送中に生じるしわの予測」, 加工技術研究会.</li>

@@ -1122,6 +1122,17 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -1689,6 +1700,17 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -1956,7 +1978,37 @@ T_w(R) = T_{w,0} \left[ 1 - k\left( \frac{R - R_0}{R_\text{max} - R_0} \right) \
 </tbody>
 </table>
 <p>詳細は <a href="../drive/">駆動系の設計</a> を参照。</p>
-<h2 id="_5">参考文献<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">理解度チェック<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>演習1: ロール接触圧</summary>
+<p>単位幅張力 <span class="arithmatex">\(t = 300\,N/m\)</span>、ロール径 <span class="arithmatex">\(D = 100\,mm\)</span> のとき、ウェブからロールへの接触圧 <span class="arithmatex">\(p\)</span> [Pa] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(p = t/R = 300 / 0.05 = 6000\,Pa = 6\,kPa\)</span>
+塗工直後のロール上でこの圧力が塗膜を変形させないか確認が必要。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習2: 曲げ応力と巻き付け径</summary>
+<p>PET（<span class="arithmatex">\(E = 4\,GPa\)</span>、厚さ <span class="arithmatex">\(h = 100\,\mu m\)</span>）を半径 <span class="arithmatex">\(R = 25\,mm\)</span> のロール（コア径 50 mm）に巻き付ける。
+ウェブ表面に生じる曲げ応力 <span class="arithmatex">\(\sigma_b\)</span> [MPa] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(\sigma_b = E h / (2R) = 4 \times 10^9 \times 100 \times 10^{-6} / (2 \times 0.025) = 8 \times 10^6\,Pa = 8\,MPa\)</span>
+厚物ウェブを小径コアに巻き付けると曲げ応力が大きくなる。コア径選定は重要。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習3: Hakiel理論の特徴</summary>
+<p>Hakiel（1987）の巻取モデルが、それ以前の Altmann（1968）モデルと比較して画期的だった点は何か。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>半径方向ヤング率 <span class="arithmatex">\(E_r\)</span> の非線形性（応力依存性）を取り入れた点</strong>。
+実際の巻取ロールでは、<span class="arithmatex">\(E_r\)</span> は接触圧の関数として大きく変化する（Pfeiffer の馬テスト）が、Altmann ら以前のモデルでは <span class="arithmatex">\(E_r\)</span> を一定として近似していた。
+Hakiel はウェブが順次積み上がる際の応力増分を逐次計算する方式を確立し、現在の巻取理論の基礎となっている。</p>
+</details>
+</details>
+<h2 id="_6">参考文献<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第7章「基礎理論の巻取問題への応用」, 加工技術研究会.</li>
 <li>橋本 巨『入門 ウェブハンドリング』第5章「ウェブの巻取問題」, 加工技術研究会, 2010.</li>

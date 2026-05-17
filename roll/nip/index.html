@@ -1189,6 +1189,17 @@
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -1767,6 +1778,17 @@
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -2025,7 +2047,38 @@ b = \sqrt{\frac{4 F R^*}{\pi L E^*}}, \qquad p_0 = \sqrt{\frac{F E^*}{\pi L R^*}
 </tr>
 </tbody>
 </table>
-<h2 id="_8">参考文献<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_8">理解度チェック<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>演習1: ニップ線荷重</summary>
+<p>ロール接触長 <span class="arithmatex">\(L = 1.2\,m\)</span>、必要なニップ全荷重 <span class="arithmatex">\(F = 600\,N\)</span> のとき、ニップ線荷重 <span class="arithmatex">\(w_l\)</span> [N/cm] を求めよ。
+また、これは「軽ニップ」「ラミネート」「カレンダ」のどのレンジに相当するか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(w_l = F/L = 600/1.2 = 500\,N/m = 5\,N/cm\)</span>
+→ <strong>軽ニップ（5〜30 N/cm）</strong> のレンジ。テンションカット用などに該当。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習2: ニップの駆動分離</summary>
+<p>ニップロールを使ってテンションゾーンを上下流で完全分離するための必要条件を答えよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(\mu_\text{nip} \cdot p \cdot A_c \ge T_\text{upper} - T_\text{lower}\)</span>
+すなわち、ニップ内摩擦力（摩擦係数×圧力×接触面積）が、上下流の張力差以上であること。
+これを満たさないと「ニップスリップ」が起き、駆動分離が不完全になる。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習3: 巻取とニップ</summary>
+<p>巻取張力 <span class="arithmatex">\(T_w = 200\,N/m\)</span> だけで巻くと軟巻きになる。ライダロールでニップ荷重 <span class="arithmatex">\(N = 5000\,N/m\)</span>、層間摩擦係数 <span class="arithmatex">\(\mu = 0.3\)</span> を加えると、Pfeiffer 式による巻取応力 <span class="arithmatex">\(\sigma_w\)</span>（単位幅）はどう変化するか。</p>
+<details class="success">
+<summary>解答</summary>
+<p>ニップなし：<span class="arithmatex">\(\sigma_w \cdot wh = T_w = 200\,N/m\)</span>
+ニップあり：<span class="arithmatex">\(\sigma_w \cdot wh = T_w + \mu N = 200 + 0.3 \times 5000 = 200 + 1500 = 1700\,N/m\)</span>
+→ 約 <strong>8.5 倍</strong> に増加。低い巻取張力でも内部応力を確保でき、テレスコープ防止に有効。</p>
+</details>
+</details>
+<h2 id="_9">参考文献<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第4章, 第5章, 加工技術研究会, 2010.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第9章6節「ニップのある場合のウェブ巻取理論」, 加工技術研究会.</li>

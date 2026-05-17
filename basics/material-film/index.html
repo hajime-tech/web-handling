@@ -783,6 +783,17 @@
   <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -1650,6 +1661,17 @@
   <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -1896,7 +1918,38 @@
 \Delta L / L = \alpha \cdot \Delta T \quad (\text{熱膨張}) \;+\; \varepsilon_\text{shrink}(T) \quad (\text{熱収縮})
 \]</div>
 <p>の両者を考慮し、張力で寸法をホールドするか、フリースパンを長く取らない設計とする。</p>
-<h2 id="_11">参考文献<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_11">理解度チェック<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>演習1: PETフィルムの応力</summary>
+<p>厚さ <span class="arithmatex">\(h = 12\,\mu m\)</span>、幅 <span class="arithmatex">\(w = 1\,m\)</span> の PET フィルムを単位幅張力 <span class="arithmatex">\(t = 100\,N/m\)</span> で搬送している。フィルムにかかる応力 <span class="arithmatex">\(\sigma\)</span> を求めよ。
+また、PET の降伏応力を <span class="arithmatex">\(\sigma_Y = 100\,MPa\)</span> とすると、この張力は降伏応力の何%か。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(\sigma = t / h = 100 / (12 \times 10^{-6}) = 8.33 \times 10^6\,Pa = 8.33\,MPa\)</span>
+降伏応力比：<span class="arithmatex">\(8.33 / 100 = 8.33\%\)</span> → <strong>適正範囲</strong>（5〜20% が一般則）。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習2: フィルム選定</summary>
+<p>150 ℃ の乾燥炉を通過し、その後コーティングする工程で使うフィルムを選定したい。
+候補：OPP、PET、PEN、PI、TAC のうち、温度的に最も適さないものはどれか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>OPP（融点 160〜170 ℃、使用温度上限 100 ℃）</strong>。150 ℃ では大きく変形・収縮する。
+最も安全なのは PI（耐熱 400 ℃）、コスト含めると PET（150 ℃ ぎりぎり）か PEN（180 ℃）が現実的選択。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習3: 湿度依存性の重要性</summary>
+<p>光学フィルム製造に TAC（吸水率 2〜4%）と COP（吸水率 0.01%）の選択肢がある。
+高精度な寸法安定性が求められる用途では、どちらを選ぶべきか。理由とともに答えよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>COP</strong>。TAC は湿度で寸法が大きく変化し、温湿度管理が厳密でないと光学特性（位相差等）が変動する。
+COP は吸水率が桁違いに低く、寸法安定性に優れる。実際、位相差フィルム用途では COP が標準的に採用される。</p>
+</details>
+</details>
+<h2 id="_12">参考文献<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第3章「ウェブの力学的性質」, 加工技術研究会, 2010.</li>
 <li>各フィルムメーカー TDS（東レ、帝人、東洋紡、宇部興産 等）.</li>

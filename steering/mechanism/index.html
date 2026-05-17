@@ -1326,6 +1326,17 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -1755,6 +1766,17 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -2003,7 +2025,38 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_3">参考文献<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">理解度チェック<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>演習1: 直角方向進入性</summary>
+<p>上流側ロールに対し、下流側ロールがミスアライメントを持つとき、ウェブはどのように振る舞うか。</p>
+<details class="success">
+<summary>解答</summary>
+<p>ウェブは <strong>下流側ローラの軸に対して直角方向に進入</strong> しようとする（normal entry rule）。
+その結果、下流ローラの傾きの方向にウェブの中心線が傾き、<strong>CD方向に蛇行が発生</strong> する。
+さらに大きなミスアラインメントでは、ローラ手前で CD 圧縮応力が誘起され、折れしわの原因にもなる。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習2: スパン時定数</summary>
+<p>スパン長 <span class="arithmatex">\(L = 3\,m\)</span>、搬送速度 <span class="arithmatex">\(V = 150\,m/min\)</span> のとき、蛇行応答のスパン時定数 <span class="arithmatex">\(\tau\)</span> [s] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(V = 150/60 = 2.5\,m/s\)</span>
+<span class="arithmatex">\(\tau = L/V = 3/2.5 = 1.2\,s\)</span>
+この時定数より速い蛇行制御は応答が追いつかず発振しやすい。EPC のループ周期は 0.1 s 程度（時定数の 1/10）に設定するのが目安。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習3: 蛇行原因の伝播</summary>
+<p>ライン中央のあるロールに片寄り蛇行が観察された。原因のロールは「観察位置の上流側」「下流側」どちらにあるか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>両方の可能性がある（むしろ下流側が見落とされやすい）</strong>。
+Shelton 解析が示すとおり、「下流ロールの傾きが上流のウェブ姿勢に現れる」ため、観察された蛇行位置より下流側のロールも疑う必要がある。
+実機トラブル切り分けでは、観察位置の前後 2〜3 スパンを点検するのが鉄則。</p>
+</details>
+</details>
+<h2 id="_4">参考文献<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第7章「ローラによるウェブの分離・拡張メカニズム」, 加工技術研究会, 2010.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第2章7節「ウェブのトラッキング能力」.</li>

@@ -1692,6 +1692,17 @@
   <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -2145,6 +2156,17 @@
   <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -2437,7 +2459,41 @@ f_r = \frac{200/60}{\pi \times 0.15} = 7.07\,\text{Hz}
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> ウェブ起因か機械起因かを切り分け</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 環境条件（温湿度・振動）の記録</li>
 </ul>
-<h2 id="_17">参考文献<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<h2 id="_17">理解度チェック<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>演習1: 周波数からロール特定</summary>
+<p>ライン速度 <span class="arithmatex">\(V = 120\,m/min\)</span> で運転中、張力FFTに 4.24 Hz のピークが見えた。直径 D 何 mm のロール由来と推定されるか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(V = 2\,m/s\)</span>
+ロール回転周波数 <span class="arithmatex">\(f_r = V/(\pi D)\)</span> より、<span class="arithmatex">\(D = V/(\pi f_r) = 2/(\pi \times 4.24) \approx 0.150\,m = 150\,mm\)</span>
+該当する 150 mm 径のロール（偏心・軸受不良が疑わしい）を点検。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習2: PID チューニング</summary>
+<p>張力制御で「振動的な変動」が出ている。比例ゲイン <span class="arithmatex">\(K_p\)</span> を下げると振動は収まるが、外乱に対する応答も鈍くなる。次の手は？</p>
+<details class="success">
+<summary>解答</summary>
+<p>(1) <strong>積分時間 <span class="arithmatex">\(T_i\)</span> を見直す</strong>（短すぎると振動、長すぎると応答遅）
+(2) <strong>巻径補正フィードフォワード</strong> を追加（巻径変化への外乱を予測補償）
+(3) <strong>加減速時の慣性補償FF</strong> を追加
+(4) センサノイズが主因なら、ローパスフィルタを入れる
+<span class="arithmatex">\(K_p\)</span> を一律下げるのではなく、振動の周波数特性を見て対処する。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習3: スプライス通過対策</summary>
+<p>巻出ロールの接紙部（スプライス）通過時に張力が乱れ、後段に張力変動が伝播してしまう。
+効果的な対策を 3 つ挙げよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p>(1) <strong>アキュムレータ</strong>（蛇腹式／フェスツーン式）を入れ、機械的に張力変動を吸収
+(2) <strong>接紙部の段差を最小化</strong>（突合せ、ラップ厚を薄く）
+(3) <strong>接紙検出センサ＋制御一時ホールド</strong>（通過中は張力制御をホールドし、追従させない）</p>
+</details>
+</details>
+<h2 id="_18">参考文献<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第6章「ウェブの張力制御」, 加工技術研究会, 2010.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第8章「ウェブ搬送・巻取時の張力制御」.</li>

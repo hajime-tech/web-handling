@@ -962,6 +962,17 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -1711,6 +1722,17 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -1916,7 +1938,41 @@ t = \frac{T}{w} \quad [\text{N/m}]
 <li>ライン全体の張力制御は連立微分方程式系として設計する。</li>
 </ol>
 <p>ロール上での張力ジャンプ機構については <a href="../euler/">オイラーの摩擦式</a>、空間的な張力分布については <a href="../distribution/">テンション分布</a>、実機ハードウェアの選定は <a href="../devices/">制御機器の選定</a> を参照。</p>
-<h2 id="_3">参考文献<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">理解度チェック<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>演習1: 単位幅張力と応力</summary>
+<p>PET フィルム（厚さ <span class="arithmatex">\(h = 25\,\mu m\)</span>、幅 <span class="arithmatex">\(w = 0.5\,m\)</span>）を <span class="arithmatex">\(T = 50\,N\)</span> で搬送している。
+(a) 単位幅張力 <span class="arithmatex">\(t\)</span> [N/m] を求めよ。
+(b) 応力 <span class="arithmatex">\(\sigma\)</span> [MPa] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p>(a) <span class="arithmatex">\(t = T/w = 50/0.5 = 100\,N/m\)</span>
+(b) <span class="arithmatex">\(\sigma = T/(wh) = 50/(0.5 \times 25 \times 10^{-6}) = 4 \times 10^6\,Pa = 4\,MPa\)</span></p>
+</details>
+</details>
+<details class="question">
+<summary>演習2: 速度差と張力</summary>
+<p>長さ <span class="arithmatex">\(L = 2\,m\)</span>、<span class="arithmatex">\(E = 4\,GPa\)</span>、<span class="arithmatex">\(h = 25\,\mu m\)</span>、<span class="arithmatex">\(w = 1\,m\)</span> のスパンで、入口と出口のロール速度差が <span class="arithmatex">\(0.1\%\)</span> のとき、定常状態の張力 <span class="arithmatex">\(T\)</span> は何 N か。</p>
+<details class="success">
+<summary>解答</summary>
+<p>ひずみ <span class="arithmatex">\(\varepsilon = 0.001\)</span>
+<span class="arithmatex">\(T = E w h \varepsilon = 4 \times 10^9 \times 1 \times 25 \times 10^{-6} \times 0.001 = 100\,N\)</span>
+わずか 0.1% の速度差で大きな張力が生まれる ⇒ 高精度な速度制御が必須。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習3: 制御則の選択</summary>
+<p>張力指令 100 N/m に対し、定常状態で実張力が 95 N/m となり、5% のオフセットが永続している。
+現在の制御は P 制御のみ。改善するにはどうすべきか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>PI または PID 制御に変更</strong>する。橋本『基礎理論と応用』第8章の最終値の定理から、
+- P 制御：<span class="arithmatex">\(e(\infty) = 1/(1+K_pK) &gt; 0\)</span>（オフセット残存）
+- PI 制御：<span class="arithmatex">\(e(\infty) = 0\)</span>（オフセット消滅）
+積分項を加えることでオフセットがゼロに収束する。</p>
+</details>
+</details>
+<h2 id="_4">参考文献<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第6章「ウェブの張力制御」, 加工技術研究会, 2010.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第8章「ウェブ搬送・巻取時の張力制御」（特に8.5節「PIDコントローラの基本事項」、8.6節「PID のウェブ張力制御系への適用」）, 加工技術研究会.</li>

@@ -1634,6 +1634,17 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -1975,6 +1986,17 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
+        理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         参考文献
       
     </span>
@@ -2250,7 +2272,43 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> メンテ周期の最適化</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> サプライヤ品質改善依頼</li>
 </ul>
-<h2 id="_7">参考文献<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_7">理解度チェック<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>演習1: 周期蛇行の原因特定</summary>
+<p>ライン速度 <span class="arithmatex">\(V = 200\,m/min\)</span>、観察された蛇行の周期 <span class="arithmatex">\(T = 0.5\,s\)</span> のとき、原因となるロール径 <span class="arithmatex">\(D\)</span> [mm] を推定せよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(V = 200/60 = 3.33\,m/s\)</span>
+1周期で進む距離 <span class="arithmatex">\(= V \times T = 3.33 \times 0.5 = 1.67\,m\)</span>
+この距離が <span class="arithmatex">\(\pi D\)</span> に等しいロール：<span class="arithmatex">\(D = 1.67/\pi \approx 0.530\,m = 530\,mm\)</span>
+該当する直径 530 mm のロール（偏心・打痕・軸受不良）を点検対象とする。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習2: 蛇行原因の分類</summary>
+<p>次の症状はどの分類の蛇行か。
+(a) 季節が変わってから片寄り傾向が出始めた
+(b) スプライス通過時のみ瞬時に大きく振れる
+(c) 巻出 1 周期に同期して左右に振れる</p>
+<details class="success">
+<summary>解答</summary>
+<p>(a) <strong>ドリフト型</strong>（温度変化、軸受摩耗、ロール撓み変動など）
+(b) <strong>過渡的蛇行</strong>（慣性、張力急変。アキュムレータと制御ホールドで対応）
+(c) <strong>周期蛇行（巻出周期同期）</strong>（原反バギング、巻出機軸偏心）</p>
+</details>
+</details>
+<details class="question">
+<summary>演習3: テレスコープ防止</summary>
+<p>巻取ロール直前で蛇行が修正されておらず、テレスコープが発生している。
+根本的な対策は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>巻取直前に EPC（Edge Position Control）ガイドロールを必ず設置する</strong>。
+どんなに上流で蛇行を吸収していても、その後のスパンで蛇行が再発するため、巻取直前のシフト補正は必須装備。
+補助的に、原反由来の蛇行を巻出直後 EPC で吸収しておくとさらに安定する。</p>
+</details>
+</details>
+<h2 id="_8">参考文献<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第7章「ローラによるウェブの分離・蛇行メカニズム」, 加工技術研究会, 2010.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第2章7節「ウェブのトラッキング能力」.</li>

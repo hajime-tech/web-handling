@@ -1317,7 +1317,18 @@
   <a href="#11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. 参考文献
+        11. 理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
       
     </span>
   </a>
@@ -1911,7 +1922,18 @@
   <a href="#11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. 参考文献
+        11. 理解度チェック
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
       
     </span>
   </a>
@@ -2179,7 +2201,39 @@ $$</p>
 <p><strong>マイクログルーブ</strong>（<span class="arithmatex">\(b_g = 200\)</span> μm、<span class="arithmatex">\(h_g = 100\)</span> μm、<span class="arithmatex">\(S_g = 0.01\)</span> mm²、ピッチ <span class="arithmatex">\(b = 2.5\)</span> mm、<span class="arithmatex">\(n_g = w/b\)</span>）：
 <span class="arithmatex">\(h'_0 = \tilde{h} - n_g S_g / w\)</span> で空気膜厚さを大幅減 → トラクション確保。</p>
 <p>ピッチを 1 mm まで詰めるとさらに改善するが、しわ発生臨界張力との兼ね合いで設計。</p>
-<h2 id="11">11. 参考文献<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<h2 id="11">11. 理解度チェック<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>演習1: マクロとマイクロの違い</summary>
+<p>マクログルーブとマイクログルーブの <strong>動作原理の違い</strong> を一行で答えよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>マクログルーブ</strong>：幅広ウェブを等価的に幅狭ウェブに分断し、ウェブ端部からの <strong>わき漏れ流出</strong> を促進する。
+<strong>マイクログルーブ</strong>：グルーブ内の流れも空気潤滑膜として機能させ、<strong>等価隙間の概念</strong> で能動的に空気膜厚さを減らす。
+透気性ウェブにはマクロが、非透気性ウェブ（フィルム）にはマイクロが特に有効。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習2: 実質浮上量の計算</summary>
+<p>幅 <span class="arithmatex">\(w = 30\,mm\)</span> のフィルムに、グルーブ数 <span class="arithmatex">\(n_g = 12\)</span>、グルーブ断面積 <span class="arithmatex">\(S_g = 0.01\,mm^2\)</span> のマイクログルーブローラを使う。平滑面換算の隙間 <span class="arithmatex">\(\tilde{h} = 5\,\mu m\)</span> のとき、実質のウェブ浮上量 <span class="arithmatex">\(h'_0\)</span> [μm] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(h'_0 = \tilde{h} - n_g S_g / w\)</span>
+<span class="arithmatex">\(= 5 \times 10^{-6} - 12 \times 0.01 \times 10^{-6} / 0.03\)</span>
+<span class="arithmatex">\(= 5 \times 10^{-6} - 4 \times 10^{-6} = 1 \times 10^{-6}\,m = 1\,\mu m\)</span>
+平滑面 5 μm → グルーブで 1 μm まで低減。合成粗さ程度なら接触状態が確保される。</p>
+</details>
+</details>
+<details class="question">
+<summary>演習3: トレードオフ</summary>
+<p>マイクログルーブのピッチを小さくすると、トラクションは改善する一方で、何が悪化するか？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>しわ発生臨界張力が低下</strong>（しわが出やすくなる）。
+これは、グルーブによる接触不連続が CD 圧縮応力を局在化させ、座屈条件を満たしやすくするため（橋本『基礎理論と応用』第9章 図9-11）。
+薄物ウェブほど顕著で、ウェブ厚さに応じてピッチ上限を決める必要がある。</p>
+</details>
+</details>
+<h2 id="_3">参考文献<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第9章「ウェブハンドリング基礎理論の拡張」、特に9.2節「マクログルーブローラを用いた場合の理論」、9.3節「マイクログルーブローラを用いた場合の理論」, 加工技術研究会.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第3章「ウェブ浮上量の予測理論」, 第4章「有効摩擦係数の予測理論」（基礎となる空気膜厚さ・摩擦係数モデル）.</li>
