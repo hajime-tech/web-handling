@@ -53,8 +53,6 @@ flowchart LR
 ```mermaid
 flowchart LR
     A[巻出側] -->|MD: 流れ方向| B[巻取側]
-    style A fill:#222,color:#fff
-    style B fill:#222,color:#fff
 ```
 
 | 略号 | 名称 | 意味 |

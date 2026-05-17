@@ -16,8 +16,6 @@
 ```mermaid
 flowchart LR
     A[上流ロール] -->|平行 → 直進| B[下流ロール]
-    style A fill:#444,color:#fff
-    style B fill:#444,color:#fff
 ```
 
 ### 直角方向進入性の系
