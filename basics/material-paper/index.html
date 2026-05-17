@@ -822,17 +822,6 @@
   <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1683,17 +1672,6 @@
   <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1734,6 +1712,16 @@
 <li><strong>ZD（厚さ方向）</strong>：層間結合は弱く、剥離（ピッキング、ブリスタ）の原因となる。</li>
 </ul>
 <p>紙の応力-ひずみ曲線（橋本『基礎理論と応用』第2章 図2-9）は鋼のような明瞭な降伏点を持たず、連続的に塑性域に入る。降伏応力の代わりに 0.2% 永久ひずみ時の応力（耐力 <span class="arithmatex">\(\sigma_{0.2}\)</span>）で評価する場合がある。</p>
+<details class="question">
+<summary>演習: 紙の異方性</summary>
+<p>紙が「MDとTDで著しい異方性を示す」のは、構造上の何が原因か。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>繊維の MD（流れ方向）配向</strong>。
+製紙工程で繊維が流れ方向に並びやすいため、MD はその方向に繊維が連続して引張に強く、TD は繊維間の結合のみで弱い。
+典型的に MD 剛性は TD の 2〜3 倍。</p>
+</details>
+</details>
 <h2 id="_3">代表的な紙の物性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1797,6 +1785,16 @@
 </tr>
 </tbody>
 </table>
+<details class="question">
+<summary>演習: 坪量と厚さ</summary>
+<p>新聞用紙（坪量 50 g/m²）の理論的な厚さは概ね何 μm か。表の値と比較してみよう。</p>
+<details class="success">
+<summary>解答</summary>
+<p>密度 0.6 g/cm³ = 600 kg/m³
+厚さ = 坪量 / 密度 = 50 g/m² / 600 g/L = 50/600 mm = 0.0833 mm ≈ <strong>83 μm</strong>
+表の値（60〜80 μm）と概ね一致。新聞用紙は薄物の中でも軽量・薄物・高速搬送が要求される代表例。</p>
+</details>
+</details>
 <h2 id="_4">紙特有の力学<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="hygro-expansion">湿度伸縮（hygro-expansion）<a class="headerlink" href="#hygro-expansion" title="Permanent link">&para;</a></h3>
 <p>紙は湿度変化で寸法が大きく変化する。</p>
@@ -1828,6 +1826,16 @@
 </table>
 <p>たとえば TD で <span class="arithmatex">\(\beta_h = 0.05\%/\%RH\)</span> の紙が湿度 50% → 70% に変化すると、1 m 幅で 1 mm 伸びる計算になる。
 印刷見当ずれ、巻取後の波打ち、コックル（波状変形）の主因となる。</p>
+<details class="question">
+<summary>演習: 湿度伸縮の計算</summary>
+<p>TD 方向の湿度膨張係数 <span class="arithmatex">\(\beta_h = 0.05\,\%/\%RH\)</span> のコート紙、幅 <span class="arithmatex">\(1.5\,m\)</span> が、湿度 40% → 60% に変化したとき、CD 方向に何 mm 伸びるか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(\varepsilon_h = 0.05\%/\%RH \times 20\,\%RH = 1.0\% = 0.01\)</span>
+伸び量 <span class="arithmatex">\(= 1500\,mm \times 0.01 = 15\,mm\)</span>
+印刷ラインでは見当ずれの直接原因となる致命的な伸び量。</p>
+</details>
+</details>
 <h3 id="_5">引張剛性とテンシブル<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>紙の引張剛性は坪量で正規化することが多い。</p>
 <div class="arithmatex">\[
@@ -1861,8 +1869,27 @@
 </tr>
 </tbody>
 </table>
+<details class="question">
+<summary>演習: 比引張強さの意味</summary>
+<p>「比引張強さ 80 N·m/g」とは物理的に何を意味するか。</p>
+<details class="success">
+<summary>解答</summary>
+<p>単位 <strong>質量</strong> あたりの引張強さ（坪量で正規化された強度）。
+この値が大きいほど、軽い紙で大きな張力に耐えられる。
+坪量や厚さが違う紙どうしを比較するための共通指標として製紙業界で使われる。</p>
+</details>
+</details>
 <h3 id="z">内部結合（Z 強度）<a class="headerlink" href="#z" title="Permanent link">&para;</a></h3>
 <p>紙の厚さ方向の結合強度は、塗工・印刷時の「剥け（ピッキング）」、巻取後の「ブリスタ」に直結する。Scott Bond、IGT pick test などで評価される。</p>
+<details class="question">
+<summary>演習: Z 強度トラブル</summary>
+<p>印刷工程で「インクと一緒に紙の表面層が剥がれる」現象が発生した。原因は何か。</p>
+<details class="success">
+<summary>解答</summary>
+<p>紙の <strong>Z 強度（厚さ方向の結合強度）不足</strong>。これを <strong>ピッキング（picking）</strong> と呼ぶ。
+対策：(1) Z 強度の高い紙を選定、(2) インクの粘着力（タック）を下げる、(3) 印圧を下げる、(4) 印刷速度を下げる、(5) Scott Bond・IGT pick test で受入検査強化。</p>
+</details>
+</details>
 <h2 id="_6">ウェブハンドリング上の注意点<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <h3 id="_7">適正張力<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>紙の適正張力は引張強さの <strong>10〜20%</strong> が目安。フィルムより比率は高め。</p>
@@ -1892,6 +1919,16 @@
 </tr>
 </tbody>
 </table>
+<details class="question">
+<summary>演習: 紙とフィルムの張力差</summary>
+<p>紙の張力設計はフィルムよりも引張強さに対する比率が高い（10〜20% vs フィルム 5〜20%）。理由を1つ挙げよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p>紙は <strong>粘弾性が小さく</strong>、フィルムのようなクリープによる長時間ひずみ蓄積のリスクが低い。
+また、紙は明確な破断挙動を示し、過張力時はすぐ断紙して止まるため、過度な低張力で運用するメリットが小さい。
+高速搬送・蛇行抑制のためにある程度の高張力が必要、という事情もある。</p>
+</details>
+</details>
 <h3 id="_8">湿度・温度管理<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>工場の温湿度が変動すると、巻取後のロールが膨張・収縮して以下が発生する。</p>
 <ul>
@@ -1900,46 +1937,12 @@
 <li>カール、コックル、波打ち</li>
 </ul>
 <p>理想は <strong>温度 23 ℃ ± 2、湿度 50% ± 5%</strong> の恒温恒湿環境。製紙工場では恒湿空調投資が大きいテーマとなる。</p>
-<h3 id="_9">紙粉・断紙<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>紙はフィルムと違い「破れたら止まる」材料。</p>
-<ul>
-<li>ロール表面に紙粉が堆積し、滑りや張力変動の原因となる。定期清掃必須。</li>
-<li>欠陥（穴、入紙不良）から断紙が走りやすい。</li>
-<li>接紙（splice）の段差や粘着剤剥がれが二次断紙を引き起こす。</li>
-</ul>
-<h3 id="_10">多孔質ゆえのエア同伴<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>巻取り時にロール面間にエアが同伴され、巻きが緩む。フィルムよりも紙のほうが多孔質のためエアは抜けやすいが、高速時はやはり問題となる。</p>
-<ul>
-<li>ライダロール／ニップで強制的にエアを押し出す。</li>
-<li>テーパテンション制御で巻径増ごとに張力を下げ、内側破壊を防ぐ。</li>
-</ul>
-<h2 id="_11">理解度チェック<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <details class="question">
-<summary>演習1: 湿度伸縮の計算</summary>
-<p>TD方向の湿度膨張係数 <span class="arithmatex">\(\beta_h = 0.05\,\%/\%RH\)</span> のコート紙、幅 <span class="arithmatex">\(1.5\,m\)</span> が、湿度 40% → 60% に変化したとき、CD方向に何 mm 伸びるか。</p>
-<details class="success">
-<summary>解答</summary>
-<p><span class="arithmatex">\(\varepsilon_h = 0.05\%/\%RH \times 20\,\%RH = 1.0\% = 0.01\)</span>
-伸び量 <span class="arithmatex">\(= 1500\,mm \times 0.01 = 15\,mm\)</span>
-印刷ラインでは見当ずれの直接原因となる致命的な伸び量。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習2: 紙とフィルムの違い</summary>
-<p>紙の応力-ひずみ曲線は、鋼やプラスチックフィルムと比較して、何が特徴的か。</p>
-<details class="success">
-<summary>解答</summary>
-<p><strong>明確な降伏点を持たない</strong>（連続的に塑性変形に入る）。
-また、MD と TD で大きく異なる <strong>異方性</strong>を示す。
-これは繊維配向と空隙構造、繊維間水素結合という紙特有の構造に起因する。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習3: 巻取トラブル</summary>
+<summary>演習: 巻取トラブル</summary>
 <p>工場の温度・湿度が深夜に変動し、翌朝出社すると巻取ロールが「ぱつぱつに張った」状態になっていた。考えられる原因と防止策を述べよ。</p>
 <details class="success">
 <summary>解答</summary>
-<p><strong>原因</strong>：夜間に湿度が上昇 → 紙が膨張 → 巻取内部応力が増大 → バーストロール寸前
+<p><strong>原因</strong>：夜間に湿度が上昇 → 紙が膨張 → 巻取内部応力が増大 → バーストロール寸前。
 <strong>防止策</strong>：
 (1) 工場の恒温恒湿化（23±2℃、50±5%RH）
 (2) ロールの保管・養生環境管理
@@ -1947,7 +1950,39 @@
 (4) ライン稼働後の巻取り直前にウェブを工場環境と平衡させる</p>
 </details>
 </details>
-<h2 id="_12">参考文献<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_9">紙粉・断紙<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>紙はフィルムと違い「破れたら止まる」材料。</p>
+<ul>
+<li>ロール表面に紙粉が堆積し、滑りや張力変動の原因となる。定期清掃必須。</li>
+<li>欠陥（穴、入紙不良）から断紙が走りやすい。</li>
+<li>接紙（splice）の段差や粘着剤剥がれが二次断紙を引き起こす。</li>
+</ul>
+<details class="question">
+<summary>演習: 紙粉対策</summary>
+<p>高速搬送ラインでロール上に紙粉が堆積し、張力が不安定になっている。なぜ張力に影響するのか。</p>
+<details class="success">
+<summary>解答</summary>
+<p>紙粉がロール表面に堆積すると、<strong>実効摩擦係数が変化</strong>（しばしば低下）し、オイラー式の張力保持力が不安定になる。
+さらに、紙粉によって局所的に厚さムラが生じ、CD 張力分布も乱れる。
+対策：エアブロー、ブラシロール、定期清掃の徹底。</p>
+</details>
+</details>
+<h3 id="_10">多孔質ゆえのエア同伴<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>巻取り時にロール面間にエアが同伴され、巻きが緩む。フィルムよりも紙のほうが多孔質のためエアは抜けやすいが、高速時はやはり問題となる。</p>
+<ul>
+<li>ライダロール／ニップで強制的にエアを押し出す。</li>
+<li>テーパテンション制御で巻径増ごとに張力を下げ、内側破壊を防ぐ。</li>
+</ul>
+<details class="question">
+<summary>演習: 紙の巻取エア対策</summary>
+<p>紙はフィルムより多孔質でエアが抜けやすいのに、それでも高速時にエア同伴対策が必要な理由は？</p>
+<details class="success">
+<summary>解答</summary>
+<p>高速時には <strong>巻き込まれるエア流量が抜ける流量を上回る</strong> ため、ロール内に空気膜が残り軟巻きになる。
+橋本『基礎理論と応用』第3章の空気膜厚さ式 <span class="arithmatex">\(h \propto V^{2/3}\)</span> より、速度の 2/3 乗で増大するため、高速ラインでは透気性の高い紙でも対策必須。</p>
+</details>
+</details>
+<h2 id="_11">参考文献<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』, 加工技術研究会, 2010.</li>
 <li>紙パルプ技術協会編『紙パルプ技術便覧』.</li>

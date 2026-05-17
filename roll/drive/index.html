@@ -1228,17 +1228,6 @@
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1800,17 +1789,6 @@
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1848,6 +1826,16 @@
 <li><strong>テンションゾーンを分離する</strong>：駆動分離度の高いロールでゾーン間張力を独立化。</li>
 <li><strong>巻取／巻出にトルクを供給する</strong>：巻径変化と慣性に追従。</li>
 </ol>
+<details class="question">
+<summary>演習: マスタドライブの役割</summary>
+<p>複数のドライブロールがあるラインで「マスタドライブ」が決めるものは何か。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>ライン速度の基準</strong>。
+マスタが速度指令を発し、他のスレーブドライブはそれを基準にした速度比（張力 FB による微補正含む）で追従する。
+マスタが乱れるとライン全体の速度・張力が乱れるため、最も剛性の高い駆動が選ばれる。</p>
+</details>
+</details>
 <h2 id="2">2. 積極駆動と消極駆動<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>『スリッター・リワインダーの技術読本』第1章2節の整理にならい、駆動形態を分類する。</p>
 <table>
@@ -1877,6 +1865,16 @@
 </tbody>
 </table>
 <p>ライン中で <strong>どのロールを積極にするか／どこに駆動分離を入れるか</strong> がレイアウト設計の最初のステップ。</p>
+<details class="question">
+<summary>演習: 駆動分類</summary>
+<p>「ブレーキ式の巻出機」は積極駆動か、消極駆動か。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>消極駆動</strong>。動力でロールを回すのではなく、下流からのウェブ張力で従動するロールにブレーキで張力を発生させる方式。
+コスト低だが応答遅・発熱大。
+対比的に、サーボモータ駆動の巻出は積極駆動。</p>
+</details>
+</details>
 <h2 id="3">3. 標準的なライン構成<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart LR
     UW[巻出&lt;br/&gt;トルク制御] --&gt; ID1[アイドラ]
@@ -1892,6 +1890,16 @@
 <li><strong>ニップ</strong>：駆動分離を確実にしたい工程の前後に配置。</li>
 <li><strong>巻取</strong>：トルク制御＋テーパテンション。</li>
 </ul>
+<details class="question">
+<summary>演習: ニップ配置の意図</summary>
+<p>上図でなぜプロセス（塗工/印刷）の前後にニップを配置するのか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>プロセス部のテンションゾーンを上下流から完全分離するため</strong>。
+塗工/印刷部は最適張力（低張力）が異なるため、ニップで駆動分離してプロセス部独立の張力制御を可能にする。
+ニップなしだと張力変動が上下流に伝播し、品質が安定しない。</p>
+</details>
+</details>
 <h2 id="4">4. アクチュエータの選定<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="_2">モータの種類<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <table>
@@ -1973,6 +1981,17 @@
 <li><strong>直動カップリング（ダイレクトドライブ）</strong>：バックラッシゼロ、剛性高。</li>
 </ul>
 <p>巻取・巻出側はバックラッシが張力変動として現れるため、低バックラッシ化が品質に直結。</p>
+<details class="question">
+<summary>演習: アクチュエータ選定（巻出）</summary>
+<p>巻出側で「低コスト・中容量・連続トルク制御」が要件のとき、選定すべきアクチュエータは？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>パウダブレーキ（粉体ブレーキ）</strong>。
+励磁電流でトルクを連続調整でき、巻出側のような「ブレーキ方向のみで OK」な用途で安価。
+ただし摩擦熱が出るので連続発熱・放熱設計が必要。応答も遅め（〜100 ms）。
+高精度・高応答が要件なら AC サーボに格上げする。</p>
+</details>
+</details>
 <h2 id="5">5. 駆動トルクの計算<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>ロール駆動に必要なトルク <span class="arithmatex">\(\tau\)</span> は：</p>
 <div class="arithmatex">\[
@@ -2015,6 +2034,16 @@ J = \frac{\pi}{2} \rho w \left(R^4 - R_0^4\right)
 <div class="arithmatex">\[
 \tau_\text{ref} = T_\text{set} R + J(R) \dot\omega + \tau_\text{loss}
 \]</div>
+<details class="question">
+<summary>演習: 巻取慣性の計算</summary>
+<p>紙ロール（<span class="arithmatex">\(\rho = 800\,kg/m^3\)</span>）、幅 <span class="arithmatex">\(w = 1.5\,m\)</span>、満巻半径 <span class="arithmatex">\(R = 0.6\,m\)</span>、コア半径 <span class="arithmatex">\(R_0 = 0.05\,m\)</span> の巻取慣性 <span class="arithmatex">\(J\)</span> [kg·m²] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(J = (\pi/2)\rho w (R^4 - R_0^4) = (\pi/2) \times 800 \times 1.5 \times (0.6^4 - 0.05^4)\)</span>
+<span class="arithmatex">\(= 1885 \times (0.1296 - 6.25 \times 10^{-6}) \approx 1885 \times 0.1296 \approx 244\,kg \cdot m^2\)</span>
+この巨大な慣性が加減速時の張力変動の主因となる。</p>
+</details>
+</details>
 <h2 id="6">6. 同期制御<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p>複数ドライブ間の速度同期は、ライン全体の張力安定性を決定する。</p>
 <h3 id="_7">方式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
@@ -2029,6 +2058,16 @@ J = \frac{\pi}{2} \rho w \left(R^4 - R_0^4\right)
 V_\text{slave} = V_\text{master} \cdot (1 + \Delta) + \text{tension PID 出力}
 \]</div>
 <p><span class="arithmatex">\(\Delta\)</span> は工程要求（塗工延伸など）からの目標速度比。</p>
+<details class="question">
+<summary>演習: 同期方式の選定</summary>
+<p>多軸（10軸以上）の高速ラインで、μs オーダーの同期精度が必要なときの通信プロトコルは？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>EtherCAT / Mechatrolink-IV / SERCOS-III</strong> の高速同期型フィールドバス。
+従来の CANopen や PROFIBUS では同期精度が不足。
+EtherCAT は特に多軸同期で μs 精度を達成可能で、ウェブハンドリングの大規模ラインで標準化が進んでいる。</p>
+</details>
+</details>
 <h2 id="7">7. 巻径推定と巻径補正<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <p>巻取／巻出のトルク制御は、巻径 <span class="arithmatex">\(R\)</span> の関数として指令を計算する。
 推定方法：</p>
@@ -2047,6 +2086,16 @@ V_\text{slave} = V_\text{master} \cdot (1 + \Delta) + \text{tension PID 出力}
    R = \frac{V}{\omega}
    $$</p>
 <p>静止状態や低速で誤差大、フィルタが必要。</p>
+<details class="question">
+<summary>演習: 巻径推定の計算</summary>
+<p>搬送速度 <span class="arithmatex">\(V = 100\,m/min\)</span>、モータ角速度 <span class="arithmatex">\(\omega = 5\,rad/s\)</span> のとき、巻径 <span class="arithmatex">\(R\)</span> [m] を推定せよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(V = 100/60 = 1.667\,m/s\)</span>
+<span class="arithmatex">\(R = V/\omega = 1.667/5 = 0.333\,m\)</span>
+ただしこの計算は静止・低速で誤差大、実機では他の推定方法と併用してフィルタリングが必須。</p>
+</details>
+</details>
 <h2 id="8">8. ハードウェアの安全設計<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2082,6 +2131,16 @@ V_\text{slave} = V_\text{master} \cdot (1 + \Delta) + \text{tension PID 出力}
 </tr>
 </tbody>
 </table>
+<details class="question">
+<summary>演習: STOの意味</summary>
+<p>駆動の安全機能「STO（Safe Torque Off）」とは何か。簡潔に答えよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>モータへのトルク供給を確実に遮断する安全機能</strong>。
+非常停止やドア開放時に、サーボアンプ内でトルク指令を遮断し、モータが惰性停止するまで動力を絶つ。
+IEC 61800-5-2 で定義された機能で、PLd 以上の安全性能を実現するために標準的に使われる。</p>
+</details>
+</details>
 <h2 id="9">9. 設計チェックリスト<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
 <p>新規ライン／改造時：</p>
 <ul class="task-list">
@@ -2094,39 +2153,7 @@ V_\text{slave} = V_\text{master} \cdot (1 + \Delta) + \text{tension PID 出力}
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> エンジニアリングツール／PLC ベンダの社内資産</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 将来のライン速度アップ余裕</li>
 </ul>
-<h2 id="_9">理解度チェック<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<details class="question">
-<summary>演習1: 巻取慣性の計算</summary>
-<p>紙ロール（<span class="arithmatex">\(\rho = 800\,kg/m^3\)</span>）、幅 <span class="arithmatex">\(w = 1.5\,m\)</span>、満巻半径 <span class="arithmatex">\(R = 0.6\,m\)</span>、コア半径 <span class="arithmatex">\(R_0 = 0.05\,m\)</span> の巻取慣性 <span class="arithmatex">\(J\)</span> [kg·m²] を求めよ。</p>
-<details class="success">
-<summary>解答</summary>
-<p><span class="arithmatex">\(J = (\pi/2)\rho w (R^4 - R_0^4) = (\pi/2) \times 800 \times 1.5 \times (0.6^4 - 0.05^4)\)</span>
-<span class="arithmatex">\(= 1885 \times (0.1296 - 6.25 \times 10^{-6}) \approx 1885 \times 0.1296 \approx 244\,kg \cdot m^2\)</span>
-この巨大な慣性が加減速時の張力変動の主因となる。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習2: 巻径推定</summary>
-<p>搬送速度 <span class="arithmatex">\(V = 100\,m/min\)</span>、モータ角速度 <span class="arithmatex">\(\omega = 5\,rad/s\)</span> のとき、巻径 <span class="arithmatex">\(R\)</span> [m] を推定せよ。</p>
-<details class="success">
-<summary>解答</summary>
-<p><span class="arithmatex">\(V = 100/60 = 1.667\,m/s\)</span>
-<span class="arithmatex">\(R = V/\omega = 1.667/5 = 0.333\,m\)</span>
-ただしこの計算は静止・低速で誤差大、実機ではフィルタリングが必須。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習3: アクチュエータ選定</summary>
-<p>巻出側で「低コスト・中容量・連続トルク制御」が要件のとき、選定すべきアクチュエータは？</p>
-<details class="success">
-<summary>解答</summary>
-<p><strong>パウダブレーキ（粉体ブレーキ）</strong>。
-励磁電流でトルクを連続調整でき、巻出側のような「ブレーキ方向のみで OK」な用途で安価。
-ただし摩擦熱が出るので連続発熱・放熱設計が必要。応答も遅め（〜100 ms）。
-高精度・高応答が要件なら AC サーボに格上げする。</p>
-</details>
-</details>
-<h2 id="_10">参考文献<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_9">参考文献<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li>『スリッター・リワインダーの技術読本』第1章「基礎」（積極・消極駆動、ニップ、フリクション、力・動力）.</li>
 <li>橋本 巨『入門 ウェブハンドリング』第6章「ウェブの張力制御」, 加工技術研究会, 2010.</li>

@@ -923,17 +923,6 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1588,17 +1577,6 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1637,6 +1615,16 @@
 \]</div>
 <p>ここで <span class="arithmatex">\(\mu\)</span> はウェブとロール間の摩擦係数、<span class="arithmatex">\(\theta\)</span> は <strong>ラジアン</strong> で表した巻き付き角。</p>
 <p>等号成立は滑り限界。実用上は安全余裕として 1.5〜2 倍の係数を掛けて設計する。</p>
+<details class="question">
+<summary>演習: 巻き付き角と張力比</summary>
+<p>摩擦係数 <span class="arithmatex">\(\mu = 0.3\)</span>、巻き付き角 90°（<span class="arithmatex">\(= \pi/2\)</span> rad）のとき、滑り限界の張力比 <span class="arithmatex">\(T_2/T_1\)</span> を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(T_2/T_1 = e^{\mu\theta} = e^{0.3 \times \pi/2} = e^{0.471} \approx 1.60\)</span>
+つまり巻き付き 90° では、最大で約 1.6 倍の張力差しか保持できない。
+90° → 180° → 270° と巻き付き角を増やすほど指数関数的に保持力が増す。</p>
+</details>
+</details>
 <h2 id="2">2. 導出（要点）<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>巻き付き角 <span class="arithmatex">\(\theta\)</span> の微小角 <span class="arithmatex">\(d\theta\)</span> に着目し、半径 <span class="arithmatex">\(R\)</span>、線張力 <span class="arithmatex">\(T\)</span> を考える。</p>
 <ul>
@@ -1652,6 +1640,16 @@
 \]</div>
 <pre class="mermaid"><code>flowchart LR
     A[低張力 T1] --&gt;|巻き付き角 θ| B[高張力 T2]</code></pre>
+<details class="question">
+<summary>演習: 式の物理的意味</summary>
+<p>オイラー式が「指数関数」になるのはなぜか、導出から考えて答えよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p>微小角ごとの張力変化が <span class="arithmatex">\(dT = \mu T \, d\theta\)</span> となり、これは <strong>張力 <span class="arithmatex">\(T\)</span> に比例して張力が増える</strong> 構造（微分方程式 <span class="arithmatex">\(dT/T = \mu\,d\theta\)</span>）。
+<span class="arithmatex">\(T\)</span> について解くと指数関数 <span class="arithmatex">\(e^{\mu\theta}\)</span> となる。
+つまり、すでに張力が高い側ほど大きな摩擦力が発生し、さらに張力差が大きく取れるという正のフィードバック構造に起因する。</p>
+</details>
+</details>
 <h2 id="3">3. 数値感覚<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>巻き付き角 180°（= <span class="arithmatex">\(\pi\)</span> rad）の Sラップを想定し、<span class="arithmatex">\(\mu\)</span> を変えると：</p>
 <table>
@@ -1696,6 +1694,17 @@
 </tbody>
 </table>
 <p>このため <strong>ドライブロールには高摩擦ゴム被覆</strong>、巻き付き角を稼ぐためにSラップ・ダブルラップを採用する。</p>
+<details class="question">
+<summary>演習: ゴム被覆ロールの効果</summary>
+<p>PET フィルムを「クロムロール（μ=0.15）」から「ゴム被覆ロール（μ=0.4）」に変更すると、180°巻き付きでの張力保持力（張力比）は何倍に上がるか。</p>
+<details class="success">
+<summary>解答</summary>
+<p>クロム：<span class="arithmatex">\(e^{0.15\pi} = e^{0.471} \approx 1.60\)</span>
+ゴム被覆：<span class="arithmatex">\(e^{0.4\pi} = e^{1.257} \approx 3.52\)</span>
+張力比は <span class="arithmatex">\(3.52/1.60 \approx 2.2\)</span> 倍に向上。
+ドライブロールにゴム被覆を採用する大きな理由がこの <strong>指数的向上効果</strong>。</p>
+</details>
+</details>
 <h2 id="4">4. ウェブ・ロール間の摩擦係数<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>実測の代表値（理想条件、参考値）：</p>
 <table>
@@ -1750,6 +1759,16 @@
 <li>湿度・温度で大きく変化。</li>
 <li>油分・離型剤がフィルムに残ると一桁低下することも。</li>
 </ul>
+<details class="question">
+<summary>演習: 摩擦係数のばらつき</summary>
+<p>実測の摩擦係数表で、PET—クロムが 0.15〜0.25 と幅がある。設計値としてはどちらの値を使うべきか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>下限値（0.15）</strong> を設計値に使うべき。
+理由：摩擦係数は速度・湿度・温度・表面汚れで容易に低下する。スリップ／断材を防ぐには <strong>保守側（低い摩擦係数）</strong> で設計すること。
+高い側の値で設計するとマージン不足で実機トラブルとなる。</p>
+</details>
+</details>
 <h2 id="5-air-entrainment">5. 空気同伴（air entrainment）<a class="headerlink" href="#5-air-entrainment" title="Permanent link">&para;</a></h2>
 <p>高速ウェブはロール表面との隙間にエアを引き込み、エア層に乗ってしまう。</p>
 <div class="arithmatex">\[
@@ -1764,6 +1783,18 @@ h_\text{air} = c \cdot R \left( \frac{\eta V}{T/w} \right)^{2/3}
 <li><strong>ニップロール</strong>（強制接触）</li>
 <li><strong>真空サクションロール</strong>（ロールに穴・真空源）</li>
 </ul>
+<details class="question">
+<summary>演習: 速度上昇とスリップ</summary>
+<p>搬送速度を 2 倍にしたところ、ロールでウェブが滑り始めた。理由とそれぞれの対策を 3 つ挙げよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>理由</strong>：搬送速度上昇 → 空気膜厚さ <span class="arithmatex">\(h_\text{air} \propto V^{2/3}\)</span> で増大 → 有効摩擦係数 <span class="arithmatex">\(\mu_\text{eff}\)</span> 低下 → オイラー式の保持力が崩れる。
+<strong>対策</strong>：
+(1) <strong>マイクログルーブローラ／マクログルーブローラ</strong> で空気膜排除
+(2) <strong>真空サクションロール</strong> で強制密着
+(3) <strong>ニップロール併用</strong> でメカニカルに張力差を発生</p>
+</details>
+</details>
 <h2 id="6-wrap">6. 滑りの判定と「巻き付け（wrap）張力」<a class="headerlink" href="#6-wrap" title="Permanent link">&para;</a></h2>
 <p>ロール前後で実際に発生する張力差 <span class="arithmatex">\(T_2 / T_1\)</span> が <span class="arithmatex">\(e^{\mu \theta}\)</span> を超えると <strong>巨視的滑り</strong> が起こり、駆動ロールであれば搬送速度を失う。
 これを避けるための実用設計：</p>
@@ -1771,6 +1802,15 @@ h_\text{air} = c \cdot R \left( \frac{\eta V}{T/w} \right)^{2/3}
 \frac{T_\text{high}}{T_\text{low}} \le \frac{e^{\mu \theta}}{SF}
 \]</div>
 <p>ここで <span class="arithmatex">\(SF\)</span> は安全率（典型 1.5〜2.0）。</p>
+<details class="question">
+<summary>演習: 安全率を見込んだ設計</summary>
+<p>PET 12 μm、Sラップ（180°）、<span class="arithmatex">\(\mu = 0.4\)</span>、安全率 1.5 のとき、許容される張力比の上限は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(T_\text{high}/T_\text{low} \le e^{\mu\theta}/SF = e^{0.4\pi}/1.5 = 3.52/1.5 \approx 2.34\)</span>
+入口 100 N/m なら出口 234 N/m が実用上限。</p>
+</details>
+</details>
 <h2 id="7">7. 応用：駆動ロールの設計<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <p>ドライブロールがスリップせずにライン速度を決めるための条件：</p>
 <ol>
@@ -1779,46 +1819,34 @@ h_\text{air} = c \cdot R \left( \frac{\eta V}{T/w} \right)^{2/3}
 <li>必要ならニップロールでメカニカルに挟む。</li>
 <li>入口・出口の張力比をオイラー式で照査する。</li>
 </ol>
+<details class="question">
+<summary>演習: ドライブロール改造</summary>
+<p>既存のドライブロール（クロム、巻き付き角 90°、μ=0.2）でスリップが多発している。コストと効果のバランスを考えた改造案を提案せよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p>優先順位：
+1. <strong>ゴム被覆へ交換</strong>（μ: 0.2 → 0.4）→ 保持力 <span class="arithmatex">\(e^{0.4\pi/2} = 1.87\)</span>、約 17% 増
+2. <strong>Sラップ化</strong>（巻き付き角 90°→180°）→ 保持力 <span class="arithmatex">\(e^{0.4\pi} = 3.52\)</span>、さらに 88% 増
+3. それでも不足なら <strong>ニップロール併用</strong> でメカニカル拘束
+装置改造のコスト的には 1 → 2 → 3 の順。</p>
+</details>
+</details>
 <h2 id="8">8. 応用：アンチスリップ計算例<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <p>例：PET 12 μm、ライン速度 100 m/min、巻き付き角 180°、<span class="arithmatex">\(\mu = 0.2\)</span>、入口張力 100 N/m、出口張力？</p>
 <p>オイラー式より <span class="arithmatex">\(T_2/T_1 \le e^{0.2 \pi} = 1.87\)</span>。
 よって出口張力上限 <span class="arithmatex">\(T_2 \le 187\,\text{N/m}\)</span>。安全率 1.5 を見込むと実用上限 <span class="arithmatex">\(\approx 125\,\text{N/m}\)</span>。
 これを超える張力差を作りたければ、巻き付き角を増やすか、ニップを併用する。</p>
-<h2 id="_2">理解度チェック<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <details class="question">
-<summary>演習1: 巻き付き角と張力比</summary>
-<p>摩擦係数 <span class="arithmatex">\(\mu = 0.3\)</span>、巻き付き角 90°（<span class="arithmatex">\(= \pi/2\)</span> rad）のとき、滑り限界の張力比 <span class="arithmatex">\(T_2/T_1\)</span> を求めよ。</p>
+<summary>演習: 計算例の応用</summary>
+<p>同じ条件で巻き付き角を 270°（<span class="arithmatex">\(3\pi/2\)</span>）に増やしたら、安全率を 1.5 として、出口張力上限は何 N/m か。</p>
 <details class="success">
 <summary>解答</summary>
-<p><span class="arithmatex">\(T_2/T_1 = e^{\mu\theta} = e^{0.3 \times \pi/2} = e^{0.471} \approx 1.60\)</span>
-つまり巻き付き 90° では、最大で約 1.6 倍の張力差しか保持できない。
-90° → 180° → 270° と巻き付き角を増やすほど指数関数的に保持力が増す。</p>
+<p><span class="arithmatex">\(T_2/T_1 \le e^{0.2 \times 3\pi/2}/1.5 = e^{0.942}/1.5 = 2.57/1.5 \approx 1.71\)</span>
+出口張力上限 <span class="arithmatex">\(\approx 100 \times 1.71 = 171\,N/m\)</span>
+180° のときは 125 N/m だったので、約 37% 向上。</p>
 </details>
 </details>
-<details class="question">
-<summary>演習2: 駆動ロール設計</summary>
-<p>PET 12 μm、ライン速度 200 m/min、ドライブロール（ゴム被覆、<span class="arithmatex">\(\mu = 0.4\)</span>）に Sラップ（180° = <span class="arithmatex">\(\pi\)</span> rad）で巻きつけて駆動したい。
-安全率 1.5 を見込んで、許容できる入口→出口の張力比上限は？</p>
-<details class="success">
-<summary>解答</summary>
-<p><span class="arithmatex">\(T_2/T_1 \le e^{\mu\theta}/SF = e^{0.4 \pi}/1.5 = e^{1.257}/1.5 = 3.52/1.5 \approx 2.34\)</span>
-実用上限：入口 100 N/m なら出口 234 N/m まで上げられる。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習3: 空気同伴の影響</summary>
-<p>搬送速度を 2 倍にしたところ、ロールでウェブが滑り始めた。理由とそれぞれの対策を 3 つ挙げよ。</p>
-<details class="success">
-<summary>解答</summary>
-<p><strong>理由</strong>：搬送速度上昇 → 空気膜厚さ <span class="arithmatex">\(h_\text{air}\)</span> 増大 → 有効摩擦係数 <span class="arithmatex">\(\mu_\text{eff}\)</span> 低下 → オイラー式の保持力が崩れる
-<span class="arithmatex">\(h_\text{air} \propto V^{2/3}\)</span>（Knox-Sweeney）</p>
-<p><strong>対策</strong>：
-(1) <strong>マイクログルーブローラ／マクログルーブローラ</strong> で空気膜排除
-(2) <strong>真空サクションロール</strong> で強制密着
-(3) <strong>ニップロール併用</strong> でメカニカルに張力差を発生</p>
-</details>
-</details>
-<h2 id="_3">参考文献<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_2">参考文献<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第4章「ウェブハンドリングのトライボロジー」、特に第3節「アモントン・クーロンの摩擦法則」、第4節「オイラーのベルト公式」, 加工技術研究会, 2010.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第2章4節「固体間の摩擦特性」、第4章「有効摩擦係数の予測理論」、第5章「ウェブのスリップ開始速度の予測」, 加工技術研究会.</li>

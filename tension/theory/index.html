@@ -962,17 +962,6 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1722,17 +1711,6 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1788,6 +1766,18 @@ t = \frac{T}{w} \quad [\text{N/m}]
 \sigma = \frac{T}{w h} = \frac{t}{h} \quad [\text{Pa}]
 \]</div>
 <p>材料の降伏応力・破断応力との比較は、必ずこの <span class="arithmatex">\(\sigma\)</span> で行う。</p>
+<details class="question">
+<summary>演習: 単位幅張力と応力</summary>
+<p>PET フィルム（厚さ <span class="arithmatex">\(h = 25\,\mu m\)</span>、幅 <span class="arithmatex">\(w = 0.5\,m\)</span>）を <span class="arithmatex">\(T = 50\,N\)</span> で搬送している。
+(a) 単位幅張力 <span class="arithmatex">\(t\)</span> [N/m] を求めよ。
+(b) 応力 <span class="arithmatex">\(\sigma\)</span> [MPa] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p>(a) <span class="arithmatex">\(t = T/w = 50/0.5 = 100\,N/m\)</span>
+(b) <span class="arithmatex">\(\sigma = T/(wh) = 50/(0.5 \times 25 \times 10^{-6}) = 4 \times 10^6\,Pa = 4\,MPa\)</span>
+単位幅張力 100 N/m を扱うことは多いが、応力は薄物ほど大きくなる点に注意。</p>
+</details>
+</details>
 <h2 id="2-">2. ウェブの応力 - ひずみ関係<a class="headerlink" href="#2-" title="Permanent link">&para;</a></h2>
 <p>線形弾性域では Hooke の法則が成立し、</p>
 <div class="arithmatex">\[
@@ -1799,6 +1789,16 @@ t = \frac{T}{w} \quad [\text{N/m}]
 \varepsilon = \frac{V_\text{out} - V_\text{in}}{V_\text{in}}, \qquad T = E w h \, \varepsilon
 \]</div>
 <p>つまり <strong>隣接ロールの回転速度差が、そのスパンの張力を作る</strong>。これがウェブハンドリング制御の最重要原理。</p>
+<details class="question">
+<summary>演習: 速度差と張力</summary>
+<p>長さ <span class="arithmatex">\(L = 2\,m\)</span>、<span class="arithmatex">\(E = 4\,GPa\)</span>、<span class="arithmatex">\(h = 25\,\mu m\)</span>、<span class="arithmatex">\(w = 1\,m\)</span> のスパンで、入口と出口のロール速度差が <span class="arithmatex">\(0.1\%\)</span> のとき、定常状態の張力 <span class="arithmatex">\(T\)</span> は何 N か。</p>
+<details class="success">
+<summary>解答</summary>
+<p>ひずみ <span class="arithmatex">\(\varepsilon = 0.001\)</span>
+<span class="arithmatex">\(T = E w h \varepsilon = 4 \times 10^9 \times 1 \times 25 \times 10^{-6} \times 0.001 = 100\,N\)</span>
+わずか 0.1% の速度差で大きな張力が生まれる ⇒ 高精度な速度制御が必須。</p>
+</details>
+</details>
 <h2 id="3">3. スパンの張力支配方程式<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>長さ <span class="arithmatex">\(L\)</span> のスパンの張力 <span class="arithmatex">\(T\)</span> は、入口・出口の速度差で時間発展する。
 ウェブ密度を無視し、線形弾性とすると、質量保存と Hooke 則から、</p>
@@ -1815,6 +1815,16 @@ t = \frac{T}{w} \quad [\text{N/m}]
 <li>速度差は <strong>微小な %オーダー</strong> で十分。0.1% でも数十 N/m の張力差を生む。</li>
 <li>入口張力 <span class="arithmatex">\(T_\text{in}\)</span> が前段から伝播してくる（スパン同士は結合）。</li>
 </ul>
+<details class="question">
+<summary>演習: スパン時定数</summary>
+<p>スパン長 <span class="arithmatex">\(L = 2\,m\)</span>、搬送速度 <span class="arithmatex">\(V = 100\,m/min\)</span> のスパンの時定数 <span class="arithmatex">\(\tau\)</span> [s] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(V = 100/60 \approx 1.67\,m/s\)</span>
+<span class="arithmatex">\(\tau = L/V = 2/1.67 \approx 1.2\,s\)</span>
+この時定数より速い制御指令を入れても張力応答は追いつかない。逆に時定数より十分遅い制御なら安定。</p>
+</details>
+</details>
 <h2 id="4-pi-pid">4. PI / PID 制御と最終値の定理<a class="headerlink" href="#4-pi-pid" title="Permanent link">&para;</a></h2>
 <p>橋本『ウェブハンドリングの基礎理論と応用』第8章では、張力制御系のフィードバックを伝達関数で記述し、最終値の定理から各制御則の特性を導出している。要点：</p>
 <table>
@@ -1850,6 +1860,18 @@ t = \frac{T}{w} \quad [\text{N/m}]
 <li><strong>積分ゲイン <span class="arithmatex">\(K_i\)</span></strong>：大きいほどオフセット消滅・回復速い。過大で系不安定。</li>
 <li><strong>微分ゲイン <span class="arithmatex">\(K_d\)</span></strong>：大きいほど安定性向上・振動周期短。ノイズに敏感。</li>
 </ul>
+<details class="question">
+<summary>演習: 制御則の選択</summary>
+<p>張力指令 100 N/m に対し、定常状態で実張力が 95 N/m となり、5% のオフセットが永続している。
+現在の制御は P 制御のみ。改善するにはどうすべきか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>PI または PID 制御に変更</strong>する。橋本『基礎理論と応用』第8章の最終値の定理から、
+- P 制御：<span class="arithmatex">\(e(\infty) = 1/(1+K_pK) &gt; 0\)</span>（オフセット残存）
+- PI 制御：<span class="arithmatex">\(e(\infty) = 0\)</span>（オフセット消滅）
+積分項を加えることでオフセットがゼロに収束する。</p>
+</details>
+</details>
 <h2 id="5">5. 張力制御の三方式<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart TB
     A[張力制御] --&gt; B[速度制御方式&lt;br/&gt;Speed control]
@@ -1905,6 +1927,17 @@ t = \frac{T}{w} \quad [\text{N/m}]
 </tr>
 </tbody>
 </table>
+<details class="question">
+<summary>演習: 制御方式の選択</summary>
+<p>高速の塗工部直前で「張力変動が大きく、塗工厚みが乱れる」現象が起きている。最適な制御方式は次のうちどれか。
+(a) 速度制御方式  (b) トルク制御方式  (c) ダンサ方式</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>(c) ダンサ方式</strong>。
+ダンサロールは機械的に張力変動を平滑化（低域フィルタ）する効果があり、塗工部のように張力変動を最小化したい工程で標準的に使われる。
+(a) 速度制御は精度高いが平滑化効果はなし、(b) トルク制御は巻出・巻取向き。</p>
+</details>
+</details>
 <h2 id="6">6. テンションゾーンの考え方<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p>ライン全体は <strong>テンションゾーン</strong> に分割され、各ゾーン内では張力が一定（理論上）。ゾーンを分けるのは<strong>完全に駆動を分離する装置</strong>：</p>
 <ul>
@@ -1924,6 +1957,16 @@ t = \frac{T}{w} \quad [\text{N/m}]
 <li>巻取部はテーパテンション</li>
 </ul>
 <p>といった工程ごとの最適化が可能になる。</p>
+<details class="question">
+<summary>演習: ゾーン設計の目的</summary>
+<p>なぜラインを複数のテンションゾーンに分けるのか。1行で答えよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>各工程に最適な張力を独立に設定するため</strong>。
+塗工部は低張力、乾燥部は熱収縮対応の張力、巻取部はテーパテンションなど、工程ごとの要求が異なる。
+ニップロール等で駆動分離して初めて、それぞれを独立制御できる。</p>
+</details>
+</details>
 <h2 id="7">7. 張力の基本方程式（速度ベース）<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <p>実機解析でしばしば使われる連立式（Shelton 1968 起源）：</p>
 <div class="arithmatex">\[
@@ -1938,41 +1981,17 @@ t = \frac{T}{w} \quad [\text{N/m}]
 <li>ライン全体の張力制御は連立微分方程式系として設計する。</li>
 </ol>
 <p>ロール上での張力ジャンプ機構については <a href="../euler/">オイラーの摩擦式</a>、空間的な張力分布については <a href="../distribution/">テンション分布</a>、実機ハードウェアの選定は <a href="../devices/">制御機器の選定</a> を参照。</p>
-<h2 id="_3">理解度チェック<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <details class="question">
-<summary>演習1: 単位幅張力と応力</summary>
-<p>PET フィルム（厚さ <span class="arithmatex">\(h = 25\,\mu m\)</span>、幅 <span class="arithmatex">\(w = 0.5\,m\)</span>）を <span class="arithmatex">\(T = 50\,N\)</span> で搬送している。
-(a) 単位幅張力 <span class="arithmatex">\(t\)</span> [N/m] を求めよ。
-(b) 応力 <span class="arithmatex">\(\sigma\)</span> [MPa] を求めよ。</p>
+<summary>演習: 上流張力の伝播</summary>
+<p>Shelton 方程式から、駆動分離が不完全な場合に上流の張力変動が下流に与える影響を簡潔に説明せよ。</p>
 <details class="success">
 <summary>解答</summary>
-<p>(a) <span class="arithmatex">\(t = T/w = 50/0.5 = 100\,N/m\)</span>
-(b) <span class="arithmatex">\(\sigma = T/(wh) = 50/(0.5 \times 25 \times 10^{-6}) = 4 \times 10^6\,Pa = 4\,MPa\)</span></p>
+<p>Shelton 方程式の右辺第2項 <span class="arithmatex">\(V_i (T_i - T_{i-1})/L_i\)</span> から、<span class="arithmatex">\(T_{i-1}\)</span>（上流張力）の変化は <strong>直接</strong> 当該ゾーンの張力時間変化に影響を与える。
+つまり、駆動分離が不完全だと上流の張力変動が次々と下流へ伝播していき、ライン全体で振動的になる。
+ニップロールなどで完全分離すれば、<span class="arithmatex">\(T_{i-1}\)</span> の影響は遮断され、ゾーンごとの独立制御が可能。</p>
 </details>
 </details>
-<details class="question">
-<summary>演習2: 速度差と張力</summary>
-<p>長さ <span class="arithmatex">\(L = 2\,m\)</span>、<span class="arithmatex">\(E = 4\,GPa\)</span>、<span class="arithmatex">\(h = 25\,\mu m\)</span>、<span class="arithmatex">\(w = 1\,m\)</span> のスパンで、入口と出口のロール速度差が <span class="arithmatex">\(0.1\%\)</span> のとき、定常状態の張力 <span class="arithmatex">\(T\)</span> は何 N か。</p>
-<details class="success">
-<summary>解答</summary>
-<p>ひずみ <span class="arithmatex">\(\varepsilon = 0.001\)</span>
-<span class="arithmatex">\(T = E w h \varepsilon = 4 \times 10^9 \times 1 \times 25 \times 10^{-6} \times 0.001 = 100\,N\)</span>
-わずか 0.1% の速度差で大きな張力が生まれる ⇒ 高精度な速度制御が必須。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習3: 制御則の選択</summary>
-<p>張力指令 100 N/m に対し、定常状態で実張力が 95 N/m となり、5% のオフセットが永続している。
-現在の制御は P 制御のみ。改善するにはどうすべきか。</p>
-<details class="success">
-<summary>解答</summary>
-<p><strong>PI または PID 制御に変更</strong>する。橋本『基礎理論と応用』第8章の最終値の定理から、
-- P 制御：<span class="arithmatex">\(e(\infty) = 1/(1+K_pK) &gt; 0\)</span>（オフセット残存）
-- PI 制御：<span class="arithmatex">\(e(\infty) = 0\)</span>（オフセット消滅）
-積分項を加えることでオフセットがゼロに収束する。</p>
-</details>
-</details>
-<h2 id="_4">参考文献<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_3">参考文献<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第6章「ウェブの張力制御」, 加工技術研究会, 2010.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第8章「ウェブ搬送・巻取時の張力制御」（特に8.5節「PIDコントローラの基本事項」、8.6節「PID のウェブ張力制御系への適用」）, 加工技術研究会.</li>

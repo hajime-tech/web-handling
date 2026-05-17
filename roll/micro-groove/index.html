@@ -1314,17 +1314,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        11. 理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1919,17 +1908,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        11. 理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1977,6 +1955,17 @@ h_0 = 0.589\, R \left( \frac{6\eta U_w}{T/w} \right)^{2/3}
 \]</div>
 <p>ここで <span class="arithmatex">\(R\)</span> はロール半径、<span class="arithmatex">\(\eta\)</span> は空気粘度、<span class="arithmatex">\(U_w\)</span> はウェブ速度、<span class="arithmatex">\(T/w\)</span> は単位幅張力。
 速度の 2/3 乗で空気膜厚さが増大するため、対策なしには高速化に限界がある。</p>
+<details class="question">
+<summary>演習: 高速化の限界</summary>
+<p>ロール径 <span class="arithmatex">\(R = 50\,mm\)</span>、空気粘度 <span class="arithmatex">\(\eta = 1.8 \times 10^{-5}\,Pa\cdot s\)</span>、単位幅張力 <span class="arithmatex">\(T/w = 100\,N/m\)</span>、ウェブ速度 <span class="arithmatex">\(U_w = 10\,m/s\)</span> のとき、空気膜厚さ <span class="arithmatex">\(h_0\)</span> [μm] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(h_0 = 0.589 \times 0.05 \times (6 \times 1.8 \times 10^{-5} \times 10/100)^{2/3}\)</span>
+<span class="arithmatex">\(= 0.0295 \times (1.08 \times 10^{-5})^{2/3}\)</span>
+<span class="arithmatex">\(= 0.0295 \times 4.94 \times 10^{-4} \approx 1.46 \times 10^{-5}\,m \approx 14.6\,\mu m\)</span>
+合成粗さ 1〜2 μm を大きく超えており、トラクションがほぼ消滅。グルーブ対策が必須。</p>
+</details>
+</details>
 <h2 id="2">2. グルーブローラの分類<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>橋本によりサイズで二分類されている。</p>
 <table>
@@ -2007,6 +1996,16 @@ h_0 = 0.589\, R \left( \frac{6\eta U_w}{T/w} \right)^{2/3}
     B --&gt; D[等価幅狭化&lt;br/&gt;わき漏れ促進]
     C --&gt; E[等価隙間理論&lt;br/&gt;能動的空気排除]</code></pre>
 <p>非透気性ウェブ（プラスチックフィルム等）では <strong>マイクログルーブが特に有効</strong>。</p>
+<details class="question">
+<summary>演習: マクロとマイクロの違い</summary>
+<p>マクログルーブとマイクログルーブの <strong>動作原理の違い</strong> を一行で答えよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>マクログルーブ</strong>：幅広ウェブを等価的に幅狭ウェブに分断し、ウェブ端部からの <strong>わき漏れ流出</strong> を促進する。
+<strong>マイクログルーブ</strong>：グルーブ内の流れも空気潤滑膜として機能させ、<strong>等価隙間の概念</strong> で能動的に空気膜厚さを減らす。
+透気性ウェブにはマクロが、非透気性ウェブ（フィルム）にはマイクロが特に有効。</p>
+</details>
+</details>
 <h2 id="3">3. マイクログルーブの理論（橋本モデル）<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h3 id="31">3.1 等価隙間の概念<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
 <p>マイクログルーブローラを「平滑面ローラ＋等価隙間 <span class="arithmatex">\(h_e\)</span>」に置き換えて解析する（橋本『基礎理論と応用』第9章3節 図9-7）。
@@ -2034,6 +2033,17 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
 <h3 id="33">3.3 有効摩擦係数<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
 <p>ウェブとローラ間の有効摩擦係数 <span class="arithmatex">\(\mu_\text{eff}\)</span> は、第4章で定式化された粗さ突起接触理論から計算される。
 <span class="arithmatex">\(h'_0 / \sigma\)</span>（合成粗さに対する隙間比）が小さいほど、突起接触割合が増えて <span class="arithmatex">\(\mu_\text{eff}\)</span> が大きくなる。</p>
+<details class="question">
+<summary>演習: 実質浮上量の計算</summary>
+<p>幅 <span class="arithmatex">\(w = 30\,mm\)</span> のフィルムに、グルーブ数 <span class="arithmatex">\(n_g = 12\)</span>、グルーブ断面積 <span class="arithmatex">\(S_g = 0.01\,mm^2\)</span> のマイクログルーブローラを使う。平滑面換算の隙間 <span class="arithmatex">\(\tilde{h} = 5\,\mu m\)</span> のとき、実質のウェブ浮上量 <span class="arithmatex">\(h'_0\)</span> [μm] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(h'_0 = \tilde{h} - n_g S_g / w\)</span>
+<span class="arithmatex">\(= 5 \times 10^{-6} - 12 \times 0.01 \times 10^{-6} / 0.03\)</span>
+<span class="arithmatex">\(= 5 \times 10^{-6} - 4 \times 10^{-6} = 1 \times 10^{-6}\,m = 1\,\mu m\)</span>
+平滑面 5 μm → グルーブで 1 μm まで低減。合成粗さ程度なら接触状態が確保される。</p>
+</details>
+</details>
 <h2 id="4">4. 設計パラメータと効果<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>実機設計で扱う主要パラメータ：</p>
 <table>
@@ -2093,6 +2103,16 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
 <li>ウェブ張力 <span class="arithmatex">\(T/w\)</span> が大きいほど、グルーブの効果は顕著に現れる</li>
 <li>低張力ウェブでは効果が限定的</li>
 </ul>
+<details class="question">
+<summary>演習: 形状の選択</summary>
+<p>マイクログルーブの形状を「三角形」「矩形」「台形」のどれにすべきか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>どれを選んでも、ピッチと断面積 <span class="arithmatex">\(S_g\)</span> が同じなら効果は同等</strong>（橋本モデル）。
+実機では加工コスト・耐久性で決まる：旋削加工なら三角形が容易、エッチングなら矩形に近い、ローレットなら台形等。
+効果は形状でなく <strong>「ピッチ× 断面積」で決まる</strong> 点が設計のキー。</p>
+</details>
+</details>
 <h2 id="5">5. しわとのトレードオフ<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>マイクログルーブは<strong>トラクション改善とは裏腹にしわを誘発しやすい</strong>。</p>
 <p>橋本『基礎理論と応用』第9章 図9-11 が示すように、</p>
@@ -2109,6 +2129,16 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
     D --&gt;|◎| F[しわ抑制]</code></pre>
 <p>設計は <strong>動作速度域とウェブ厚さで決まる最適点</strong> を狙うことになる。
 ウェブが薄いほど（<span class="arithmatex">\(h \le 25\,\mu m\)</span>）しわ発生臨界張力は急減するため、<strong>薄物ウェブには大きめのピッチ＋大きめの断面積</strong> が原則。</p>
+<details class="question">
+<summary>演習: 薄物ウェブの設計</summary>
+<p>厚さ 12 μm の PET フィルムにマイクログルーブローラを適用する。ピッチを「小さく詰める（1 mm）」「広めに取る（5 mm）」のどちらが適切か。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>広めに取る（5 mm）</strong>。
+薄物ウェブはしわ発生臨界張力が極めて低く、ピッチを詰めるとしわが頻発する。
+広めピッチで、足りないトラクションは断面積を大きくしてカバーする。または速度を抑える。</p>
+</details>
+</details>
 <h2 id="6">6. ロール表面処理の選択肢<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p>実機ローラの選択肢：</p>
 <table>
@@ -2153,6 +2183,16 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
 </tbody>
 </table>
 <p>マイクログルーブと粗面化（梨地、サテン仕上げ）は併用も可能。粗面のみでは効果が限定的なので、<strong>高速ラインでは旋削マイクログルーブが第一選択</strong> となる。</p>
+<details class="question">
+<summary>演習: ロール製法の選定</summary>
+<p>高速ライン（300 m/min 以上）で形状を最適化したいマイクログルーブローラの製法は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>旋削マイクログルーブ</strong>。
+専用バイトで形状（ピッチ・断面積・角度）を自由に設計できる。試作・改造もしやすい。
+コスト重視ならローレット加工も候補だが、形状自由度は劣る。</p>
+</details>
+</details>
 <h2 id="7">7. 適用判断フロー<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart TD
     A[搬送トラブル発生&lt;br/&gt;スリップ・蛇行] --&gt; B{速度依存?}
@@ -2163,6 +2203,16 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
     E --&gt; G{しわ感度?}
     G --&gt;|高| H[大ピッチ+大断面積]
     G --&gt;|低| I[小ピッチで最大効果]</code></pre>
+<details class="question">
+<summary>演習: 適用判断</summary>
+<p>新聞用紙（透気性大）の搬送ラインで高速時にスリップが多発している。マクログルーブとマイクログルーブのどちらを優先すべきか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>マクログルーブ</strong>。
+紙のような透気性ウェブは、表面からの空気流出が容易なため、わき漏れ流出を促進するマクログルーブの効果が高い。
+マイクログルーブは非透気性ウェブ（フィルム・金属箔）向け。</p>
+</details>
+</details>
 <h2 id="8">8. 実機適用の注意点<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <h3 id="81">8.1 グルーブの清掃<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
 <p>グルーブは塵・塗工剤・湿気で容易に目詰まりする。
@@ -2180,6 +2230,19 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
 小径ロールほど元々空気膜が薄いため、マイクログルーブの効果は <strong>中〜大径ロールでより顕著</strong>。</p>
 <h3 id="84">8.4 巻き付き角の確保<a class="headerlink" href="#84" title="Permanent link">&para;</a></h3>
 <p><span class="arithmatex">\(\theta \ge 60°\)</span> 程度を確保しないと、グルーブによる流量制御が十分機能しない。</p>
+<details class="question">
+<summary>演習: 目詰まり対策</summary>
+<p>マイクログルーブローラの効果が運転中に突然失われた。考えられる原因と対策は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>原因</strong>：グルーブが塵・塗工剤・湿気で目詰まりして平滑ロール化した。
+<strong>対策</strong>：
+(1) 定期的なエアブロー清掃（運転中／停止時）
+(2) 溶剤拭き取り（材質と相性を確認）
+(3) 目詰まり前に清掃する予防保全スケジュール導入
+(4) 塗工剤の付着方向を変える、塗工後の距離を取る等</p>
+</details>
+</details>
 <h2 id="9">9. 設計手順（実用版）<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>ラインの最高速度と最低張力</strong> を確認</li>
@@ -2191,6 +2254,17 @@ q_x = \frac{U_w \tilde{h}}{2} \cdot w = \frac{U_w}{2}\left( h'_0 w + n_g S_g \ri
 <li>試作ロールで搬送試験 → スリップ開始速度・しわ発生限界を実測</li>
 <li>必要に応じてピッチ・断面積を反復調整</li>
 </ol>
+<details class="question">
+<summary>演習: 設計手順</summary>
+<p>新規ラインの設計で最初にやるべきことは？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>「ラインの最高速度と最低張力」を確認 → 平滑ロール想定で空気膜厚さ <span class="arithmatex">\(h_0\)</span> を計算</strong>。
+この <span class="arithmatex">\(h_0\)</span> がウェブ・ロール合成粗さ <span class="arithmatex">\(\sigma\)</span> を超えていなければグルーブは不要。
+超えている場合のみ、グルーブの種類と仕様を検討する。
+最初から「グルーブにする」と決め打ちせず、本当に必要かを判断するのが設計の出発点。</p>
+</details>
+</details>
 <h2 id="10">10. 計算例<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
 <p>PET 25 μm フィルム、ロール径 <span class="arithmatex">\(R = 55\)</span> mm、巻き付き角 60°、張力 <span class="arithmatex">\(T = 100\)</span> N/m、ライン速度 <span class="arithmatex">\(V = 5\)</span> m/s の条件で：</p>
 <p><strong>平滑ロール</strong>：
@@ -2201,35 +2275,13 @@ $$</p>
 <p><strong>マイクログルーブ</strong>（<span class="arithmatex">\(b_g = 200\)</span> μm、<span class="arithmatex">\(h_g = 100\)</span> μm、<span class="arithmatex">\(S_g = 0.01\)</span> mm²、ピッチ <span class="arithmatex">\(b = 2.5\)</span> mm、<span class="arithmatex">\(n_g = w/b\)</span>）：
 <span class="arithmatex">\(h'_0 = \tilde{h} - n_g S_g / w\)</span> で空気膜厚さを大幅減 → トラクション確保。</p>
 <p>ピッチを 1 mm まで詰めるとさらに改善するが、しわ発生臨界張力との兼ね合いで設計。</p>
-<h2 id="11">11. 理解度チェック<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
 <details class="question">
-<summary>演習1: マクロとマイクロの違い</summary>
-<p>マクログルーブとマイクログルーブの <strong>動作原理の違い</strong> を一行で答えよ。</p>
-<details class="success">
-<summary>解答</summary>
-<p><strong>マクログルーブ</strong>：幅広ウェブを等価的に幅狭ウェブに分断し、ウェブ端部からの <strong>わき漏れ流出</strong> を促進する。
-<strong>マイクログルーブ</strong>：グルーブ内の流れも空気潤滑膜として機能させ、<strong>等価隙間の概念</strong> で能動的に空気膜厚さを減らす。
-透気性ウェブにはマクロが、非透気性ウェブ（フィルム）にはマイクロが特に有効。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習2: 実質浮上量の計算</summary>
-<p>幅 <span class="arithmatex">\(w = 30\,mm\)</span> のフィルムに、グルーブ数 <span class="arithmatex">\(n_g = 12\)</span>、グルーブ断面積 <span class="arithmatex">\(S_g = 0.01\,mm^2\)</span> のマイクログルーブローラを使う。平滑面換算の隙間 <span class="arithmatex">\(\tilde{h} = 5\,\mu m\)</span> のとき、実質のウェブ浮上量 <span class="arithmatex">\(h'_0\)</span> [μm] を求めよ。</p>
-<details class="success">
-<summary>解答</summary>
-<p><span class="arithmatex">\(h'_0 = \tilde{h} - n_g S_g / w\)</span>
-<span class="arithmatex">\(= 5 \times 10^{-6} - 12 \times 0.01 \times 10^{-6} / 0.03\)</span>
-<span class="arithmatex">\(= 5 \times 10^{-6} - 4 \times 10^{-6} = 1 \times 10^{-6}\,m = 1\,\mu m\)</span>
-平滑面 5 μm → グルーブで 1 μm まで低減。合成粗さ程度なら接触状態が確保される。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習3: トレードオフ</summary>
+<summary>演習: トレードオフ（しわ）</summary>
 <p>マイクログルーブのピッチを小さくすると、トラクションは改善する一方で、何が悪化するか？</p>
 <details class="success">
 <summary>解答</summary>
 <p><strong>しわ発生臨界張力が低下</strong>（しわが出やすくなる）。
-これは、グルーブによる接触不連続が CD 圧縮応力を局在化させ、座屈条件を満たしやすくするため（橋本『基礎理論と応用』第9章 図9-11）。
+グルーブによる接触不連続が CD 圧縮応力を局在化させ、座屈条件を満たしやすくするため（橋本『基礎理論と応用』第9章 図9-11）。
 薄物ウェブほど顕著で、ウェブ厚さに応じてピッチ上限を決める必要がある。</p>
 </details>
 </details>

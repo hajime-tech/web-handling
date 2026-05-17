@@ -1634,17 +1634,6 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1986,17 +1975,6 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -2070,6 +2048,19 @@
 </tr>
 </tbody>
 </table>
+<details class="question">
+<summary>演習: 蛇行分類</summary>
+<p>次の症状はどの分類の蛇行か。
+(a) 季節が変わってから片寄り傾向が出始めた
+(b) スプライス通過時のみ瞬時に大きく振れる
+(c) 巻出 1 周期に同期して左右に振れる</p>
+<details class="success">
+<summary>解答</summary>
+<p>(a) <strong>ドリフト型</strong>（温度変化、軸受摩耗、ロール撓み変動など）
+(b) <strong>過渡的蛇行</strong>（慣性、張力急変。アキュムレータと制御ホールドで対応）
+(c) <strong>周期蛇行（巻出周期同期）</strong>（原反バギング、巻出機軸偏心）</p>
+</details>
+</details>
 <h2 id="2">2. 蛇行発生時の即時対応<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="_2">緊急停止判断<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>蛇行量がウェブ幅の数% を超えると、ロール端面で擦れ・破断・テレスコープの危険。
@@ -2083,6 +2074,17 @@
 <li>直前の変更点（材料、ロール交換、設定変更）</li>
 <li>発生位置の写真／動画</li>
 </ul>
+<details class="question">
+<summary>演習: 緊急時判断</summary>
+<p>ウェブ幅 1000 mm のラインで、蛇行量が 30 mm に達した。次にとるべき行動は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>減速 or 非常停止</strong>。
+蛇行量がウェブ幅の 3% に達しており、ロール端面で擦れ・破断・テレスコープのリスクが高い。
+まず停止して状況を観察し、原因切り分けに進む。
+強引に運転継続すると製品全数廃棄、装置損傷につながる。</p>
+</details>
+</details>
 <h2 id="3">3. 切り分けフロー<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart TD
     A[蛇行発生] --&gt; B{全長?&lt;br/&gt;or 一部?}
@@ -2116,6 +2118,17 @@
 <li>軸受異音・温度</li>
 <li>フレーム水平度</li>
 </ul>
+<details class="question">
+<summary>演習: 切り分けの第一歩</summary>
+<p>蛇行発生時、最初に「全長で片寄り」か「途中から発生」かを判別する理由は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>原因の絞り込みに直結するから</strong>。
+- 全長で片寄り → 巻出側（原反バギング、巻出機軸ズレ）が支配的
+- 途中から発生 → ライン中の特定ロール／工程が原因
+この切り分けで点検対象を 1/3 程度に絞れる。</p>
+</details>
+</details>
 <h2 id="4">4. 原因別の対策<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="a">(a) ロールミスアライメント<a class="headerlink" href="#a" title="Permanent link">&para;</a></h3>
 <p><strong>最頻原因</strong>。次の手順で点検：</p>
@@ -2158,6 +2171,17 @@
 <li>接紙通過時に EPC 一時ホールド</li>
 <li>アキュムレータでバッファ</li>
 </ul>
+<details class="question">
+<summary>演習: 平行度基準</summary>
+<p>蛇行原因のミスアライメント対策で、ロール平行度の目標値は何 mm/m か。また測定にはどんな機器を使うか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>目標値：0.05 mm/m 以下</strong>。
+測定機器：<strong>レーザアライナ</strong>（レーザ墨出器、レーザトラッカー等）。
+水平・垂直方向ともにレーザ光線を基準として、ロール軸の傾き・平行度・直角度を精密測定する。
+固定金具のガタや経年変形を発見できる。</p>
+</details>
+</details>
 <h2 id="5">5. 周期蛇行の解析実例<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>例：周期 0.7 秒の蛇行が観察された。</p>
 <p>ライン速度 V = 100 m/min = 1.67 m/s。
@@ -2191,6 +2215,17 @@
 </table>
 <p>ライン中の直径約 370 mm のロール（例：ライン中央のドライブロール）が候補。
 そのロールを点検 → 偏心 0.3 mm 発見 → 旋盤研磨で振れ 10 μm 以下に → 蛇行解消。</p>
+<details class="question">
+<summary>演習: 周期蛇行のロール特定</summary>
+<p>ライン速度 <span class="arithmatex">\(V = 200\,m/min\)</span>、観察された蛇行の周期 <span class="arithmatex">\(T = 0.5\,s\)</span> のとき、原因となるロール径 <span class="arithmatex">\(D\)</span> [mm] を推定せよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(V = 200/60 = 3.33\,m/s\)</span>
+1周期で進む距離 <span class="arithmatex">\(= V \times T = 3.33 \times 0.5 = 1.67\,m\)</span>
+この距離が <span class="arithmatex">\(\pi D\)</span> に等しいロール：<span class="arithmatex">\(D = 1.67/\pi \approx 0.530\,m = 530\,mm\)</span>
+該当する直径 530 mm のロール（偏心・打痕・軸受不良）を点検対象とする。</p>
+</details>
+</details>
 <h2 id="6">6. 高速ライン特有の蛇行<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p>ライン速度を上げると以下が発生する：</p>
 <ul>
@@ -2205,6 +2240,18 @@
 <li>EPC 制御ゲイン再調整、応答速いアクチュエータ採用</li>
 <li>ロールの剛性アップ</li>
 </ul>
+<details class="question">
+<summary>演習: 高速化での蛇行対策</summary>
+<p>ラインを 200 → 400 m/min に増速したところ蛇行が大きくなった。物理メカニズムを答え、対策を 3 つ挙げよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>メカニズム</strong>：空気同伴の増加（<span class="arithmatex">\(h_\text{air} \propto V^{2/3}\)</span>）で実効摩擦係数が低下し、ウェブの直角方向進入性が崩れた。
+<strong>対策</strong>：
+(1) <strong>マイクログルーブローラ／真空ロール</strong>で空気膜を排除
+(2) <strong>EPC ゲイン・ループ周期の再チューニング</strong>（速度依存ゲインスケジューリング）
+(3) <strong>ニップ追加</strong>で駆動分離強化</p>
+</details>
+</details>
 <h2 id="7">7. 巻取での蛇行：テレスコープ・スターリング<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <p>巻取ロールに蛇行が現れると、軸方向にずれて積み上がり「テレスコープ」となる。
 原因と対策：</p>
@@ -2240,6 +2287,16 @@
 </tbody>
 </table>
 <p>巻取り直前の EPC は必須装備と考える。</p>
+<details class="question">
+<summary>演習: テレスコープ防止</summary>
+<p>巻取ロール直前で蛇行が修正されておらず、テレスコープが発生している。根本的な対策は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>巻取直前に EPC（Edge Position Control）ガイドロールを必ず設置する</strong>。
+どんなに上流で蛇行を吸収していても、その後のスパンで蛇行が再発するため、巻取直前のシフト補正は必須装備。
+補助的に、原反由来の蛇行を巻出直後 EPC で吸収しておくとさらに安定する。</p>
+</details>
+</details>
 <h2 id="8">8. 再発防止：データの蓄積<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <p>蛇行トラブルは類似事例が多い。組織として：</p>
 <ul>
@@ -2249,6 +2306,16 @@
 <li>メンテ周期の見直し</li>
 </ul>
 <p>これらは IoT センサと PLC ロギングを組み合わせると効率化できる。</p>
+<details class="question">
+<summary>演習: ナレッジ蓄積の意義</summary>
+<p>蛇行トラブル対応で「トラブル日誌」を残すべき理由を 2 つ挙げよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p>(1) <strong>類似事例の高速解決</strong>：過去の症状・原因・対策パターンを参照することで、新規トラブル発生時に切り分けと対策の時間を大幅短縮できる。
+(2) <strong>再発防止のメンテ周期最適化</strong>：頻発するロールや工程を統計的に把握し、予防保全周期や部品交換タイミングを科学的に決められる。
+IoT センサ＋PLC ロギングで自動化すれば、組織知の蓄積が加速する。</p>
+</details>
+</details>
 <h2 id="9">9. 蛇行トラブル対策チェックリスト<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
 <h3 id="_4">即時対応<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
@@ -2272,43 +2339,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> メンテ周期の最適化</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> サプライヤ品質改善依頼</li>
 </ul>
-<h2 id="_7">理解度チェック<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<details class="question">
-<summary>演習1: 周期蛇行の原因特定</summary>
-<p>ライン速度 <span class="arithmatex">\(V = 200\,m/min\)</span>、観察された蛇行の周期 <span class="arithmatex">\(T = 0.5\,s\)</span> のとき、原因となるロール径 <span class="arithmatex">\(D\)</span> [mm] を推定せよ。</p>
-<details class="success">
-<summary>解答</summary>
-<p><span class="arithmatex">\(V = 200/60 = 3.33\,m/s\)</span>
-1周期で進む距離 <span class="arithmatex">\(= V \times T = 3.33 \times 0.5 = 1.67\,m\)</span>
-この距離が <span class="arithmatex">\(\pi D\)</span> に等しいロール：<span class="arithmatex">\(D = 1.67/\pi \approx 0.530\,m = 530\,mm\)</span>
-該当する直径 530 mm のロール（偏心・打痕・軸受不良）を点検対象とする。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習2: 蛇行原因の分類</summary>
-<p>次の症状はどの分類の蛇行か。
-(a) 季節が変わってから片寄り傾向が出始めた
-(b) スプライス通過時のみ瞬時に大きく振れる
-(c) 巻出 1 周期に同期して左右に振れる</p>
-<details class="success">
-<summary>解答</summary>
-<p>(a) <strong>ドリフト型</strong>（温度変化、軸受摩耗、ロール撓み変動など）
-(b) <strong>過渡的蛇行</strong>（慣性、張力急変。アキュムレータと制御ホールドで対応）
-(c) <strong>周期蛇行（巻出周期同期）</strong>（原反バギング、巻出機軸偏心）</p>
-</details>
-</details>
-<details class="question">
-<summary>演習3: テレスコープ防止</summary>
-<p>巻取ロール直前で蛇行が修正されておらず、テレスコープが発生している。
-根本的な対策は？</p>
-<details class="success">
-<summary>解答</summary>
-<p><strong>巻取直前に EPC（Edge Position Control）ガイドロールを必ず設置する</strong>。
-どんなに上流で蛇行を吸収していても、その後のスパンで蛇行が再発するため、巻取直前のシフト補正は必須装備。
-補助的に、原反由来の蛇行を巻出直後 EPC で吸収しておくとさらに安定する。</p>
-</details>
-</details>
-<h2 id="_8">参考文献<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_7">参考文献<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第7章「ローラによるウェブの分離・蛇行メカニズム」, 加工技術研究会, 2010.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第2章7節「ウェブのトラッキング能力」.</li>

@@ -1157,17 +1157,6 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1944,17 +1933,6 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1992,6 +1970,16 @@
     ROLL --&gt; SENS[センサ&lt;br/&gt;ロードセル/ダンサ/巻径]
     SENS --&gt; CTRL</code></pre>
 <p>選定の順序は <strong>目標性能 → センサ → アクチュエータ → コントローラ → チューニング</strong>。</p>
+<details class="question">
+<summary>演習: 選定の順序</summary>
+<p>張力制御システムを設計するとき、最初に決めるべきは「センサ」「アクチュエータ」「コントローラ」のどれか。</p>
+<details class="success">
+<summary>解答</summary>
+<p>いずれでもなく <strong>「目標性能（最大張力／最小張力／応答性／精度）」</strong>。
+目標性能が決まらないと、必要なセンサ容量・アクチュエータ性能・コントローラ仕様も決まらない。
+現場では「何 N/m を ±何 % で制御したい」「加減速 ±何秒で立ち上げたい」を明確にすることから始める。</p>
+</details>
+</details>
 <h2 id="2">2. テンションセンサ<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="a">(a) ロードセル方式<a class="headerlink" href="#a" title="Permanent link">&para;</a></h3>
 <p>ロールの軸受け部分にひずみゲージ式または磁気式ロードセルを組み込み、ロールにかかる合力からウェブ張力を算出。</p>
@@ -2040,6 +2028,16 @@
 <h3 id="c">(c) 非接触式<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
 <p>レーザドップラー、画像解析による振動数計測など。
 研究・診断用途、または接触を嫌う製品（光学フィルム、塗工直後）に。</p>
+<details class="question">
+<summary>演習: テンションセンサ容量選定</summary>
+<p>最大張力 500 N を見込むラインのテンションセンサ容量は何 N を選ぶべきか。理由とともに答えよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>750〜1500 N</strong>（想定最大の 1.5〜3 倍）。
+加減速時の過渡応答や、外乱・突発張力ピークがあるため、最大張力ぎりぎりだと過負荷で破損する恐れがある。
+過負荷耐性は 150% 以上を要求するのが標準。</p>
+</details>
+</details>
 <h2 id="3">3. アクチュエータ<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h3 id="a-ac">(a) ACサーボモータ<a class="headerlink" href="#a-ac" title="Permanent link">&para;</a></h3>
 <p>巻出・巻取・ドライブロールの主流。</p>
@@ -2100,6 +2098,17 @@
 </tr>
 </tbody>
 </table>
+<details class="question">
+<summary>演習: アクチュエータ選定</summary>
+<p>巻取径が大きく変化する高張力フィルムラインで、巻出側の張力制御に最も適したアクチュエータは？
+(a) パウダブレーキ  (b) ヒステリシスブレーキ  (c) AC サーボモータ  (d) 空圧シリンダ</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>(c) AC サーボモータ</strong>。
+トルク・速度・位置の高精度制御、巻径変化に応じた指令計算、加減速時の慣性補償が可能。
+パウダブレーキは安価だが応答遅・発熱大で大型ラインには不向き。</p>
+</details>
+</details>
 <h2 id="4">4. コントローラ<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="a_1">(a) 専用テンションコントローラ<a class="headerlink" href="#a_1" title="Permanent link">&para;</a></h3>
 <p>メーカ製の「テンション制御専用機」。ロードセル入力・アナログ出力を一台で完結。</p>
@@ -2121,6 +2130,16 @@
 <li>LabVIEW RT、CompactRIO、Beckhoff TwinCAT など。</li>
 <li>カスタムアルゴリズム（H∞、MPC、Sliding Mode）の実装が容易。</li>
 </ul>
+<details class="question">
+<summary>演習: コントローラの選定</summary>
+<p>1ライン単機で、ロードセル入力＋アナログ出力で完結する小規模ラインに最も適したコントローラ構成は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>(a) 専用テンションコントローラ</strong>。
+短期立上げが可能で、テーパテンション・巻径演算・PID自動チューニング等の機能内蔵。コスト・工数とも最小。
+ライン全体統括や多軸同期が要件なら PLC+サーボに格上げ。</p>
+</details>
+</details>
 <h2 id="5">5. チューニング指針<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <h3 id="pid">PID パラメータの初期値<a class="headerlink" href="#pid" title="Permanent link">&para;</a></h3>
 <p>スパン剛性 <span class="arithmatex">\(K = E w h / L\)</span>、巻取／駆動慣性 <span class="arithmatex">\(J\)</span>、目標応答 <span class="arithmatex">\(\omega_n\)</span> を用いて、</p>
@@ -2141,6 +2160,17 @@ K_p \approx \frac{2 \zeta \omega_n J}{K}, \quad T_i \approx \frac{2 \zeta}{\omeg
 R(t) = R_0 + \frac{V \cdot h \cdot t}{2\pi R(t)} \;\Longleftrightarrow\; R = \sqrt{R_0^2 + \frac{V h t}{\pi}}
 \]</div>
 <p>または超音波／光センサ／LVDT による直接計測。</p>
+<details class="question">
+<summary>演習: チューニング手順</summary>
+<p>新規ラインで PID チューニングを始めるとき、最初に動かすゲインは「P」「I」「D」のどれが安全か。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>積分（I）のみ（または弱い比例 P）</strong>。
+最初から大きな P や D を入れると発振するリスクが高い。
+まず I だけで応答を確認し、その後 P を徐々に上げて発振直前で 50% 戻す。
+D は通常不要、ノイズに弱い。</p>
+</details>
+</details>
 <h2 id="6">6. 安全設計<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>断ウェブ検出</strong>：張力急減を検知し、即時停止。</li>
@@ -2149,6 +2179,16 @@ R(t) = R_0 + \frac{V \cdot h \cdot t}{2\pi R(t)} \;\Longleftrightarrow\; R = \sq
 <li><strong>アキュムレータ位置リミット</strong>：満杯・空のメカリミット。</li>
 <li><strong>ロール温度監視</strong>：パウダブレーキの過熱保護。</li>
 </ul>
+<details class="question">
+<summary>演習: 慣性補償トルク</summary>
+<p>巻取機の慣性 <span class="arithmatex">\(J = 50\,kg \cdot m^2\)</span>、巻取径 <span class="arithmatex">\(R = 0.3\,m\)</span>、ライン加速度 <span class="arithmatex">\(\dot V = 0.5\,m/s^2\)</span> のとき、加速時の張力誤差を最小化するために必要な <strong>慣性補償トルク</strong> はいくらか。</p>
+<details class="success">
+<summary>解答</summary>
+<p>角加速度 <span class="arithmatex">\(\dot\omega = \dot V / R = 0.5/0.3 = 1.67\,rad/s^2\)</span>
+慣性トルク <span class="arithmatex">\(\tau_J = J \dot\omega = 50 \times 1.67 = 83.3\,N\cdot m\)</span>
+この大きさを <strong>フィードフォワード</strong>で加算しないと、加速時に張力が急変する。</p>
+</details>
+</details>
 <h2 id="7">7. 選定チェックリスト<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <p>実機選定時のチェック項目：</p>
 <ul class="task-list">
@@ -2160,39 +2200,19 @@ R(t) = R_0 + \frac{V \cdot h \cdot t}{2\pi R(t)} \;\Longleftrightarrow\; R = \sq
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 通信プロトコルは？（EtherCAT, PROFINET, EtherNet/IP）</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> エンジニアリングツールの社内資産は？</li>
 </ul>
-<h2 id="_5">理解度チェック<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <details class="question">
-<summary>演習1: テンションセンサ容量選定</summary>
-<p>最大張力 500 N を見込むラインのテンションセンサ容量は何 N を選ぶべきか。理由とともに答えよ。</p>
+<summary>演習: ターンダウン比</summary>
+<p>張力指令の上限 500 N/m、下限 50 N/m のラインのターンダウン比は？
+また、これがアクチュエータ選定にどう影響するか。</p>
 <details class="success">
 <summary>解答</summary>
-<p><strong>750〜1500 N</strong>（想定最大の 1.5〜3 倍）。
-理由：加減速時の過渡応答や、外乱・突発張力ピークがあるため、最大張力ぎりぎりだと過負荷で破損する恐れがある。
-過負荷耐性は 150% 以上を要求するのが標準。</p>
+<p>ターンダウン比 = 500/50 = <strong>10:1</strong>。
+ターンダウン比が大きいほどアクチュエータの分解能・制御性が要求される。
+パウダブレーキは励磁電流の制御範囲が限られるので 5:1 程度が目安、AC サーボなら 100:1 以上が容易。
+10:1 なら AC サーボが安全な選択。</p>
 </details>
 </details>
-<details class="question">
-<summary>演習2: アクチュエータ選定</summary>
-<p>巻取径が大きく変化する高張力フィルムラインで、巻出側の張力制御に最も適したアクチュエータは？
-(a) パウダブレーキ  (b) ヒステリシスブレーキ  (c) AC サーボモータ  (d) 空圧シリンダ</p>
-<details class="success">
-<summary>解答</summary>
-<p><strong>(c) AC サーボモータ</strong>。
-理由：トルク・速度・位置の高精度制御、巻径変化に応じた指令計算、加減速時の慣性補償が可能。
-パウダブレーキは安価だが応答遅・発熱大で大型ラインには不向き。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習3: 慣性補償の重要性</summary>
-<p>巻取機の慣性 <span class="arithmatex">\(J = 50\,kg \cdot m^2\)</span>、巻取径 <span class="arithmatex">\(R = 0.3\,m\)</span>、ライン加速度 <span class="arithmatex">\(\dot V = 0.5\,m/s^2\)</span> のとき、加速時の張力誤差を最小化するために必要な <strong>慣性補償トルク</strong> はいくらか。</p>
-<details class="success">
-<summary>解答</summary>
-<p>角加速度 <span class="arithmatex">\(\dot\omega = \dot V / R = 0.5/0.3 = 1.67\,rad/s^2\)</span>
-慣性トルク <span class="arithmatex">\(\tau_J = J \dot\omega = 50 \times 1.67 = 83.3\,N\cdot m\)</span>
-この大きさを <strong>フィードフォワード</strong>で加算しないと、加速時に張力が急変する。</p>
-</details>
-</details>
-<h2 id="_6">参考文献<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_5">参考文献<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第6章「ウェブの張力制御」, 加工技術研究会, 2010.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第8章「ウェブ搬送・巻取時の張力制御」（8.1 はじめに、8.2 ウェブ搬送システムと張力制御、8.3 張力制御のための力学系のモデリング、8.4 ウェブの張力制御系、8.5 PID コントローラの基本事項、8.6 PID のウェブ張力制御系への適用）, 加工技術研究会.</li>

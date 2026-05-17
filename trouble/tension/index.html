@@ -1692,17 +1692,6 @@
   <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -2156,17 +2145,6 @@
   <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -2235,6 +2213,19 @@
 </tr>
 </tbody>
 </table>
+<details class="question">
+<summary>演習: 変動分類</summary>
+<p>張力が定常的に指令値より 5% 低い状態が続いている。これはどの分類で、考えられる原因は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>DC（オフセット）変動</strong>。
+考えられる原因：
+(1) 巻径推定誤差（特に巻取・巻出のトルク制御）
+(2) センサ校正ずれ（ロードセル経年ドリフト）
+(3) P 単独制御によるオフセット残存
+対策：センサ再校正、巻径計測の精密化、PI 以上の制御則導入。</p>
+</details>
+</details>
 <h2 id="2">2. 主な発生源<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="a">(a) 制御系起因<a class="headerlink" href="#a" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2268,6 +2259,16 @@
 <li>外部振動（隣接設備、空調）</li>
 <li>床振動</li>
 </ul>
+<details class="question">
+<summary>演習: 発生源の切り分け</summary>
+<p>張力変動が「同じ条件」で発生したり消えたりする。最も疑うべき発生源カテゴリは？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>環境起因</strong>（温度・湿度変動、外部振動）。
+制御系・機械系・ウェブ起因は通常、運転条件と密接に紐づく。条件変えずに変動する場合は、外部の温湿度変化・隣接設備振動・床振動などを疑う。
+対策：温湿度センサと張力センサを同時記録して相関を見る。</p>
+</details>
+</details>
 <h2 id="3">3. 周波数別の診断<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>張力変動は FFT で周波数解析すると、原因を切り分けやすい。</p>
 <table>
@@ -2310,6 +2311,16 @@
 f_r = \frac{200/60}{\pi \times 0.15} = 7.07\,\text{Hz}
 \]</div>
 <p>→ 7 Hz 付近に張力ピークが見えれば、このロールが原因の候補。</p>
+<details class="question">
+<summary>演習: 周波数からロール特定</summary>
+<p>ライン速度 <span class="arithmatex">\(V = 120\,m/min\)</span> で運転中、張力FFTに 4.24 Hz のピークが見えた。直径 D 何 mm のロール由来と推定されるか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(V = 2\,m/s\)</span>
+ロール回転周波数 <span class="arithmatex">\(f_r = V/(\pi D)\)</span> より、<span class="arithmatex">\(D = V/(\pi f_r) = 2/(\pi \times 4.24) \approx 0.150\,m = 150\,mm\)</span>
+該当する 150 mm 径のロール（偏心・軸受不良が疑わしい）を点検。</p>
+</details>
+</details>
 <h2 id="4">4. 制御系チューニング<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="pid">PID パラメータの最適化<a class="headerlink" href="#pid" title="Permanent link">&para;</a></h3>
 <p><a href="../../tension/devices/">制御機器の選定</a> で示した手順に従う。要点：</p>
@@ -2335,6 +2346,18 @@ f_r = \frac{200/60}{\pi \times 0.15} = 7.07\,\text{Hz}
 <li>H∞ ロバスト制御</li>
 </ul>
 <p>などを導入する例も増えている。</p>
+<details class="question">
+<summary>演習: PID チューニング</summary>
+<p>張力制御で「振動的な変動」が出ている。比例ゲイン <span class="arithmatex">\(K_p\)</span> を下げると振動は収まるが、外乱に対する応答も鈍くなる。次の手は？</p>
+<details class="success">
+<summary>解答</summary>
+<p>(1) <strong>積分時間 <span class="arithmatex">\(T_i\)</span> を見直す</strong>（短すぎると振動、長すぎると応答遅）
+(2) <strong>巻径補正フィードフォワード</strong> を追加（巻径変化への外乱を予測補償）
+(3) <strong>加減速時の慣性補償FF</strong> を追加
+(4) センサノイズが主因なら、ローパスフィルタを入れる
+<span class="arithmatex">\(K_p\)</span> を一律下げるのではなく、振動の周波数特性を見て対処する。</p>
+</details>
+</details>
 <h2 id="5">5. 機械系の対策<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <h3 id="_5">ロール偏心<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2359,6 +2382,17 @@ f_r = \frac{200/60}{\pi \times 0.15} = 7.07\,\text{Hz}
 <li>油圧配管の気泡 → サーボ応答悪化</li>
 <li>ケーブル劣化 → ノイズ</li>
 </ul>
+<details class="question">
+<summary>演習: 機械系対策</summary>
+<p>ロール周期で張力変動が出る。最も効果的な対策3つを挙げよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p>(1) <strong>ロール振れの再仕上げ</strong>：旋盤で 10 μm 以下に再加工、または動バランス取り
+(2) <strong>軸受交換</strong>：精度等級 P5 以上の高精度軸受へ
+(3) <strong>軸受予圧・潤滑の適正化</strong>：振動センサで継続監視
+さらに頻発するなら設計剛性アップ、防振対策を検討。</p>
+</details>
+</details>
 <h2 id="6">6. ウェブ起因対策<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <h3 id="_9">原反品質<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2377,6 +2411,17 @@ f_r = \frac{200/60}{\pi \times 0.15} = 7.07\,\text{Hz}
 <li>受入時に外観検査</li>
 <li>必要なら芯出し再巻取り</li>
 </ul>
+<details class="question">
+<summary>演習: スプライス通過対策</summary>
+<p>巻出ロールの接紙部（スプライス）通過時に張力が乱れ、後段に張力変動が伝播してしまう。
+効果的な対策を 3 つ挙げよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p>(1) <strong>アキュムレータ</strong>（蛇腹式／フェスツーン式）を入れ、機械的に張力変動を吸収
+(2) <strong>接紙部の段差を最小化</strong>（突合せ、ラップ厚を薄く）
+(3) <strong>接紙検出センサ＋制御一時ホールド</strong>（通過中は張力制御をホールドし、追従させない）</p>
+</details>
+</details>
 <h2 id="7">7. 環境対策<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <h3 id="_12">温湿度<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2390,6 +2435,17 @@ f_r = \frac{200/60}{\pi \times 0.15} = 7.07\,\text{Hz}
 <li>隣接設備（プレス、コンプレッサ）との距離・防振</li>
 <li>ライン全長で振動測定</li>
 </ul>
+<details class="question">
+<summary>演習: 環境管理基準</summary>
+<p>印刷ラインの恒温恒湿環境の理想的な管理基準値は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>温度 23 ± 2 ℃、湿度 50 ± 5 %RH</strong>。
+紙やフィルムの寸法安定性を確保するための業界標準値。
+印刷見当ずれや巻取ロールの膨張・収縮トラブルを最小化できる。
+ただし設備投資が大きいので、品質要求と費用のバランスで決める。</p>
+</details>
+</details>
 <h2 id="8">8. 過渡変動の対策<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <h3 id="_14">加減速<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2408,6 +2464,18 @@ f_r = \frac{200/60}{\pi \times 0.15} = 7.07\,\text{Hz}
 <li>自動糸通し（air doctor、ロープ通し）</li>
 <li>アキュムレータからの再立上げ手順</li>
 </ul>
+<details class="question">
+<summary>演習: 加減速時の張力変動</summary>
+<p>巻取側でライン加減速時のみ大きな張力変動が出る。原因と対策を答えよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>原因</strong>：巻取ロールの慣性 <span class="arithmatex">\(J\)</span> が大きく、加減速時の慣性トルク <span class="arithmatex">\(J \dot\omega\)</span> が大きい。これがフィードバック制御だけでは追従できず、張力誤差として表れる。
+<strong>対策</strong>：
+(1) <strong>慣性補償フィードフォワード</strong>：<span class="arithmatex">\(\tau_J = J(R) \dot\omega\)</span> を加算
+(2) <strong>S字加減速プロファイル</strong>：急激な変化を抑える
+(3) 加速度上限を見直し、設計値内に収める</p>
+</details>
+</details>
 <h2 id="9">9. 診断・解析ツール<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2447,6 +2515,18 @@ f_r = \frac{200/60}{\pi \times 0.15} = 7.07\,\text{Hz}
 </tr>
 </tbody>
 </table>
+<details class="question">
+<summary>演習: ツールの選定</summary>
+<p>張力変動の原因が「制御系か機械系か」を切り分けたい。最初に使うべきツールは？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>高速ロードセル＋ FFT アナライザ</strong>。
+張力波形を 1 kHz オーダーで取得 → 周波数解析。
+- 制御周期の逆数に大きなピーク → 制御系発振
+- ロール回転周波数に大きなピーク → 機械系（ロール偏心・軸受）
+この切り分けで対策の方向性が決まる。</p>
+</details>
+</details>
 <h2 id="10">10. 対策チェックリスト<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
 <p>問題発生時の確認手順：</p>
 <ul class="task-list">
@@ -2459,41 +2539,7 @@ f_r = \frac{200/60}{\pi \times 0.15} = 7.07\,\text{Hz}
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> ウェブ起因か機械起因かを切り分け</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 環境条件（温湿度・振動）の記録</li>
 </ul>
-<h2 id="_17">理解度チェック<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
-<details class="question">
-<summary>演習1: 周波数からロール特定</summary>
-<p>ライン速度 <span class="arithmatex">\(V = 120\,m/min\)</span> で運転中、張力FFTに 4.24 Hz のピークが見えた。直径 D 何 mm のロール由来と推定されるか。</p>
-<details class="success">
-<summary>解答</summary>
-<p><span class="arithmatex">\(V = 2\,m/s\)</span>
-ロール回転周波数 <span class="arithmatex">\(f_r = V/(\pi D)\)</span> より、<span class="arithmatex">\(D = V/(\pi f_r) = 2/(\pi \times 4.24) \approx 0.150\,m = 150\,mm\)</span>
-該当する 150 mm 径のロール（偏心・軸受不良が疑わしい）を点検。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習2: PID チューニング</summary>
-<p>張力制御で「振動的な変動」が出ている。比例ゲイン <span class="arithmatex">\(K_p\)</span> を下げると振動は収まるが、外乱に対する応答も鈍くなる。次の手は？</p>
-<details class="success">
-<summary>解答</summary>
-<p>(1) <strong>積分時間 <span class="arithmatex">\(T_i\)</span> を見直す</strong>（短すぎると振動、長すぎると応答遅）
-(2) <strong>巻径補正フィードフォワード</strong> を追加（巻径変化への外乱を予測補償）
-(3) <strong>加減速時の慣性補償FF</strong> を追加
-(4) センサノイズが主因なら、ローパスフィルタを入れる
-<span class="arithmatex">\(K_p\)</span> を一律下げるのではなく、振動の周波数特性を見て対処する。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習3: スプライス通過対策</summary>
-<p>巻出ロールの接紙部（スプライス）通過時に張力が乱れ、後段に張力変動が伝播してしまう。
-効果的な対策を 3 つ挙げよ。</p>
-<details class="success">
-<summary>解答</summary>
-<p>(1) <strong>アキュムレータ</strong>（蛇腹式／フェスツーン式）を入れ、機械的に張力変動を吸収
-(2) <strong>接紙部の段差を最小化</strong>（突合せ、ラップ厚を薄く）
-(3) <strong>接紙検出センサ＋制御一時ホールド</strong>（通過中は張力制御をホールドし、追従させない）</p>
-</details>
-</details>
-<h2 id="_18">参考文献<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<h2 id="_17">参考文献<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第6章「ウェブの張力制御」, 加工技術研究会, 2010.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第8章「ウェブ搬送・巻取時の張力制御」.</li>

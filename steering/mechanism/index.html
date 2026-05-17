@@ -1326,17 +1326,6 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1766,17 +1755,6 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1846,6 +1824,16 @@
 </tbody>
 </table>
 <p>橋本『入門』第7章 図7-1・7-2 にこれらが図示・実験的に示されている。</p>
+<details class="question">
+<summary>演習: 直角方向進入性</summary>
+<p>上流側ロールに対し、下流側ロールがミスアライメントを持つとき、ウェブはどのように振る舞うか。</p>
+<details class="success">
+<summary>解答</summary>
+<p>ウェブは <strong>下流側ローラの軸に対して直角方向に進入</strong> しようとする（normal entry rule）。
+その結果、下流ローラの傾きの方向にウェブの中心線が傾き、<strong>CD方向に蛇行が発生</strong> する。
+さらに大きなミスアラインメントでは、ローラ手前で CD 圧縮応力が誘起され、折れしわの原因にもなる。</p>
+</details>
+</details>
 <h2 id="2">2. 蛇行の発生原因（実機での主因）<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="a">(a) ロールミスアライメント<a class="headerlink" href="#a" title="Permanent link">&para;</a></h3>
 <p>最も多い原因。</p>
@@ -1875,6 +1863,17 @@
 <li>局所気流（吹き出しダクトの乱れ）</li>
 <li>部分加湿／除湿</li>
 </ul>
+<details class="question">
+<summary>演習: 蛇行原因の頻度</summary>
+<p>実機で観察される蛇行の原因として、最も多いのは次のうちどれか。
+(a) ウェブのバギング  (b) ロールミスアライメント  (c) 張力分布の片寄り  (d) 環境変動</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>(b) ロールミスアライメント</strong>。
+装置経年変化、フレーム変形、軸受摩耗、固定金具ガタなど原因は多岐にわたる。
+定期的な平行度測定（レーザアライナで 0.05 mm/m 以下）が対策の基本。</p>
+</details>
+</details>
 <h2 id="3-3">3. 蛇行を生む3種類の横方向作用<a class="headerlink" href="#3-3" title="Permanent link">&para;</a></h2>
 <p>橋本『入門』第7章 図7-3 では、ウェブを CD方向に動かす力を3つに分類している。</p>
 <table>
@@ -1900,6 +1899,16 @@
 </tbody>
 </table>
 <p>実機の蛇行は通常、これら3つが複合して現れる。</p>
+<details class="question">
+<summary>演習: 横方向作用の分類</summary>
+<p>乾燥炉で片側だけ温度が高く、その側のウェブが大きく収縮するために蛇行が発生している。これは橋本分類のどれに該当するか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>(a) 横方向力</strong>。
+温度・湿度差による収縮差は CD 方向に直接働く力としてウェブを動かす。
+対策は乾燥炉の温度プロファイル均一化、または下流に EPC を設置して補正。</p>
+</details>
+</details>
 <h2 id="4-shelton">4. Shelton モデル：蛇行の運動方程式<a class="headerlink" href="#4-shelton" title="Permanent link">&para;</a></h2>
 <p>Shelton（1968）はウェブを <strong>長スパンの梁</strong> とみなし、スパンの両端での横変位 <span class="arithmatex">\(y\)</span> と傾き <span class="arithmatex">\(\theta\)</span> の挙動を支配方程式化した。</p>
 <p>スパン入口での横変位 <span class="arithmatex">\(y_1\)</span>、傾き <span class="arithmatex">\(\theta_1\)</span>、出口の横変位 <span class="arithmatex">\(y_2\)</span> が与えられたとき、直角方向進入条件（ウェブが下流ロールに垂直に入る）から：</p>
@@ -1913,6 +1922,16 @@
 <li><strong>速度が高い</strong> ほど時定数が短くなり、敏感に反応する。</li>
 <li>ロールの傾きは、下流のウェブ姿勢に直接効く。</li>
 </ul>
+<details class="question">
+<summary>演習: スパン時定数の計算</summary>
+<p>スパン長 <span class="arithmatex">\(L = 3\,m\)</span>、搬送速度 <span class="arithmatex">\(V = 150\,m/min\)</span> のとき、蛇行応答のスパン時定数 <span class="arithmatex">\(\tau\)</span> [s] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(V = 150/60 = 2.5\,m/s\)</span>
+<span class="arithmatex">\(\tau = L/V = 3/2.5 = 1.2\,s\)</span>
+この時定数より速い蛇行制御は応答が追いつかず発振しやすい。EPC のループ周期は 0.1 s 程度（時定数の 1/10）に設定するのが目安。</p>
+</details>
+</details>
 <h2 id="5">5. 蛇行の伝播<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>「下流ロールの傾き」が上流の蛇行を作るが、その効果は <strong>複数のスパンを上流に遡って</strong> 伝わる。
 これは Shelton の解析で示された、ウェブハンドリング技術者にとって反直感的だが重要な事実：</p>
@@ -1920,6 +1939,16 @@
 <li>ロール傾きの影響は、<strong>そのロールより下流ではなく、上流のウェブ姿勢に現れる</strong></li>
 <li>すなわち、蛇行原因を探す際は、蛇行が観察される位置から <strong>下流側</strong> にも目を向ける必要がある</li>
 </ul>
+<details class="question">
+<summary>演習: 伝播方向</summary>
+<p>ライン中央のあるロールに片寄り蛇行が観察された。原因のロールは「観察位置の上流側」「下流側」どちらにあるか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>両方の可能性がある（むしろ下流側が見落とされやすい）</strong>。
+Shelton 解析が示すとおり、「下流ロールの傾きが上流のウェブ姿勢に現れる」ため、観察された蛇行位置より下流側のロールも疑う必要がある。
+実機トラブル切り分けでは、観察位置の前後 2〜3 スパンを点検するのが鉄則。</p>
+</details>
+</details>
 <h2 id="6">6. 蛇行と摩擦・空気同伴<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p>ウェブとロール間の摩擦が不十分だと、直角方向進入性そのものが成立しない（ウェブがロール上を滑ってしまう）。
 高速になると空気同伴で実効摩擦係数が低下し、蛇行が <strong>急に大きくなる</strong> ことがある。</p>
@@ -1934,6 +1963,16 @@
 <li>駆動分離を増やす</li>
 <li>速度に応じた張力プロファイル設定</li>
 </ul>
+<details class="question">
+<summary>演習: 高速化と蛇行</summary>
+<p>ライン速度を 1.5 倍にアップしたところ、それまで安定していたラインが急に蛇行が大きくなった。考えられる物理メカニズムは？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>空気同伴による直角方向進入性の崩壊</strong>。
+速度上昇 → 空気膜厚さ増 → 実効摩擦係数低下 → ウェブがロール表面で滑り、ロール軸方向に縛り付けられなくなる → 蛇行拡大。
+対策：マイクログルーブローラ、真空ロール、ニップ追加。</p>
+</details>
+</details>
 <h2 id="7">7. 蛇行の周波数特性<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <p>蛇行は単発現象ではなく、しばしば特定周波数で振動的に発生する：</p>
 <ul>
@@ -1944,6 +1983,16 @@
 <li><strong>高周波</strong>：通常はゼロ。ライン振動の影響</li>
 </ul>
 <p>蛇行センサと FFT 解析で原因切り分けが効率的。</p>
+<details class="question">
+<summary>演習: 周波数からの原因推定</summary>
+<p>蛇行波形を FFT すると、巻出ロール回転周期に同期した成分が大きい。考えられる原因は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>巻出原反のバギング、または巻出機の軸偏心／軸受不良</strong>。
+巻出周期と同期する蛇行は、原反由来か巻出機機械要因のいずれか。
+前者なら原反受入検査強化、後者なら軸受交換・芯出し再調整。</p>
+</details>
+</details>
 <h2 id="8">8. 蛇行測定方法<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1982,6 +2031,16 @@
 </tbody>
 </table>
 <p>精度は ±0.1 mm 程度が標準、高精度品は ±0.01 mm。</p>
+<details class="question">
+<summary>演習: センサ選定</summary>
+<p>透明 PET フィルムの蛇行検出に最も適したセンサは？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>超音波エッジセンサ</strong>。
+透過光式は透明だと光が通り抜けて検出できない。超音波は透明・半透明・不透明問わず動作する。
+高精度（±0.05 mm）が必要ならラインスキャンカメラ＋画像処理も候補。</p>
+</details>
+</details>
 <h2 id="9">9. 対策概論<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
 <p>蛇行対策の全体像：</p>
 <table>
@@ -2025,38 +2084,18 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_3">理解度チェック<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <details class="question">
-<summary>演習1: 直角方向進入性</summary>
-<p>上流側ロールに対し、下流側ロールがミスアライメントを持つとき、ウェブはどのように振る舞うか。</p>
+<summary>演習: 対策の優先順位</summary>
+<p>新規ラインの蛇行対策で、最も基本的（最初に取り組むべき）なものは次のうちどれか。
+(a) EPC 装置を追加  (b) スプレッダロール追加  (c) ロール平行度・真直度を測定／調整  (d) PID チューニング見直し</p>
 <details class="success">
 <summary>解答</summary>
-<p>ウェブは <strong>下流側ローラの軸に対して直角方向に進入</strong> しようとする（normal entry rule）。
-その結果、下流ローラの傾きの方向にウェブの中心線が傾き、<strong>CD方向に蛇行が発生</strong> する。
-さらに大きなミスアラインメントでは、ローラ手前で CD 圧縮応力が誘起され、折れしわの原因にもなる。</p>
+<p><strong>(c) ロール平行度・真直度を測定／調整</strong>。
+蛇行原因の大半はロールミスアライメント。これを放置したまま EPC を追加しても根本解決にならず、EPC の負荷が増えるだけ。
+まず装置精度を確保してから、必要に応じて EPC・スプレッダ等を検討するのが正しい順序。</p>
 </details>
 </details>
-<details class="question">
-<summary>演習2: スパン時定数</summary>
-<p>スパン長 <span class="arithmatex">\(L = 3\,m\)</span>、搬送速度 <span class="arithmatex">\(V = 150\,m/min\)</span> のとき、蛇行応答のスパン時定数 <span class="arithmatex">\(\tau\)</span> [s] を求めよ。</p>
-<details class="success">
-<summary>解答</summary>
-<p><span class="arithmatex">\(V = 150/60 = 2.5\,m/s\)</span>
-<span class="arithmatex">\(\tau = L/V = 3/2.5 = 1.2\,s\)</span>
-この時定数より速い蛇行制御は応答が追いつかず発振しやすい。EPC のループ周期は 0.1 s 程度（時定数の 1/10）に設定するのが目安。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習3: 蛇行原因の伝播</summary>
-<p>ライン中央のあるロールに片寄り蛇行が観察された。原因のロールは「観察位置の上流側」「下流側」どちらにあるか。</p>
-<details class="success">
-<summary>解答</summary>
-<p><strong>両方の可能性がある（むしろ下流側が見落とされやすい）</strong>。
-Shelton 解析が示すとおり、「下流ロールの傾きが上流のウェブ姿勢に現れる」ため、観察された蛇行位置より下流側のロールも疑う必要がある。
-実機トラブル切り分けでは、観察位置の前後 2〜3 スパンを点検するのが鉄則。</p>
-</details>
-</details>
-<h2 id="_4">参考文献<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_3">参考文献<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『入門 ウェブハンドリング』第7章「ローラによるウェブの分離・拡張メカニズム」, 加工技術研究会, 2010.</li>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第2章7節「ウェブのトラッキング能力」.</li>

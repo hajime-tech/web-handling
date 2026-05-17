@@ -1122,17 +1122,6 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1700,17 +1689,6 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1775,6 +1753,16 @@ p = \frac{T}{R w} = \frac{t}{R} \quad [\text{Pa}]
 \]</div>
 <p>たとえば単位幅張力 <span class="arithmatex">\(t = 200\,\text{N/m}\)</span>、ロール径 <span class="arithmatex">\(D = 200\,\text{mm}\)</span> なら <span class="arithmatex">\(p = 200/0.1 = 2000\,\text{Pa} = 2\,\text{kPa}\)</span>。
 塗工後の乾燥ロール上では、この圧力で塗膜が変形しないか確認が必要。</p>
+<details class="question">
+<summary>演習: 接触圧の計算</summary>
+<p>単位幅張力 <span class="arithmatex">\(t = 300\,N/m\)</span>、ロール径 <span class="arithmatex">\(D = 100\,mm\)</span> のとき、ウェブからロールへの接触圧 <span class="arithmatex">\(p\)</span> [Pa] を求めよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(R = D/2 = 50\,mm = 0.05\,m\)</span>
+<span class="arithmatex">\(p = t/R = 300 / 0.05 = 6000\,Pa = 6\,kPa\)</span>
+塗工直後のロール上で 6 kPa が塗膜を変形させないか確認が必要。</p>
+</details>
+</details>
 <h2 id="2">2. ウェブの曲げ応力<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>ロールに巻き付くとウェブ表面には引張・圧縮側の曲げ応力が加わる。</p>
 <div class="arithmatex">\[
@@ -1787,6 +1775,17 @@ p = \frac{T}{R w} = \frac{t}{R} \quad [\text{Pa}]
 <p>ロール径が小さく、ウェブが厚いほど曲げ応力が支配的になる。
 たとえば PET 100 μm、<span class="arithmatex">\(E = 4\,\text{GPa}\)</span>、<span class="arithmatex">\(R = 25\,\text{mm}\)</span>（コア径50 mm）なら、<span class="arithmatex">\(\sigma_b = 4 \times 10^9 \cdot 100 \times 10^{-6} / (2 \cdot 0.025) = 8\,\text{MPa}\)</span> となり、外側は弾性域上限近くまで使うことになる。</p>
 <p><strong>小径ロールはウェブにとって過酷</strong>。コア径選定は材料・厚さで決まる。</p>
+<details class="question">
+<summary>演習: コア径の選定</summary>
+<p>PET（<span class="arithmatex">\(E = 4\,GPa\)</span>、厚さ <span class="arithmatex">\(h = 100\,\mu m\)</span>）を半径 <span class="arithmatex">\(R = 25\,mm\)</span>（コア径 50 mm）に巻き付けたときの曲げ応力 <span class="arithmatex">\(\sigma_b\)</span> [MPa] を求めよ。
+PET の降伏応力 100 MPa との比は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(\sigma_b = E h / (2R) = 4 \times 10^9 \times 100 \times 10^{-6} / (2 \times 0.025) = 8\,MPa\)</span>
+降伏応力比：<span class="arithmatex">\(8/100 = 8\%\)</span>。許容範囲だが、厚物ウェブを小径コアに巻くと曲げ応力が支配的になることがわかる。
+コア径を 50 → 100 mm に倍増すれば曲げ応力は半減する。</p>
+</details>
+</details>
 <h2 id="3">3. ロール表面と空気膜<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>高速搬送では、ロール表面とウェブの間に薄い空気膜が引き込まれる。Knox-Sweeney（1977）の近似：</p>
 <div class="arithmatex">\[
@@ -1803,6 +1802,16 @@ h_\text{air} = 0.643\, R \left( \frac{\eta V}{T/w} \right)^{2/3}
 <li><strong>静圧ロール</strong>：エアを噴出して非接触で安定保持</li>
 </ul>
 <p>橋本『基礎理論と応用』第9章ではこれら拡張理論の数値モデルが体系化されている。</p>
+<details class="question">
+<summary>演習: 空気膜厚さと速度</summary>
+<p>搬送速度を 50 m/min から 200 m/min に4倍にすると、空気膜厚さは何倍になるか。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\(h_\text{air} \propto V^{2/3}\)</span> より、<span class="arithmatex">\(4^{2/3} = 2.52\)</span> 倍。
+速度を4倍にしても空気膜は約2.5倍にしかならないが、合成粗さに対して大きくなるとスリップ閾値を一気に超える。
+高速対策（グルーブロール等）はこの非線形挙動を意識する。</p>
+</details>
+</details>
 <h2 id="4">4. ロールの剛性・撓み・固有振動<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="_2">撓み<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>両端支持ロール（長さ <span class="arithmatex">\(L\)</span>、外径 <span class="arithmatex">\(D\)</span>、肉厚 <span class="arithmatex">\(t\)</span>）に均一分布荷重 <span class="arithmatex">\(q\)</span> がかかるときの中央撓み：</p>
@@ -1849,6 +1858,16 @@ f_1 = \frac{\pi}{2 L^2} \sqrt{\frac{E I}{m'}}
 </tbody>
 </table>
 <p>『スリッター・リワインダーの技術読本』第1章5.4節に径・肉厚・材質別の詳細な危険回転数表がある。</p>
+<details class="question">
+<summary>演習: 危険回転数の回避</summary>
+<p>直径 200 mm、長さ 2 m の鋼ロールを使用するライン。最大ライン速度 80 m/min とすると、危険回転数を回避できるか。</p>
+<details class="success">
+<summary>解答</summary>
+<p>ロール周速 = 80 m/min → 回転速度 = <span class="arithmatex">\(80/(\pi \times 0.2) = 127.3\,\)</span>rpm
+表より危険回転数 ≈ 5,000 rpm。運転速度 127 rpm は危険回転数のはるか下で <strong>安全</strong>。
+危険回転数の 70% 未満で運用するのが一般則（実用安全マージン）。</p>
+</details>
+</details>
 <h2 id="5">5. 巻取ロール内部の応力<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <h3 id="hakiel">Hakiel 理論<a class="headerlink" href="#hakiel" title="Permanent link">&para;</a></h3>
 <p>巻取ロールの半径方向応力 <span class="arithmatex">\(\sigma_r\)</span> と接線方向応力 <span class="arithmatex">\(\sigma_\theta\)</span> の分布は、Hakiel（1987）の巻取方程式で計算できる。
@@ -1879,6 +1898,16 @@ r^2 \frac{d^2 \sigma_r}{dr^2} + 3 r \frac{d\sigma_r}{dr} + \left(1 - \frac{E_\th
 <li><strong>テレスコープ</strong>：層間摩擦不足で軸方向にずれる</li>
 <li><strong>スターリング・コックル</strong>：CD 応力ムラで端面が波打つ</li>
 </ul>
+<details class="question">
+<summary>演習: Hakiel 理論の画期性</summary>
+<p>Hakiel（1987）の巻取モデルが、それ以前の Altmann（1968）モデルと比較して画期的だった点は何か。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>半径方向ヤング率 <span class="arithmatex">\(E_r\)</span> の非線形性（応力依存性）を取り入れた点</strong>。
+実際の巻取ロールでは、<span class="arithmatex">\(E_r\)</span> は接触圧の関数として大きく変化する（Pfeiffer の馬テスト）が、Altmann ら以前のモデルでは <span class="arithmatex">\(E_r\)</span> を一定として近似していた。
+Hakiel はウェブが順次積み上がる際の応力増分を逐次計算する方式を確立し、現在の巻取理論の基礎となっている。</p>
+</details>
+</details>
 <h2 id="6-tnt">6. 巻取の三大要素 TNT<a class="headerlink" href="#6-tnt" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1912,6 +1941,16 @@ r^2 \frac{d^2 \sigma_r}{dr^2} + 3 r \frac{d\sigma_r}{dr} + \left(1 - \frac{E_\th
 \]</div>
 <p>ここで <span class="arithmatex">\(\sigma_w\)</span> は <strong>巻取応力</strong>（wound-on tension）、<span class="arithmatex">\(T_w\)</span> は巻取張力、<span class="arithmatex">\(N\)</span> はニップ荷重、<span class="arithmatex">\(\mu\)</span> は層間摩擦係数。
 ニップを併用すると低張力でも内部応力を確保できる。詳細は <a href="../nip/">ニップ力と変形</a> を参照。</p>
+<details class="question">
+<summary>演習: Pfeiffer 式の応用</summary>
+<p>巻取張力 <span class="arithmatex">\(T_w = 100\,N/m\)</span> ではテレスコープが発生する。ニップ荷重 <span class="arithmatex">\(N = 4000\,N/m\)</span>、層間 <span class="arithmatex">\(\mu = 0.3\)</span> を加えると、巻取応力（単位幅）は何倍に向上するか。</p>
+<details class="success">
+<summary>解答</summary>
+<p>ニップなし：<span class="arithmatex">\(T_w = 100\,N/m\)</span>
+ニップあり：<span class="arithmatex">\(T_w + \mu N = 100 + 0.3 \times 4000 = 100 + 1200 = 1300\,N/m\)</span>
+→ <strong>13 倍</strong> に増加。低張力でも層間圧縮を確保できるため、テレスコープを抑制できる。</p>
+</details>
+</details>
 <h2 id="7">7. テーパテンション制御<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <p>巻径増に応じて巻取張力を漸減させ、内層応力過大を防ぐ。</p>
 <div class="arithmatex">\[
@@ -1945,6 +1984,16 @@ T_w(R) = T_{w,0} \left[ 1 - k\left( \frac{R - R_0}{R_\text{max} - R_0} \right) \
 </tr>
 </tbody>
 </table>
+<details class="question">
+<summary>演習: テーパテンションの計算</summary>
+<p>巻取初期張力 <span class="arithmatex">\(T_{w,0} = 300\,N/m\)</span>、テーパ率 <span class="arithmatex">\(k = 0.4\)</span>、コア <span class="arithmatex">\(R_0 = 0.05\,m\)</span>、満巻 <span class="arithmatex">\(R_\text{max} = 0.5\,m\)</span> のとき、<span class="arithmatex">\(R = 0.3\,m\)</span> での張力は何 N/m か。</p>
+<details class="success">
+<summary>解答</summary>
+<p><span class="arithmatex">\((R - R_0)/(R_\text{max} - R_0) = (0.3 - 0.05)/(0.5 - 0.05) = 0.25/0.45 = 0.556\)</span>
+<span class="arithmatex">\(T_w(0.3) = 300 \times (1 - 0.4 \times 0.556) = 300 \times (1 - 0.222) = 300 \times 0.778 \approx 233\,N/m\)</span>
+満巻に近づくに従って、最大 300 × (1 - 0.4) = 180 N/m まで漸減する。</p>
+</details>
+</details>
 <h2 id="8">8. 巻取駆動方式<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1978,37 +2027,18 @@ T_w(R) = T_{w,0} \left[ 1 - k\left( \frac{R - R_0}{R_\text{max} - R_0} \right) \
 </tbody>
 </table>
 <p>詳細は <a href="../drive/">駆動系の設計</a> を参照。</p>
-<h2 id="_5">理解度チェック<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <details class="question">
-<summary>演習1: ロール接触圧</summary>
-<p>単位幅張力 <span class="arithmatex">\(t = 300\,N/m\)</span>、ロール径 <span class="arithmatex">\(D = 100\,mm\)</span> のとき、ウェブからロールへの接触圧 <span class="arithmatex">\(p\)</span> [Pa] を求めよ。</p>
+<summary>演習: 巻取駆動の選定</summary>
+<p>高張力で薄物のプラスチックフィルムを高品質に巻取りたい。最適な巻取方式は？</p>
 <details class="success">
 <summary>解答</summary>
-<p><span class="arithmatex">\(p = t/R = 300 / 0.05 = 6000\,Pa = 6\,kPa\)</span>
-塗工直後のロール上でこの圧力が塗膜を変形させないか確認が必要。</p>
+<p><strong>ニップワインド（中心駆動＋ライダロール）</strong>。
+- 中心駆動で高張力対応
+- ライダロール（ニップロール）で巻取面のエア排除
+- Pfeiffer 式で内部応力を Tension と Nip の両方から確保</p>
 </details>
 </details>
-<details class="question">
-<summary>演習2: 曲げ応力と巻き付け径</summary>
-<p>PET（<span class="arithmatex">\(E = 4\,GPa\)</span>、厚さ <span class="arithmatex">\(h = 100\,\mu m\)</span>）を半径 <span class="arithmatex">\(R = 25\,mm\)</span> のロール（コア径 50 mm）に巻き付ける。
-ウェブ表面に生じる曲げ応力 <span class="arithmatex">\(\sigma_b\)</span> [MPa] を求めよ。</p>
-<details class="success">
-<summary>解答</summary>
-<p><span class="arithmatex">\(\sigma_b = E h / (2R) = 4 \times 10^9 \times 100 \times 10^{-6} / (2 \times 0.025) = 8 \times 10^6\,Pa = 8\,MPa\)</span>
-厚物ウェブを小径コアに巻き付けると曲げ応力が大きくなる。コア径選定は重要。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習3: Hakiel理論の特徴</summary>
-<p>Hakiel（1987）の巻取モデルが、それ以前の Altmann（1968）モデルと比較して画期的だった点は何か。</p>
-<details class="success">
-<summary>解答</summary>
-<p><strong>半径方向ヤング率 <span class="arithmatex">\(E_r\)</span> の非線形性（応力依存性）を取り入れた点</strong>。
-実際の巻取ロールでは、<span class="arithmatex">\(E_r\)</span> は接触圧の関数として大きく変化する（Pfeiffer の馬テスト）が、Altmann ら以前のモデルでは <span class="arithmatex">\(E_r\)</span> を一定として近似していた。
-Hakiel はウェブが順次積み上がる際の応力増分を逐次計算する方式を確立し、現在の巻取理論の基礎となっている。</p>
-</details>
-</details>
-<h2 id="_6">参考文献<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_5">参考文献<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>橋本 巨『ウェブハンドリングの基礎理論と応用』第7章「基礎理論の巻取問題への応用」, 加工技術研究会.</li>
 <li>橋本 巨『入門 ウェブハンドリング』第5章「ウェブの巻取問題」, 加工技術研究会, 2010.</li>

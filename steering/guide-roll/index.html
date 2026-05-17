@@ -1437,17 +1437,6 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -1932,17 +1921,6 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理解度チェック
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         参考文献
       
     </span>
@@ -2010,6 +1988,15 @@
 </tr>
 </tbody>
 </table>
+<details class="question">
+<summary>演習: 用途の特定</summary>
+<p>「スリット後の複数本ウェブを別々の巻取機に分配する」用途で使うロールはどの分類か。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>分離用途</strong>。テーパロールやフリースプレッダで CD 方向に広げて、スリット後のウェブをそれぞれの巻取機方向に分配する。
+橋本『入門』第7章「ローラによるウェブの分離・拡張メカニズム」が詳しい。</p>
+</details>
+</details>
 <h2 id="2">2. 拡幅（スプレッダ）ロール各種<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>『スリッター・リワインダーの技術読本』第1章 3.4「ウェブの幅拡げ」では、以下が体系的に紹介されている。</p>
 <h3 id="a-concave-spreader-roller">(a) 凹面ローラー（Concave Spreader Roller）<a class="headerlink" href="#a-concave-spreader-roller" title="Permanent link">&para;</a></h3>
@@ -2046,6 +2033,16 @@
 <h3 id="k">(k) スパイラル溝付きローラー<a class="headerlink" href="#k" title="Permanent link">&para;</a></h3>
 <p>ロール表面に螺旋状の溝を切り、回転時に軸方向の摩擦成分を作る。
 <strong>最も簡便で安価</strong>、保守も楽。中速〜高速に多用。</p>
+<details class="question">
+<summary>演習: 塗工直後の選定</summary>
+<p>塗工直後の光学フィルム（表面接触NG、極めて薄い）のしわ抑制に最適なスプレッダロールは？
+(a) バナナロール  (b) コンケイブロール  (c) エアタンクスプレッダ／非接触式  (d) スパイラル溝付きロール</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>(c) エアタンクスプレッダ／非接触式</strong>。塗工直後の表面接触が禁忌の場合、接触式は塗膜を傷つける。
+非接触エア式または下流に十分な距離を空けてから接触式を使う構成にする。</p>
+</details>
+</details>
 <h2 id="3">3. 拡幅ロールの選定マトリクス<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2081,6 +2078,17 @@
 </tr>
 </tbody>
 </table>
+<details class="question">
+<summary>演習: 高速ライン向け選定</summary>
+<p>幅広・高速ライン（&gt;300 m/min）のしわ取りに最適なのはどれか。
+(a) コンケイブロール  (b) バナナロール（高速対応軸受）  (c) D-bar  (d) テンター</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>(b) バナナロール（高速対応軸受）</strong>。
+高速・幅広に対する拡幅効果が強力で、装置として安定。コンケイブはマイルド、D-bar は低速向け、テンターは大型で工程組み込みが大変。
+ただし回転抵抗大の問題があるため、低張力ウェブでは設置位置・巻き付き角を工夫する。</p>
+</details>
+</details>
 <h2 id="4-epc">4. EPC ガイドロール（蛇行修正ロール）<a class="headerlink" href="#4-epc" title="Permanent link">&para;</a></h2>
 <p>蛇行を能動的に修正するためのロール構造。詳細は <a href="../auto-guide/">自動蛇行修正装置</a> を参照。</p>
 <h3 id="_2">形式分類<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -2116,6 +2124,16 @@
 </tbody>
 </table>
 <p>旋回中心の位置や回転軸の方向によって、上流／下流どちらのウェブ姿勢を制御するかが変わる。</p>
+<details class="question">
+<summary>演習: EPC形式の選定</summary>
+<p>巻出機を含むフレーム全体をスライドさせて、原反のオフセットを補正したい場合、最も適したEPC形式は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>エンドポジション型（End-Position Guide）</strong>。
+巻出・巻取直結の用途で、フレーム全体をリニアアクチュエータで動かす。原反の幅方向初期位置のずれを大きく補正できる。
+中間スパンならピボットやパラレル型を使う。</p>
+</details>
+</details>
 <h2 id="5">5. ガイドロール設計の基本式<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <h3 id="_3">入口・出口の蛇行関係<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>スパン長 <span class="arithmatex">\(L\)</span>、ガイドロールの傾き角 <span class="arithmatex">\(\phi\)</span> のとき、ウェブの横変位 <span class="arithmatex">\(y\)</span> の応答は近似的に：</p>
@@ -2131,6 +2149,16 @@
 <h3 id="_4">巻き付き角と修正効果<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>ガイドロールの巻き付き角 <span class="arithmatex">\(\theta_w\)</span> が小さいと、ロールを傾けてもウェブを動かす効果が弱い。
 標準は <span class="arithmatex">\(\theta_w \ge 90°\)</span>、できれば 120°以上を確保したい。</p>
+<details class="question">
+<summary>演習: 巻き付き角の不足</summary>
+<p>バナナロールを設置したが拡幅効果が出ない。考えられる原因を 2 つ挙げよ。</p>
+<details class="success">
+<summary>解答</summary>
+<p>(1) <strong>取付方向が逆</strong>：弓の凸側がウェブ進入方向を向いている必要がある。
+(2) <strong>巻き付き角不足</strong>：90° 以上を確保しないと効果が出ない。
+その他の原因：曲率（湾曲量）が不足、ロール周面の摩擦不足で滑っている、など。</p>
+</details>
+</details>
 <h2 id="6">6. 設置位置の指針<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <ul>
 <li>蛇行を直したい工程の <strong>直前</strong> に置く（塗工直前、印刷直前、巻取直前など）</li>
@@ -2143,6 +2171,16 @@
     G1 --&gt; P[プロセス]
     P --&gt; G2[エキジットガイド&lt;br/&gt;巻取直前修正]
     G2 --&gt; RW[巻取]</code></pre>
+<details class="question">
+<summary>演習: 設置位置の優先</summary>
+<p>新規ラインで EPC を1台だけ追加できる予算しかない。どこに設置するのが最も効果的か。</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>巻取直前（エキジットガイド）</strong>。
+巻取での蛇行はテレスコープに直結し、製品全数廃棄リスクが大きい。
+2台目を追加できる場合は巻出直後（エントリーガイド）で原反由来の蛇行を最初に吸収するのが理想。</p>
+</details>
+</details>
 <h2 id="7">7. メンテナンスと注意点<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <ul>
 <li>ロール表面：擦り傷・打痕は即蛇行原因に。定期点検</li>
@@ -2151,6 +2189,15 @@
 <li>バナナロール：曲率設定（取付向きの誤りで逆効果に）</li>
 <li>スパイラル溝：溝目詰まりの清掃</li>
 </ul>
+<details class="question">
+<summary>演習: スパイラル溝の保守</summary>
+<p>スパイラル溝付きロールの拡幅効果が落ちた。最も疑うべき原因は？</p>
+<details class="success">
+<summary>解答</summary>
+<p><strong>溝の目詰まり</strong>。塵・塗工剤・湿気が溝に詰まると、軸方向力が発生しなくなり、平滑ロール化する。
+対策：エアブロー清掃、溶剤拭き取り（材質と相性確認）、目詰まり前の予防保全。</p>
+</details>
+</details>
 <h2 id="8">8. ガイドロール選定チェックリスト<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 蛇行修正したい位置はライン内のどこか</li>
@@ -2161,39 +2208,17 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> スペース（旋回幅）の制約</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 既存制御系（PLC、HMI）との接続</li>
 </ul>
-<h2 id="_5">理解度チェック<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <details class="question">
-<summary>演習1: スプレッダ選定</summary>
-<p>塗工直後の光学フィルム（表面接触NG、極めて薄い）のしわ抑制のために選定するスプレッダロールとして最も適切なのは？
-(a) バナナロール  (b) コンケイブロール  (c) エアタンクスプレッダ／非接触式  (d) スパイラル溝付きロール</p>
+<summary>演習: チェックリストの優先項目</summary>
+<p>ガイドロール選定でチェックリスト上の項目のうち、最も忘れがちで失敗例が多いのは？</p>
 <details class="success">
 <summary>解答</summary>
-<p><strong>(c) エアタンクスプレッダ／非接触式</strong>。塗工直後の表面接触が禁忌の場合、接触式は塗膜を傷つける。
-非接触エア式または下流に十分な距離を空けてから接触式を使う構成にする。</p>
+<p><strong>「巻き付き角 90° 以上の確保」</strong>。
+スペースの都合で巻き付き角を浅くしたガイドロールは、傾けてもウェブを動かす効果が極めて弱く、EPC が機能しない。
+既存装置への後付けで特に失敗しやすいポイント。設置前にレイアウト図で必ず巻き付き角を確認する。</p>
 </details>
 </details>
-<details class="question">
-<summary>演習2: バナナロール設置</summary>
-<p>バナナロールを設置したが拡幅効果が出ない。考えられる原因を 2 つ挙げよ。</p>
-<details class="success">
-<summary>解答</summary>
-<p>(1) <strong>取付方向が逆</strong>：弓の凸側がウェブ進入方向を向いている必要がある。
-(2) <strong>巻き付き角不足</strong>：90° 以上を確保しないと効果が出ない。
-その他の原因：曲率（湾曲量）が不足、ロール周面の摩擦不足で滑っている、など。</p>
-</details>
-</details>
-<details class="question">
-<summary>演習3: スプレッダロールの種類</summary>
-<p>幅広・高速ライン（&gt;300 m/min）のしわ取りに最適なのはどれか。理由とともに答えよ。
-(a) コンケイブロール  (b) バナナロール（高速対応軸受）  (c) D-bar  (d) テンター</p>
-<details class="success">
-<summary>解答</summary>
-<p><strong>(b) バナナロール（高速対応軸受）</strong>。
-理由：高速・幅広に対する拡幅効果が強力で、装置として安定。コンケイブはマイルド、D-bar は低速向け、テンターは大型で工程組み込みが大変。
-ただし回転抵抗大の問題があるため、低張力ウェブでは設置位置・巻き付き角を工夫する。</p>
-</details>
-</details>
-<h2 id="_6">参考文献<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_5">参考文献<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>『スリッター・リワインダーの技術読本』第1章 3.4「ウェブの幅拡げ」, 3.2「回転ローラー」.</li>
 <li>橋本 巨『入門 ウェブハンドリング』第7章, 加工技術研究会, 2010.</li>
