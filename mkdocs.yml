@@ -1,6 +1,6 @@
 site_name: ウェブハンドリング技術解説
 site_description: ロールトゥロール搬送の理論と実践
-site_author: あなたの名前
+site_author: はじめ
 
 theme:
   name: material
@@ -29,3 +29,31 @@ markdown_extensions:
 
 extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - ホーム: index.md
+  - 基礎知識:
+    - ウェブハンドリングとは: basics/overview.md
+    - 用語・記号一覧: basics/glossary.md
+    - 材料特性:
+      - フィルム: basics/material-film.md
+      - 紙: basics/material-paper.md
+      - 金属箔: basics/material-foil.md
+  - テンション制御:
+    - 基本理論: tension/theory.md
+    - オイラーの摩擦式: tension/euler.md
+    - テンション分布: tension/distribution.md
+    - 制御機器の選定: tension/devices.md
+  - ロール・搬送系の力学:
+    - ロール周りの力学: roll/mechanics.md
+    - ニップ力と変形: roll/nip.md
+    - 駆動系の設計: roll/drive.md
+    - マイクログルーブローラ: roll/micro-groove.md
+  - 蛇行制御:
+    - 発生メカニズム: steering/mechanism.md
+    - ガイドロールの設計: steering/guide-roll.md
+    - 自動蛇行修正装置: steering/auto-guide.md
+  - トラブルシューティング:
+    - しわの原因と対策: trouble/wrinkle.md
+    - テンション変動の対策: trouble/tension.md
+    - 蛇行トラブルの対策: trouble/steering.md

@@ -1,0 +1,28 @@
+# Build output (mkdocs build artifact)
+/site/
+
+# Copyrighted reference materials — DO NOT PUSH
+/references/
+
+# Local Claude Code workspace
+/.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
