@@ -1,0 +1,2800 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ロールトゥロール搬送の理論と実践">
+      
+      
+        <meta name="author" content="はじめ">
+      
+      
+      
+        <link rel="prev" href="../overview/">
+      
+      
+        <link rel="next" href="../material-film/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>用語・記号一覧 - ウェブハンドリング技術解説</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="ウェブハンドリング技術解説" class="md-header__button md-logo" aria-label="ウェブハンドリング技術解説" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ウェブハンドリング技術解説
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              用語・記号一覧
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ウェブハンドリング技術解説" class="md-nav__button md-logo" aria-label="ウェブハンドリング技術解説" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ウェブハンドリング技術解説
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基礎知識
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    基礎知識
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ウェブハンドリングとは
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用語・記号一覧
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用語・記号一覧
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 基本概念
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 装置・ロール・補機
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 寸法・座標
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 力学量
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. ウェブの変形モード
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 弾性・粘弾性・レオロジー
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 曲げ・座屈・しわ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 摩擦・トライボロジー
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 蛇行・ガイド
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 巻取・スリット
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 制御・信号
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. ウェブの欠陥・トラブル
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    材料特性
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    材料特性
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material-film/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    フィルム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material-paper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    紙
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material-foil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金属箔
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    テンション制御
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    テンション制御
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tension/theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基本理論
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tension/euler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    オイラーの摩擦式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tension/distribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    テンション分布
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tension/devices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    制御機器の選定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ロール・搬送系の力学
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ロール・搬送系の力学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roll/mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ロール周りの力学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roll/nip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ニップ力と変形
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roll/drive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    駆動系の設計
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roll/micro-groove/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    マイクログルーブローラ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    蛇行制御
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    蛇行制御
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../steering/mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    発生メカニズム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../steering/guide-roll/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ガイドロールの設計
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../steering/auto-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自動蛇行修正装置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    トラブルシューティング
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    トラブルシューティング
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trouble/wrinkle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    しわの原因と対策
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trouble/tension/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    テンション変動の対策
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trouble/steering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    蛇行トラブルの対策
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 基本概念
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 装置・ロール・補機
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 寸法・座標
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 力学量
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. ウェブの変形モード
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 弾性・粘弾性・レオロジー
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 曲げ・座屈・しわ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 摩擦・トライボロジー
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 蛇行・ガイド
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 巻取・スリット
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 制御・信号
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. ウェブの欠陥・トラブル
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">用語・記号一覧</h1>
+<p>ウェブハンドリングで頻出する用語と記号を一覧にまとめる。本サイト全体で共通に使用する。
+出典：橋本 巨『入門 ウェブハンドリング』各章扉 KEY WORDS、橋本 巨『ウェブハンドリングの基礎理論と応用』第2章、『スリッター・リワインダーの技術読本』第1章他。</p>
+<hr />
+<h2 id="1">1. 基本概念</h2>
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>英語</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ウェブ</td>
+<td>web</td>
+<td>連続した薄物材料の総称（フィルム、紙、金属箔、不織布等）</td>
+</tr>
+<tr>
+<td>連続紙</td>
+<td>continuous paper</td>
+<td>ロール状の連続した紙</td>
+</tr>
+<tr>
+<td>ロール・ツー・ロール搬送</td>
+<td>roll-to-roll (R2R)</td>
+<td>巻出から巻取までの連続搬送方式</td>
+</tr>
+<tr>
+<td>ウェブハンドリング</td>
+<td>web handling</td>
+<td>ウェブの搬送・取り扱い技術</td>
+</tr>
+<tr>
+<td>コンバーティング</td>
+<td>converting</td>
+<td>原反に価値を付与する加工（コーティング、ラミネート、印刷等）</td>
+</tr>
+<tr>
+<td>ウェブスパン</td>
+<td>web span</td>
+<td>隣接する2本のロール間のウェブ区間</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2">2. 装置・ロール・補機</h2>
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>英語</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>巻出機</td>
+<td>unwinder / unwind stand</td>
+<td>原反ロールを巻き出す装置</td>
+</tr>
+<tr>
+<td>巻取機</td>
+<td>rewinder / winder</td>
+<td>製品ロールを巻き取る装置</td>
+</tr>
+<tr>
+<td>アイドラロール</td>
+<td>idler roll</td>
+<td>駆動を持たず、ウェブに従動するロール</td>
+</tr>
+<tr>
+<td>ドライブロール</td>
+<td>drive roll</td>
+<td>サーボやインダクションモータで駆動するロール</td>
+</tr>
+<tr>
+<td>ニップロール</td>
+<td>nip roll</td>
+<td>2本のロールでウェブを挟み、滑りを防いで搬送するロール</td>
+</tr>
+<tr>
+<td>ダンサロール</td>
+<td>dancer roll</td>
+<td>バネ・エアシリンダで支持され、張力変動を吸収するロール</td>
+</tr>
+<tr>
+<td>ガイドロール</td>
+<td>guide roll</td>
+<td>蛇行修正のために回転軸を傾けるロール</td>
+</tr>
+<tr>
+<td>スプレッダロール</td>
+<td>spreader roll</td>
+<td>しわを伸ばすためのバナナロール／溝付きロール</td>
+</tr>
+<tr>
+<td>バナナロール（エキスパンダロール）</td>
+<td>bowed roll / expander roll</td>
+<td>弓状の軸で軸方向外向きに拡幅する受動ロール</td>
+</tr>
+<tr>
+<td>凹面ロール</td>
+<td>concave spreader roll</td>
+<td>中央が細く両端が太い樽形ロール</td>
+</tr>
+<tr>
+<td>スパイラル溝付きロール</td>
+<td>spiral grooved roller</td>
+<td>螺旋溝で軸方向力を発生させる拡幅ロール</td>
+</tr>
+<tr>
+<td>テンター</td>
+<td>tenter</td>
+<td>クリップ／ピンで両端を機械的に幅出しする大型装置</td>
+</tr>
+<tr>
+<td>クーラントロール（チルロール）</td>
+<td>chill roll</td>
+<td>ウェブを冷却する内部水冷ロール</td>
+</tr>
+<tr>
+<td>サクションロール</td>
+<td>suction roll</td>
+<td>穿孔＋負圧で密着搬送するロール</td>
+</tr>
+<tr>
+<td>静圧ロール</td>
+<td>hydrostatic roller</td>
+<td>エアを噴出して非接触でウェブを保持するロール</td>
+</tr>
+<tr>
+<td>マクログルーブロール</td>
+<td>macro-grooved roller</td>
+<td>軸方向の深い溝で空気を排出するロール</td>
+</tr>
+<tr>
+<td>マイクログルーブロール</td>
+<td>micro-grooved roller</td>
+<td>微細な粗面化で空気膜を破るロール</td>
+</tr>
+<tr>
+<td>アキュムレータ（蓄積装置）</td>
+<td>accumulator</td>
+<td>スプライス時等にウェブを蓄え、停止せず搬送を継続する装置</td>
+</tr>
+<tr>
+<td>ライダロール</td>
+<td>rider roll</td>
+<td>巻取ロール表面に当てるニップロール（エア排除）</td>
+</tr>
+<tr>
+<td>ターレット</td>
+<td>turret</td>
+<td>自動切替式の巻出／巻取機構</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3">3. 寸法・座標</h2>
+<table>
+<thead>
+<tr>
+<th>記号</th>
+<th>名称</th>
+<th>意味</th>
+<th>単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MD</td>
+<td>Machine Direction</td>
+<td>流れ方向（長手）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>TD / CD</td>
+<td>Transverse / Cross (Machine) Direction</td>
+<td>幅方向</td>
+<td>—</td>
+</tr>
+<tr>
+<td>ND / ZD</td>
+<td>Normal / Z Direction</td>
+<td>厚さ方向</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(w\)</span></td>
+<td>ウェブ幅</td>
+<td>TD方向の幅</td>
+<td>m, mm</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(h\)</span></td>
+<td>ウェブ厚さ</td>
+<td>NDの厚み</td>
+<td>μm, mm</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(L\)</span></td>
+<td>スパン長</td>
+<td>ロール間距離</td>
+<td>m</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(D\)</span></td>
+<td>ロール径</td>
+<td>ロールの外径</td>
+<td>mm</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(R\)</span></td>
+<td>ロール半径</td>
+<td><span class="arithmatex">\(R = D/2\)</span></td>
+<td>mm</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\theta_w\)</span></td>
+<td>巻き付き角</td>
+<td>ウェブがロールに巻き付く中心角</td>
+<td>rad, deg</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4">4. 力学量</h2>
+<table>
+<thead>
+<tr>
+<th>記号</th>
+<th>名称</th>
+<th>意味</th>
+<th>単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(T\)</span></td>
+<td>張力</td>
+<td>ウェブ全幅にかかる引張力</td>
+<td>N</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma\)</span></td>
+<td>引張応力</td>
+<td><span class="arithmatex">\(\sigma = T/(w h)\)</span></td>
+<td>Pa, MPa</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(t\)</span></td>
+<td>単位幅張力（線張力）</td>
+<td><span class="arithmatex">\(t = T/w\)</span></td>
+<td>N/m</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(V\)</span></td>
+<td>搬送速度</td>
+<td>ウェブの長手方向速度</td>
+<td>m/min, m/s</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\omega\)</span></td>
+<td>ロール角速度</td>
+<td>rad/s</td>
+<td>rad/s</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mu\)</span></td>
+<td>摩擦係数</td>
+<td>ウェブとロール間</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mu_s\)</span></td>
+<td>静摩擦係数</td>
+<td>静止状態の摩擦係数</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mu_k\)</span></td>
+<td>動摩擦係数</td>
+<td>滑り中の摩擦係数</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mu_\text{eff}\)</span></td>
+<td>有効摩擦係数</td>
+<td>空気膜等の影響を含めた実効摩擦係数</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(E\)</span></td>
+<td>ヤング率</td>
+<td>縦弾性係数</td>
+<td>Pa, GPa</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(G\)</span></td>
+<td>横（剪断）弾性係数</td>
+<td><span class="arithmatex">\(G = E/[2(1+\nu)]\)</span></td>
+<td>Pa, GPa</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\nu\)</span></td>
+<td>ポアソン比</td>
+<td>横／縦ひずみ比</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\varepsilon\)</span></td>
+<td>ひずみ（縦ひずみ）</td>
+<td><span class="arithmatex">\(\varepsilon = (L'-L)/L\)</span></td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\varepsilon'\)</span></td>
+<td>横ひずみ</td>
+<td><span class="arithmatex">\(\varepsilon' = (W-W')/W\)</span></td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\gamma\)</span></td>
+<td>せん断ひずみ</td>
+<td><span class="arithmatex">\(\gamma = \Delta/L = \tan\theta\)</span></td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma_Y\)</span></td>
+<td>降伏応力</td>
+<td>弾性域上限</td>
+<td>MPa</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma_B\)</span></td>
+<td>引張強さ</td>
+<td>ネッキング点の最大応力</td>
+<td>MPa</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma_{0.2}\)</span></td>
+<td>耐力（0.2% proof stress）</td>
+<td>永久ひずみ 0.2% に対応する応力。非鉄金属で使用</td>
+<td>MPa</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\rho\)</span></td>
+<td>密度</td>
+<td>質量密度</td>
+<td>kg/m³</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\eta\)</span></td>
+<td>粘度</td>
+<td>流体粘度（空気 ≈ 1.8×10⁻⁵ Pa·s）</td>
+<td>Pa·s</td>
+</tr>
+</tbody>
+</table>
+<p>橋本『基礎理論と応用』第2章2節「ウエブの力学特性」の記号体系に倣う。</p>
+<h2 id="5">5. ウェブの変形モード</h2>
+<p>橋本『基礎理論と応用』第2章2節 図2-3 が示す基本的変形モード：</p>
+<table>
+<thead>
+<tr>
+<th>モード</th>
+<th>英語</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>引張</td>
+<td>tension</td>
+<td>MD 方向に引かれての伸び（および CD 縮み）</td>
+</tr>
+<tr>
+<td>圧縮</td>
+<td>compression</td>
+<td>MD 方向に押されての縮み（および CD 伸び）</td>
+</tr>
+<tr>
+<td>せん断</td>
+<td>shearing</td>
+<td>平行二辺がずれる変形</td>
+</tr>
+<tr>
+<td>曲げ</td>
+<td>bending</td>
+<td>曲げモーメントによるたわみ</td>
+</tr>
+<tr>
+<td>ねじり</td>
+<td>torsion</td>
+<td>端面ねじりによる軸まわりゆがみ</td>
+</tr>
+<tr>
+<td>座屈</td>
+<td>buckling</td>
+<td>圧縮で曲げ変形に転じる不安定現象</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6">6. 弾性・粘弾性・レオロジー</h2>
+<p>橋本『入門』第3章 KEY WORDS に頻出。</p>
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>英語</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>フックの法則</td>
+<td>Hooke's law</td>
+<td><span class="arithmatex">\(\sigma = E\varepsilon\)</span></td>
+</tr>
+<tr>
+<td>弾性変形領域</td>
+<td>elastic deformation region</td>
+<td>除荷で元に戻る変形領域</td>
+</tr>
+<tr>
+<td>塑性変形</td>
+<td>plastic deformation</td>
+<td>永久ひずみを残す変形</td>
+</tr>
+<tr>
+<td>引張試験</td>
+<td>tensile test</td>
+<td>応力-ひずみ曲線を得る基本試験</td>
+</tr>
+<tr>
+<td>応力-ひずみ曲線</td>
+<td>stress-strain curve</td>
+<td>引張試験で得る材料特性曲線</td>
+</tr>
+<tr>
+<td>等方性</td>
+<td>isotropic</td>
+<td>方向に依らない物性</td>
+</tr>
+<tr>
+<td>非等方性（異方性）</td>
+<td>anisotropic</td>
+<td>方向によって物性が異なる</td>
+</tr>
+<tr>
+<td>鎖状配向フィルム</td>
+<td>chain-oriented film</td>
+<td>高分子鎖が長軸方向に並んだフィルム</td>
+</tr>
+<tr>
+<td>面配向フィルム</td>
+<td>planar-oriented film</td>
+<td>高分子鎖が面内に二次元配向</td>
+</tr>
+<tr>
+<td>面配向・結晶化フィルム</td>
+<td>planar-oriented crystalline film</td>
+<td>二軸延伸＋熱処理結晶化フィルム</td>
+</tr>
+<tr>
+<td>連続体モデル</td>
+<td>continuum model</td>
+<td>ウェブを連続体として扱うモデル</td>
+</tr>
+<tr>
+<td>分布定数モデル</td>
+<td>distributed-parameter model</td>
+<td>スパン内で物理量が空間分布するモデル</td>
+</tr>
+<tr>
+<td>集中定数モデル</td>
+<td>lumped-parameter model</td>
+<td>質点・バネ・ダッシュポットで近似</td>
+</tr>
+<tr>
+<td>ニュートンの粘性法則</td>
+<td>Newton's law of viscosity</td>
+<td><span class="arithmatex">\(\tau = \eta \dot\gamma\)</span></td>
+</tr>
+<tr>
+<td>粘弾性体</td>
+<td>viscoelastic body</td>
+<td>弾性と粘性を併せ持つ材料</td>
+</tr>
+<tr>
+<td>力学モデル</td>
+<td>mechanical model</td>
+<td>バネ・ダッシュポットによる粘弾性表現</td>
+</tr>
+<tr>
+<td>瞬間弾性ひずみ</td>
+<td>instantaneous elastic strain</td>
+<td>応力印加直後の弾性ひずみ</td>
+</tr>
+<tr>
+<td>クリープ</td>
+<td>creep</td>
+<td>一定応力下でひずみが時間とともに増加する現象</td>
+</tr>
+<tr>
+<td>応力緩和</td>
+<td>stress relaxation</td>
+<td>一定ひずみ下で応力が時間とともに減少</td>
+</tr>
+<tr>
+<td>遅延弾性回復ひずみ</td>
+<td>delayed elastic recovery strain</td>
+<td>除荷後ゆっくり回復する弾性ひずみ</td>
+</tr>
+<tr>
+<td>一般化フォークト・モデル</td>
+<td>generalized Voigt model</td>
+<td>粘弾性のバネ・ダッシュポット並列モデル</td>
+</tr>
+<tr>
+<td>構成方程式</td>
+<td>constitutive equation</td>
+<td>応力とひずみの関係式の総称</td>
+</tr>
+<tr>
+<td>レオロジー</td>
+<td>rheology</td>
+<td>物質の変形・流動を扱う分野</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7">7. 曲げ・座屈・しわ</h2>
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>英語</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ベルヌイ-ナビエの仮定</td>
+<td>Bernoulli-Navier hypothesis</td>
+<td>曲げ前後で断面の平面が保たれる仮定</td>
+</tr>
+<tr>
+<td>断面の平面保持の仮定</td>
+<td>plane section hypothesis</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>中立面</td>
+<td>neutral plane</td>
+<td>曲げ時にひずみゼロの面</td>
+</tr>
+<tr>
+<td>中立軸</td>
+<td>neutral axis</td>
+<td>中立面と断面の交線</td>
+</tr>
+<tr>
+<td>曲げ剛性</td>
+<td>bending rigidity</td>
+<td><span class="arithmatex">\(D = E h^3 / 12(1-\nu^2)\)</span></td>
+</tr>
+<tr>
+<td>線形座屈理論</td>
+<td>linear buckling theory</td>
+<td>中立安定条件から座屈荷重を求める</td>
+</tr>
+<tr>
+<td>非線形座屈理論</td>
+<td>nonlinear buckling theory</td>
+<td>座屈後の大変形を扱う</td>
+</tr>
+<tr>
+<td>長柱</td>
+<td>column</td>
+<td>断面寸法に比べ長さが極端に大きい棒</td>
+</tr>
+<tr>
+<td>座屈限界値（座屈荷重）</td>
+<td>critical buckling load</td>
+<td>座屈が始まる圧縮力</td>
+</tr>
+<tr>
+<td>座屈応力</td>
+<td>buckling stress</td>
+<td>座屈荷重を断面積で除した値</td>
+</tr>
+<tr>
+<td>座屈形</td>
+<td>buckling mode</td>
+<td>座屈直後のたわみ形状</td>
+</tr>
+<tr>
+<td>トラフ</td>
+<td>trough</td>
+<td>波板状のくぼみ。折れしわの前駆形態</td>
+</tr>
+<tr>
+<td>折れしわ</td>
+<td>fold wrinkle</td>
+<td>永久痕の残る鋭い折れ込み</td>
+</tr>
+<tr>
+<td>臨界ミスアラインメント角度</td>
+<td>critical misalignment angle</td>
+<td>折れしわ発生の限界角度</td>
+</tr>
+<tr>
+<td>ポアソン効果</td>
+<td>Poisson effect</td>
+<td>引張方向と直交する縮み</td>
+</tr>
+<tr>
+<td>カール</td>
+<td>curl</td>
+<td>ウェブが平らに戻らずに丸まる現象</td>
+</tr>
+<tr>
+<td>ラミネート加工</td>
+<td>lamination</td>
+<td>複数層を貼り合わせる加工</td>
+</tr>
+<tr>
+<td>積層ウェブ</td>
+<td>laminate web</td>
+<td>複数層からなるウェブ</td>
+</tr>
+<tr>
+<td>接着層</td>
+<td>adhesive layer</td>
+<td>積層ウェブの粘着剤層</td>
+</tr>
+<tr>
+<td>線膨張係数</td>
+<td>linear expansion coefficient</td>
+<td><span class="arithmatex">\(\alpha\)</span>、<span class="arithmatex">\(\Delta L/L = \alpha \Delta T\)</span></td>
+</tr>
+<tr>
+<td>熱応力</td>
+<td>thermal stress</td>
+<td>熱膨張差で生じる内部応力</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8">8. 摩擦・トライボロジー</h2>
+<p>橋本『入門』第4章「ウェブハンドリングのトライボロジー」KEY WORDS より。</p>
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>英語</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最大静止摩擦力</td>
+<td>maximum static friction</td>
+<td>動き出し直前の摩擦力</td>
+</tr>
+<tr>
+<td>静摩擦力</td>
+<td>static friction</td>
+<td>静止状態の摩擦力</td>
+</tr>
+<tr>
+<td>動摩擦力</td>
+<td>kinetic friction</td>
+<td>滑り中の摩擦力</td>
+</tr>
+<tr>
+<td>摩擦係数</td>
+<td>coefficient of friction</td>
+<td>摩擦力／垂直力</td>
+</tr>
+<tr>
+<td>アモントン-クーロンの摩擦法則</td>
+<td>Amontons-Coulomb's law</td>
+<td>摩擦力は垂直力に比例、接触面積に無関係</td>
+</tr>
+<tr>
+<td>オイラーのベルト公式</td>
+<td>Euler's belt equation</td>
+<td><span class="arithmatex">\(T_2/T_1 = e^{\mu\theta}\)</span></td>
+</tr>
+<tr>
+<td>摩擦のメカニズム</td>
+<td>friction mechanism</td>
+<td>凝着・掘り起こし等</td>
+</tr>
+<tr>
+<td>摩擦の凝着説</td>
+<td>adhesion theory of friction</td>
+<td>真実接触点での凝着が摩擦の本質</td>
+</tr>
+<tr>
+<td>フラクタル性</td>
+<td>fractality</td>
+<td>粗面構造の自己相似性</td>
+</tr>
+<tr>
+<td>表面粗さ曲線</td>
+<td>surface roughness profile</td>
+<td>触針式・光学式で得る粗さデータ</td>
+</tr>
+<tr>
+<td>触針式粗さ計</td>
+<td>stylus profilometer</td>
+<td>針で表面をなぞる粗さ計</td>
+</tr>
+<tr>
+<td>走査型電子顕微鏡</td>
+<td>SEM</td>
+<td>電子線で表面を観察</td>
+</tr>
+<tr>
+<td>共焦点レーザ顕微鏡</td>
+<td>confocal laser microscope</td>
+<td>焦点深度を利用した3D観察</td>
+</tr>
+<tr>
+<td>走査型トンネル顕微鏡</td>
+<td>STM</td>
+<td>トンネル電流で原子配列観察</td>
+</tr>
+<tr>
+<td>原子間力顕微鏡</td>
+<td>AFM</td>
+<td>原子間力で表面を観察</td>
+</tr>
+<tr>
+<td>粗さ突起</td>
+<td>asperity</td>
+<td>微視的な突起</td>
+</tr>
+<tr>
+<td>真実接触面積</td>
+<td>real contact area</td>
+<td>突起同士が実際に接する面積</td>
+</tr>
+<tr>
+<td>ヘルツ接触</td>
+<td>Hertzian contact</td>
+<td>弾性体の点／線接触の古典理論</td>
+</tr>
+<tr>
+<td>塑性指数</td>
+<td>plasticity index</td>
+<td><span class="arithmatex">\(\psi\)</span>、弾性／塑性領域を判別</td>
+</tr>
+<tr>
+<td>有効摩擦係数</td>
+<td>effective friction coefficient</td>
+<td>空気膜等を含めた実効摩擦係数</td>
+</tr>
+<tr>
+<td>空気巻き込み（空気同伴）</td>
+<td>air entrainment</td>
+<td>ロール表面とウェブ間にエアが引き込まれる現象</td>
+</tr>
+<tr>
+<td>レイノルズ方程式</td>
+<td>Reynolds equation</td>
+<td>流体潤滑の支配方程式</td>
+</tr>
+<tr>
+<td>フォイル軸受理論</td>
+<td>foil bearing theory</td>
+<td>薄板と硬面間の弾性流体潤滑理論</td>
+</tr>
+<tr>
+<td>EHL（弾性流体潤滑）問題</td>
+<td>elasto-hydrodynamic lubrication</td>
+<td>弾性体接触＋流体膜の連成問題</td>
+</tr>
+<tr>
+<td>ストライベック曲線</td>
+<td>Stribeck curve</td>
+<td>速度と摩擦係数の関係曲線</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9">9. 蛇行・ガイド</h2>
+<p>橋本『入門』第7章 KEY WORDS より。</p>
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>英語</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>蛇行</td>
+<td>wandering / lateral motion</td>
+<td>ウェブが CD 方向に位置ずれする現象</td>
+</tr>
+<tr>
+<td>ウェブの直角方向進入性</td>
+<td>normal entry rule</td>
+<td>ウェブは下流ロール軸に直角に進入する原理</td>
+</tr>
+<tr>
+<td>トラッキング能力</td>
+<td>tracking capability</td>
+<td>ウェブが正しい位置を維持する性質</td>
+</tr>
+<tr>
+<td>ミスアライメント</td>
+<td>misalignment</td>
+<td>ロール軸の平行度ずれ</td>
+</tr>
+<tr>
+<td>はりの曲げ理論</td>
+<td>beam bending theory</td>
+<td>蛇行解析にも応用される</td>
+</tr>
+<tr>
+<td>EPC</td>
+<td>Edge Position Control</td>
+<td>エッジ位置一定制御</td>
+</tr>
+<tr>
+<td>CPC</td>
+<td>Center Position Control</td>
+<td>中央位置一定制御（両エッジ検出）</td>
+</tr>
+<tr>
+<td>LPC</td>
+<td>Line Position Control</td>
+<td>任意のライン（印刷マーク等）一定制御</td>
+</tr>
+<tr>
+<td>ピボット型ガイドロール</td>
+<td>pivot guide</td>
+<td>中央旋回式の蛇行修正ロール</td>
+</tr>
+<tr>
+<td>パラレル型ガイドロール</td>
+<td>parallel shifter</td>
+<td>平行移動式の蛇行修正ロール</td>
+</tr>
+<tr>
+<td>ステアリング型ガイドロール</td>
+<td>steering guide</td>
+<td>前後軸旋回式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10">10. 巻取・スリット</h2>
+<p>橋本『入門』第5章および『スリッター・リワインダーの技術読本』KEY WORDS より。</p>
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>英語</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中心駆動巻取（センタードライブ）</td>
+<td>center drive winding</td>
+<td>コア軸をトルク駆動</td>
+</tr>
+<tr>
+<td>表面駆動巻取（サーフェイスドライブ）</td>
+<td>surface drive winding</td>
+<td>表面ドラム駆動</td>
+</tr>
+<tr>
+<td>併用駆動巻取（コンビネーションドライブ）</td>
+<td>combination drive winding</td>
+<td>中心＋表面の併用</td>
+</tr>
+<tr>
+<td>ニップワインド</td>
+<td>nip winding</td>
+<td>中心駆動＋ニップロール</td>
+</tr>
+<tr>
+<td>TNT</td>
+<td>Tension–Nip–Torque</td>
+<td>巻取品質を支配する三要素</td>
+</tr>
+<tr>
+<td>巻取張力</td>
+<td>wound-on tension（ <span class="arithmatex">\(T_w\)</span> ）</td>
+<td>巻取部での張力指令</td>
+</tr>
+<tr>
+<td>WOT</td>
+<td>Wound-On Tension</td>
+<td>巻取応力（実際にロールに残る応力）</td>
+</tr>
+<tr>
+<td>テーパテンション</td>
+<td>taper tension</td>
+<td>巻径増に応じて張力を下げる制御</td>
+</tr>
+<tr>
+<td>層間圧力</td>
+<td>inter-layer pressure</td>
+<td>巻層間に働く圧縮圧</td>
+</tr>
+<tr>
+<td>半径方向応力</td>
+<td>radial stress</td>
+<td>圧縮、巻取ロール内部の主応力の1つ</td>
+</tr>
+<tr>
+<td>接線方向応力</td>
+<td>tangential stress</td>
+<td>巻取ロール内部の主応力の1つ</td>
+</tr>
+<tr>
+<td>等方性ロール</td>
+<td>isotropic roll</td>
+<td>半径方向・接線方向ヤング率が等しい仮定</td>
+</tr>
+<tr>
+<td>異方性ロール</td>
+<td>anisotropic roll</td>
+<td>実体に近い、半径方向ヤング率が低い</td>
+</tr>
+<tr>
+<td>非線形ヤング率</td>
+<td>nonlinear Young's modulus</td>
+<td>圧力依存の半径方向ヤング率</td>
+</tr>
+<tr>
+<td>Altmann の公式</td>
+<td>Altmann's formula</td>
+<td>等方性ロール内応力分布の解析解</td>
+</tr>
+<tr>
+<td>Hakiel モデル</td>
+<td>Hakiel's model</td>
+<td>異方性・非線形を考慮した巻取応力モデル</td>
+</tr>
+<tr>
+<td>巻取方程式</td>
+<td>winding equation</td>
+<td>巻取応力の非線形2階常微分方程式</td>
+</tr>
+<tr>
+<td>非線形2階常微分方程式</td>
+<td>nonlinear 2nd-order ODE</td>
+<td>巻取方程式の数学的分類</td>
+</tr>
+<tr>
+<td>固巻き状態</td>
+<td>fully compressed state</td>
+<td>層間に空気膜が残らない巻取状態</td>
+</tr>
+<tr>
+<td>軟巻き状態</td>
+<td>not fully compressed state</td>
+<td>空気膜を含む緩い巻取状態</td>
+</tr>
+<tr>
+<td>積極駆動</td>
+<td>active drive</td>
+<td>動力でロールを回す方式</td>
+</tr>
+<tr>
+<td>消極駆動</td>
+<td>passive drive</td>
+<td>ウェブ張力で従動する方式</td>
+</tr>
+<tr>
+<td>テンションカット</td>
+<td>tension cut</td>
+<td>ニップ等で上下流の張力を分離</td>
+</tr>
+<tr>
+<td>スリッタ</td>
+<td>slitter</td>
+<td>ウェブを長手方向に分割切断する装置</td>
+</tr>
+<tr>
+<td>シアーカット</td>
+<td>shear cut</td>
+<td>上下刃のせん断による切断</td>
+</tr>
+<tr>
+<td>レザーカット</td>
+<td>razor cut</td>
+<td>カミソリ刃で切る方式</td>
+</tr>
+<tr>
+<td>スコアーカット</td>
+<td>score cut</td>
+<td>刃を上から押し当てる方式</td>
+</tr>
+<tr>
+<td>ターレット</td>
+<td>turret</td>
+<td>自動切替式の巻出／巻取機構</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11">11. 制御・信号</h2>
+<p>橋本『基礎理論と応用』第8章、『入門』第6章 KEY WORDS より。</p>
+<table>
+<thead>
+<tr>
+<th>記号・用語</th>
+<th>英語</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID</td>
+<td>Proportional-Integral-Derivative</td>
+<td>比例・積分・微分制御</td>
+</tr>
+<tr>
+<td>P 制御</td>
+<td>proportional control</td>
+<td>比例制御。オフセット残存</td>
+</tr>
+<tr>
+<td>PI 制御</td>
+<td>PI control</td>
+<td>比例＋積分。オフセットゼロ</td>
+</tr>
+<tr>
+<td>PID 制御</td>
+<td>PID control</td>
+<td>比例＋積分＋微分。応答改善</td>
+</tr>
+<tr>
+<td>比例ゲイン <span class="arithmatex">\(K_p\)</span></td>
+<td>proportional gain</td>
+<td>比例項のゲイン</td>
+</tr>
+<tr>
+<td>積分ゲイン <span class="arithmatex">\(K_i\)</span></td>
+<td>integration gain</td>
+<td>積分項のゲイン</td>
+</tr>
+<tr>
+<td>微分ゲイン <span class="arithmatex">\(K_d\)</span></td>
+<td>derivative gain</td>
+<td>微分項のゲイン</td>
+</tr>
+<tr>
+<td>積分時間 <span class="arithmatex">\(T_i\)</span></td>
+<td>integration time</td>
+<td><span class="arithmatex">\(K_p/K_i\)</span></td>
+</tr>
+<tr>
+<td>微分時間 <span class="arithmatex">\(T_d\)</span></td>
+<td>derivative time</td>
+<td><span class="arithmatex">\(K_d/K_p\)</span></td>
+</tr>
+<tr>
+<td>比例要素</td>
+<td>proportional element</td>
+<td><span class="arithmatex">\(G_c(s) = K_p\)</span></td>
+</tr>
+<tr>
+<td>最終値の定理</td>
+<td>final value theorem</td>
+<td><span class="arithmatex">\(\lim_{t\to\infty} y(t) = \lim_{s\to 0} sY(s)\)</span></td>
+</tr>
+<tr>
+<td>ラプラス変換</td>
+<td>Laplace transform</td>
+<td>時間→s 領域変換</td>
+</tr>
+<tr>
+<td>ラプラス逆変換</td>
+<td>inverse Laplace transform</td>
+<td>s→時間 領域変換</td>
+</tr>
+<tr>
+<td>Heaviside の展開定理</td>
+<td>Heaviside expansion theorem</td>
+<td>部分分数展開による逆変換</td>
+</tr>
+<tr>
+<td>伝達関数</td>
+<td>transfer function</td>
+<td>入出力比 <span class="arithmatex">\(Y(s)/U(s)\)</span></td>
+</tr>
+<tr>
+<td>ブロック線図</td>
+<td>block diagram</td>
+<td>制御系の図的表現</td>
+</tr>
+<tr>
+<td>フィードフォワード（FF）</td>
+<td>feed-forward</td>
+<td>外乱推定値に基づく前向き補償</td>
+</tr>
+<tr>
+<td>フィードバック（FB）</td>
+<td>feed-back</td>
+<td>偏差に基づく補正</td>
+</tr>
+<tr>
+<td>固有振動数 <span class="arithmatex">\(\omega_n\)</span></td>
+<td>natural frequency</td>
+<td>2次系のパラメータ</td>
+</tr>
+<tr>
+<td>減衰比 <span class="arithmatex">\(\zeta\)</span></td>
+<td>damping ratio</td>
+<td>2次系のパラメータ</td>
+</tr>
+<tr>
+<td>オーバーシュート</td>
+<td>overshoot</td>
+<td>立ち上がり時の行き過ぎ</td>
+</tr>
+<tr>
+<td>チューニング</td>
+<td>tuning</td>
+<td>ゲイン調整</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12">12. ウェブの欠陥・トラブル</h2>
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>英語</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>しわ</td>
+<td>wrinkle</td>
+<td>ウェブが面外に局所座屈した状態</td>
+</tr>
+<tr>
+<td>折れしわ</td>
+<td>fold wrinkle</td>
+<td>永久痕の残る鋭いしわ</td>
+</tr>
+<tr>
+<td>センタしわ</td>
+<td>center wrinkle</td>
+<td>中央部の縦方向しわ</td>
+</tr>
+<tr>
+<td>エッジしわ</td>
+<td>edge wrinkle</td>
+<td>両端付近の縦方向しわ</td>
+</tr>
+<tr>
+<td>バギング</td>
+<td>bagging</td>
+<td>幅方向に伸びムラ・たるみが残る</td>
+</tr>
+<tr>
+<td>蛇行</td>
+<td>wandering / lateral motion</td>
+<td>CD方向の位置ずれ</td>
+</tr>
+<tr>
+<td>テレスコープ</td>
+<td>telescoping</td>
+<td>巻取ロールが軸方向にずれ落ちる不良</td>
+</tr>
+<tr>
+<td>スターリング</td>
+<td>starring</td>
+<td>巻取ロール端面に星形のしわ</td>
+</tr>
+<tr>
+<td>ダイシング</td>
+<td>dishing</td>
+<td>巻取ロール端面が皿状にずれる不良</td>
+</tr>
+<tr>
+<td>ブロッキング</td>
+<td>blocking</td>
+<td>巻取ロール内でウェブ同士が貼り付く</td>
+</tr>
+<tr>
+<td>カール</td>
+<td>curl</td>
+<td>ウェブが丸まる現象</td>
+</tr>
+<tr>
+<td>ゲージバンド</td>
+<td>gauge band</td>
+<td>厚さムラが巻き重なって生じる帯状の盛り上がり</td>
+</tr>
+<tr>
+<td>マクロスリップ</td>
+<td>macro-slip</td>
+<td>ロール全体で起こる巨視的滑り</td>
+</tr>
+<tr>
+<td>ピンホール</td>
+<td>pinhole</td>
+<td>微小な貫通孔</td>
+</tr>
+<tr>
+<td>ピッキング</td>
+<td>picking</td>
+<td>塗工面が剥がれる現象</td>
+</tr>
+<tr>
+<td>ブリスタ</td>
+<td>blister</td>
+<td>ウェブ層間の膨れ・剥離</td>
+</tr>
+<tr>
+<td>ニップしわ</td>
+<td>nip wrinkle</td>
+<td>ニップ通過時に発生するしわ</td>
+</tr>
+<tr>
+<td>バーストロール</td>
+<td>burst roll</td>
+<td>過張力で巻取ロールが破断</td>
+</tr>
+<tr>
+<td>ルーズロール</td>
+<td>loose roll</td>
+<td>緩い巻取で形状崩れ</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">参考</h2>
+<ul>
+<li>橋本 巨『入門 ウェブハンドリング』全7章, 加工技術研究会, 2010. 各節扉に KEY WORDS リスト。</li>
+<li>橋本 巨『ウェブハンドリングの基礎理論と応用』第2章「ウェブハンドリングに関する基本的事項」, 加工技術研究会.</li>
+<li>『スリッター・リワインダーの技術読本』第1章「基礎」.</li>
+<li>D. R. Roisum, <em>The Mechanics of Web Handling</em>, TAPPI Press, 1996（英語用語の対応）.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

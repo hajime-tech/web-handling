@@ -1,0 +1,2167 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ロールトゥロール搬送の理論と実践">
+      
+      
+        <meta name="author" content="はじめ">
+      
+      
+      
+        <link rel="prev" href="../guide-roll/">
+      
+      
+        <link rel="next" href="../../trouble/wrinkle/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>自動蛇行修正装置 - ウェブハンドリング技術解説</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="ウェブハンドリング技術解説" class="md-header__button md-logo" aria-label="ウェブハンドリング技術解説" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ウェブハンドリング技術解説
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              自動蛇行修正装置
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ウェブハンドリング技術解説" class="md-nav__button md-logo" aria-label="ウェブハンドリング技術解説" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ウェブハンドリング技術解説
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基礎知識
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    基礎知識
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ウェブハンドリングとは
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用語・記号一覧
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    材料特性
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    材料特性
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/material-film/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    フィルム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/material-paper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    紙
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/material-foil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金属箔
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    テンション制御
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    テンション制御
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tension/theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基本理論
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tension/euler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    オイラーの摩擦式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tension/distribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    テンション分布
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tension/devices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    制御機器の選定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ロール・搬送系の力学
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ロール・搬送系の力学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roll/mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ロール周りの力学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roll/nip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ニップ力と変形
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roll/drive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    駆動系の設計
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roll/micro-groove/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    マイクログルーブローラ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    蛇行制御
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    蛇行制御
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    発生メカニズム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide-roll/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ガイドロールの設計
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自動蛇行修正装置
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自動蛇行修正装置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. システム構成
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. エッジ検出方式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ガイドロール機構
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ガイドロール機構">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (a) ピボット（旋回）方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (b) パラレル（平行移動）方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (c) ステアリング方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (d) 巻出・巻取シフト方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 制御理論
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 制御理論">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スパン時定数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PI コントローラ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ループ周期
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        速度依存ゲインスケジューリング
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 設置位置と修正範囲
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 設置位置と修正範囲">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        設置位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        検出位置とアクチュエータ位置の関係
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. アクチュエータ選定
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 実用上の注意点
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 実用上の注意点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        振動と発振
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        端切れ・エッジ欠損
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スプライス（接紙）通過
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        透明ウェブ・無地ウェブ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-cpccenter-position-control-lpcline-position-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. CPC（Center Position Control）と LPC（Line Position Control）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. メーカ・選定の現状
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-epc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. EPC 導入チェックリスト
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    トラブルシューティング
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    トラブルシューティング
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trouble/wrinkle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    しわの原因と対策
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trouble/tension/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    テンション変動の対策
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trouble/steering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    蛇行トラブルの対策
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. システム構成
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. エッジ検出方式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ガイドロール機構
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ガイドロール機構">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (a) ピボット（旋回）方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (b) パラレル（平行移動）方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (c) ステアリング方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (d) 巻出・巻取シフト方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 制御理論
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 制御理論">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スパン時定数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PI コントローラ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ループ周期
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        速度依存ゲインスケジューリング
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 設置位置と修正範囲
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 設置位置と修正範囲">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        設置位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        検出位置とアクチュエータ位置の関係
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. アクチュエータ選定
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 実用上の注意点
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 実用上の注意点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        振動と発振
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        端切れ・エッジ欠損
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スプライス（接紙）通過
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        透明ウェブ・無地ウェブ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-cpccenter-position-control-lpcline-position-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. CPC（Center Position Control）と LPC（Line Position Control）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. メーカ・選定の現状
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-epc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. EPC 導入チェックリスト
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">自動蛇行修正装置</h1>
+<p>ウェブの蛇行を <strong>エッジセンサ → 制御 → ガイドロール旋回</strong> の閉ループで自動補正する装置を、一般に <strong>EPC（Edge Position Control）</strong> または <strong>CPC（Center Position Control）</strong> と呼ぶ。
+本ページでは EPC システムの構成、制御理論、選定指針を整理する。</p>
+<h2 id="1">1. システム構成</h2>
+<pre class="mermaid"><code>flowchart LR
+    W[ウェブエッジ] --&gt; S[エッジセンサ]
+    S --&gt; C[コントローラ&lt;br/&gt;PI/PID]
+    C --&gt; A[アクチュエータ&lt;br/&gt;サーボ/油圧]
+    A --&gt; G[ガイドロール&lt;br/&gt;旋回]
+    G --&gt; W</code></pre>
+<p>主要構成要素：</p>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>機能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>エッジセンサ</td>
+<td>ウェブエッジ位置を計測</td>
+</tr>
+<tr>
+<td>コントローラ</td>
+<td>偏差から指令を計算（PI/PID）</td>
+</tr>
+<tr>
+<td>アクチュエータ</td>
+<td>サーボ・油圧・電動シリンダ</td>
+</tr>
+<tr>
+<td>ガイドロール</td>
+<td>旋回／並進してウェブを動かす</td>
+</tr>
+<tr>
+<td>機械フレーム</td>
+<td>高剛性、低バックラッシ</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2">2. エッジ検出方式</h2>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>原理</th>
+<th>適用ウェブ</th>
+<th>精度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>透過光（フォトCCD）</td>
+<td>LED光をエッジで遮る量</td>
+<td>不透明〜半透明</td>
+<td>±0.1 mm</td>
+</tr>
+<tr>
+<td>反射光</td>
+<td>エッジ部の反射量変化</td>
+<td>任意</td>
+<td>±0.2 mm</td>
+</tr>
+<tr>
+<td>超音波</td>
+<td>超音波のエッジ通過遮断</td>
+<td>透明、多層</td>
+<td>±0.2 mm</td>
+</tr>
+<tr>
+<td>渦流式</td>
+<td>金属ウェブの誘導</td>
+<td>金属箔</td>
+<td>±0.05 mm</td>
+</tr>
+<tr>
+<td>静電容量</td>
+<td>距離変化</td>
+<td>金属、導電性</td>
+<td>±0.1 mm</td>
+</tr>
+<tr>
+<td>ラインスキャンカメラ</td>
+<td>画像処理でエッジ／パターン検出</td>
+<td>任意（パターン認識可）</td>
+<td>±0.05 mm</td>
+</tr>
+</tbody>
+</table>
+<p>特殊な用途：</p>
+<ul>
+<li><strong>印刷見当検出（CPC）</strong>：ウェブ上の印刷マークを画像で見て位置決め。</li>
+<li><strong>両エッジ検出（センターガイド）</strong>：両エッジを検出して中央位置を維持。幅変動するウェブに有効。</li>
+</ul>
+<h2 id="3">3. ガイドロール機構</h2>
+<p>ロール（または複数ロール群）をどう動かすかで、修正動作の特性が変わる。</p>
+<h3 id="a">(a) ピボット（旋回）方式</h3>
+<p>1本のロールフレームを、中央のピボット軸を中心に旋回。</p>
+<ul>
+<li>構造シンプル、応答速い</li>
+<li>修正量は ±数度 = ウェブの数十 mm</li>
+</ul>
+<h3 id="b">(b) パラレル（平行移動）方式</h3>
+<p>ロール（または2本のロールフレーム）を平行に平行移動。</p>
+<ul>
+<li>大型ウェブに有効</li>
+<li>ストローク確保しやすい</li>
+</ul>
+<h3 id="c">(c) ステアリング方式</h3>
+<p>スパン入口側の傾きで下流ウェブを誘導。橋本『入門』第7章「直角方向進入性」の応用。</p>
+<h3 id="d">(d) 巻出・巻取シフト方式</h3>
+<p>巻出・巻取機ごと軸方向にスライド。ロールが大きく動かせる利点があるが装置が大掛かり。</p>
+<h2 id="4">4. 制御理論</h2>
+<h3 id="_2">スパン時定数</h3>
+<p>ウェブの蛇行応答は、スパン時定数 <span class="arithmatex">\(\tau = L/V\)</span> の 1 次遅れ系として近似される。</p>
+<div class="arithmatex">\[
+G_p(s) = \frac{K_p}{\tau s + 1} e^{-T_d s}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(K_p\)</span>：ガイドロール傾き角に対するウェブ横変位の感度</li>
+<li><span class="arithmatex">\(\tau\)</span>：スパン時定数 <span class="arithmatex">\(L/V\)</span></li>
+<li><span class="arithmatex">\(T_d\)</span>：センサからガイドロールまでの遅れ</li>
+</ul>
+<h3 id="pi">PI コントローラ</h3>
+<p>EPC 制御は通常 PI で十分：</p>
+<div class="arithmatex">\[
+u(s) = K_c \left(1 + \frac{1}{T_i s}\right) e(s)
+\]</div>
+<p>チューニング指針：</p>
+<ul>
+<li><span class="arithmatex">\(K_c\)</span>：オープンループゲイン <span class="arithmatex">\(K_c K_p = 1\sim 3\)</span> を目安</li>
+<li><span class="arithmatex">\(T_i\)</span>：スパン時定数の 2〜5 倍</li>
+<li>微分は通常不要（ノイズに弱い）</li>
+</ul>
+<h3 id="_3">ループ周期</h3>
+<p>制御周期はスパン時定数の 1/10 以下が目安：</p>
+<ul>
+<li>中速ライン（100 m/min, L=2 m）：<span class="arithmatex">\(\tau = 1.2\,\text{s}\)</span> → 制御周期 100 ms</li>
+<li>高速ライン（500 m/min, L=2 m）：<span class="arithmatex">\(\tau = 0.24\,\text{s}\)</span> → 20 ms</li>
+</ul>
+<h3 id="_4">速度依存ゲインスケジューリング</h3>
+<p>ライン速度が変動する場合、<span class="arithmatex">\(\tau\)</span> が変わるため固定ゲインでは性能劣化する。
+<strong>速度に応じてゲインを変更</strong> するスケジューリングが標準的。</p>
+<div class="arithmatex">\[
+K_c(V) = K_{c0} \cdot \frac{V_0}{V}
+\]</div>
+<h2 id="5">5. 設置位置と修正範囲</h2>
+<h3 id="_5">設置位置</h3>
+<p>EPC は <strong>修正したい工程の直前</strong> に置くのが原則。</p>
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>巻出直後</td>
+<td>原反由来の蛇行吸収</td>
+</tr>
+<tr>
+<td>塗工部直前</td>
+<td>塗工幅安定</td>
+</tr>
+<tr>
+<td>印刷部直前</td>
+<td>見当精度確保</td>
+</tr>
+<tr>
+<td>ラミネート直前</td>
+<td>重ね合わせ精度</td>
+</tr>
+<tr>
+<td>巻取直前</td>
+<td>巻取端面の揃え</td>
+</tr>
+</tbody>
+</table>
+<p>複数 EPC を直列に配置することも一般的。</p>
+<h3 id="_6">検出位置とアクチュエータ位置の関係</h3>
+<p>エッジセンサは <strong>ガイドロールよりも下流</strong> に設置する（フィードバック制御のため）。
+センサからガイドロールまでが近すぎると応答振動、遠すぎると遅れで応答遅延。</p>
+<h2 id="6">6. アクチュエータ選定</h2>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>推奨条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACサーボ + ボールねじ</td>
+<td>高精度、高応答、中容量。最も標準</td>
+</tr>
+<tr>
+<td>電動シリンダ</td>
+<td>コンパクト、メンテ少</td>
+</tr>
+<tr>
+<td>油圧シリンダ</td>
+<td>大荷重、高速。配管要</td>
+</tr>
+<tr>
+<td>空圧シリンダ + 比例弁</td>
+<td>安価、応答中。剛性低</td>
+</tr>
+<tr>
+<td>ステッピングモータ</td>
+<td>低速、低価格、簡易系</td>
+</tr>
+</tbody>
+</table>
+<p>応答時間：50〜200 ms が標準。</p>
+<h2 id="7">7. 実用上の注意点</h2>
+<h3 id="_7">振動と発振</h3>
+<ul>
+<li>ガイドロールを過度に俊敏に動かすと、ウェブが「振り子状」に振動。</li>
+<li>制御ゲインが高すぎる、または計測遅れが大きいと発振。</li>
+<li>対策：ゲイン下げる、フィルタを入れる、機械剛性上げる。</li>
+</ul>
+<h3 id="_8">端切れ・エッジ欠損</h3>
+<ul>
+<li>ウェブエッジが欠けていたり、塗工はみ出しがあるとセンサ誤検出。</li>
+<li>対策：両エッジ検出のセンターガイド、画像センサ、フィルタリング。</li>
+</ul>
+<h3 id="_9">スプライス（接紙）通過</h3>
+<ul>
+<li>接紙部はエッジが乱れる。一時的に制御ホールド。</li>
+</ul>
+<h3 id="_10">透明ウェブ・無地ウェブ</h3>
+<ul>
+<li>透過光式が使えない場合は超音波・静電容量を使う。</li>
+<li>画像センサは強力だがコスト・キャリブレーション要。</li>
+</ul>
+<h2 id="8-cpccenter-position-control-lpcline-position-control">8. CPC（Center Position Control）と LPC（Line Position Control）</h2>
+<ul>
+<li><strong>EPC</strong>：エッジ位置を一定に保つ（ウェブ幅が一定なら中央も維持）</li>
+<li><strong>CPC</strong>：両エッジ検出で中央位置を維持。ウェブ幅変動に強い</li>
+<li><strong>LPC</strong>：印刷ラインや塗工エッジなど <strong>任意の特徴線</strong> を維持</li>
+</ul>
+<p>選択指針：</p>
+<table>
+<thead>
+<tr>
+<th>ウェブ条件</th>
+<th>推奨</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>幅一定、エッジクリーン</td>
+<td>EPC</td>
+</tr>
+<tr>
+<td>幅変動あり</td>
+<td>CPC</td>
+</tr>
+<tr>
+<td>エッジが汚い／印刷で位置決め必要</td>
+<td>LPC（カメラ式）</td>
+</tr>
+<tr>
+<td>マルチレーン（スリッタ後）</td>
+<td>エッジ＆中央併用</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9">9. メーカ・選定の現状</h2>
+<ul>
+<li><strong>Maxcess（Fife）</strong>：世界最大手、ガイドロール全機種</li>
+<li><strong>Erhardt+Leimer（独）</strong>：高精度、欧州規格中心</li>
+<li><strong>Nireco</strong>：日本国内大手、加工技研系</li>
+<li><strong>BST eltromat</strong>：印刷分野強い</li>
+<li><strong>Maxcess MAGPOWR</strong>：トルク制御も一体提案</li>
+</ul>
+<p>セルベンダの場合は、メーカ標準ソフトウェアと PLC（三菱、安川、Siemens 等）との通信プロトコル（EtherCAT、Modbus TCP、CC-Link 等）を確認。</p>
+<h2 id="10-epc">10. EPC 導入チェックリスト</h2>
+<ul>
+<li>[ ] 蛇行量（センターからの偏差）、修正必要範囲は？</li>
+<li>[ ] ライン速度範囲（最低速 — 最高速）</li>
+<li>[ ] ウェブ材質・幅・厚さ・透明度</li>
+<li>[ ] エッジ品質（綺麗 / バリ / ジグザグ）</li>
+<li>[ ] スパン長と巻き付き角の確保</li>
+<li>[ ] 必要応答性（蛇行外乱の周波数）</li>
+<li>[ ] スパースペース、装置設置寸法</li>
+<li>[ ] 既存 PLC・通信プロトコル</li>
+<li>[ ] 安全設計（カバー、非常停止連動）</li>
+</ul>
+<h2 id="_11">参考文献</h2>
+<ul>
+<li>橋本 巨『入門 ウェブハンドリング』第7章, 加工技術研究会, 2010.</li>
+<li>各メーカ技術資料：Maxcess（Fife/MAGPOWR）, Erhardt+Leimer, Nireco, BST eltromat 等.</li>
+<li>D. R. Roisum, <em>The Mechanics of Web Handling</em>, TAPPI Press, 1996, Ch. 4.</li>
+<li>J. J. Shelton, "Lateral Dynamics of a Moving Web", PhD thesis, Oklahoma State Univ., 1968.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

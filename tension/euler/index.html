@@ -13,26 +13,28 @@
       
       
       
+        <link rel="prev" href="../theory/">
       
-        <link rel="next" href="basics/overview/">
+      
+        <link rel="next" href="../distribution/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>ウェブハンドリング技術解説</title>
+        <title>オイラーの摩擦式 - ウェブハンドリング技術解説</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -90,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
-    <a href="." title="ウェブハンドリング技術解説" class="md-header__button md-logo" aria-label="ウェブハンドリング技術解説" data-md-component="logo">
+    <a href="../.." title="ウェブハンドリング技術解説" class="md-header__button md-logo" aria-label="ウェブハンドリング技術解説" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ホーム
+              オイラーの摩擦式
             
           </span>
         </div>
@@ -188,7 +190,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="ウェブハンドリング技術解説" class="md-nav__button md-logo" aria-label="ウェブハンドリング技術解説" data-md-component="logo">
+    <a href="../.." title="ウェブハンドリング技術解説" class="md-nav__button md-logo" aria-label="ウェブハンドリング技術解説" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -203,37 +205,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ホーム
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -249,48 +224,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        このサイトについて
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        テンション制御の基本式
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -354,7 +287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="basics/overview/" class="md-nav__link">
+      <a href="../../basics/overview/" class="md-nav__link">
         
   
   
@@ -382,7 +315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="basics/glossary/" class="md-nav__link">
+      <a href="../../basics/glossary/" class="md-nav__link">
         
   
   
@@ -459,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="basics/material-film/" class="md-nav__link">
+      <a href="../../basics/material-film/" class="md-nav__link">
         
   
   
@@ -487,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="basics/material-paper/" class="md-nav__link">
+      <a href="../../basics/material-paper/" class="md-nav__link">
         
   
   
@@ -515,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="basics/material-foil/" class="md-nav__link">
+      <a href="../../basics/material-foil/" class="md-nav__link">
         
   
   
@@ -555,8 +488,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -567,11 +502,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -592,7 +527,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -610,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tension/theory/" class="md-nav__link">
+      <a href="../theory/" class="md-nav__link">
         
   
   
@@ -635,10 +570,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="tension/euler/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    オイラーの摩擦式
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -654,6 +616,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 式の形
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 導出（要点）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 数値感覚
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ウェブ・ロール間の摩擦係数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-air-entrainment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 空気同伴（air entrainment）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-wrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 滑りの判定と「巻き付け（wrap）張力」
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 応用：駆動ロールの設計
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 応用：アンチスリップ計算例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -666,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tension/distribution/" class="md-nav__link">
+      <a href="../distribution/" class="md-nav__link">
         
   
   
@@ -694,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tension/devices/" class="md-nav__link">
+      <a href="../devices/" class="md-nav__link">
         
   
   
@@ -781,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="roll/mechanics/" class="md-nav__link">
+      <a href="../../roll/mechanics/" class="md-nav__link">
         
   
   
@@ -809,7 +890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="roll/nip/" class="md-nav__link">
+      <a href="../../roll/nip/" class="md-nav__link">
         
   
   
@@ -837,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="roll/drive/" class="md-nav__link">
+      <a href="../../roll/drive/" class="md-nav__link">
         
   
   
@@ -865,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="roll/micro-groove/" class="md-nav__link">
+      <a href="../../roll/micro-groove/" class="md-nav__link">
         
   
   
@@ -952,7 +1033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="steering/mechanism/" class="md-nav__link">
+      <a href="../../steering/mechanism/" class="md-nav__link">
         
   
   
@@ -980,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="steering/guide-roll/" class="md-nav__link">
+      <a href="../../steering/guide-roll/" class="md-nav__link">
         
   
   
@@ -1008,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="steering/auto-guide/" class="md-nav__link">
+      <a href="../../steering/auto-guide/" class="md-nav__link">
         
   
   
@@ -1095,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="trouble/wrinkle/" class="md-nav__link">
+      <a href="../../trouble/wrinkle/" class="md-nav__link">
         
   
   
@@ -1123,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="trouble/tension/" class="md-nav__link">
+      <a href="../../trouble/tension/" class="md-nav__link">
         
   
   
@@ -1151,7 +1232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="trouble/steering/" class="md-nav__link">
+      <a href="../../trouble/steering/" class="md-nav__link">
         
   
   
@@ -1206,10 +1287,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        このサイトについて
+        1. 式の形
       
     </span>
   </a>
@@ -1217,10 +1298,87 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        テンション制御の基本式
+        2. 導出（要点）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 数値感覚
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ウェブ・ロール間の摩擦係数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-air-entrainment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 空気同伴（air entrainment）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-wrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 滑りの判定と「巻き付け（wrap）張力」
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 応用：駆動ロールの設計
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 応用：アンチスリップ計算例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
       
     </span>
   </a>
@@ -1244,17 +1402,171 @@
 
 
 
-<h1 id="_1">ウェブハンドリング技術解説へようこそ</h1>
-<p>ロールトゥロール搬送（ウェブハンドリング）の理論と実践をまとめたサイトです。</p>
-<h2 id="_2">このサイトについて</h2>
-<p>薄膜・フィルム・紙・金属箔など、帯状材料の搬送技術を体系的に解説します。</p>
-<h2 id="_3">テンション制御の基本式</h2>
-<p>オイラーの摩擦式：</p>
-<div class="arithmatex">\[T_2 = T_1 \cdot e^{\mu\theta}\]</div>
-<div class="admonition note">
-<p class="admonition-title">対象読者</p>
-<p>機械設計・製造ラインの技術者を主な対象としています。</p>
-</div>
+<h1 id="_1">オイラーの摩擦式</h1>
+<p>ウェブハンドリングで最重要の式の一つが <strong>オイラーのベルト摩擦式</strong>（Euler-Eytelwein formula）。
+ウェブがロールに巻き付いて滑らずに保持される条件、あるいはロール前後で張力差を維持できる限界を与える。</p>
+<h2 id="1">1. 式の形</h2>
+<p>ロールに <strong>巻き付き角</strong> <span class="arithmatex">\(\theta\)</span> [rad] で巻き付いたウェブが、ロール表面で完全滑り直前にある状態を考える。
+高張力側を <span class="arithmatex">\(T_2\)</span>、低張力側を <span class="arithmatex">\(T_1\)</span>（<span class="arithmatex">\(T_2 &gt; T_1\)</span>）とすると、</p>
+<div class="arithmatex">\[
+\boxed{\,\frac{T_2}{T_1} \le e^{\mu \theta}\,}
+\]</div>
+<p>ここで <span class="arithmatex">\(\mu\)</span> はウェブとロール間の摩擦係数、<span class="arithmatex">\(\theta\)</span> は <strong>ラジアン</strong> で表した巻き付き角。</p>
+<p>等号成立は滑り限界。実用上は安全余裕として 1.5〜2 倍の係数を掛けて設計する。</p>
+<h2 id="2">2. 導出（要点）</h2>
+<p>巻き付き角 <span class="arithmatex">\(\theta\)</span> の微小角 <span class="arithmatex">\(d\theta\)</span> に着目し、半径 <span class="arithmatex">\(R\)</span>、線張力 <span class="arithmatex">\(T\)</span> を考える。</p>
+<ul>
+<li>半径方向の力の釣り合い：<span class="arithmatex">\(dN = T\,d\theta\)</span></li>
+<li>接線方向：<span class="arithmatex">\(dT = \mu\, dN = \mu T\, d\theta\)</span></li>
+</ul>
+<p>これを <span class="arithmatex">\(\theta = 0\)</span>（張力 <span class="arithmatex">\(T_1\)</span>）から <span class="arithmatex">\(\theta\)</span>（張力 <span class="arithmatex">\(T_2\)</span>）まで積分：</p>
+<div class="arithmatex">\[
+\int_{T_1}^{T_2} \frac{dT}{T} = \mu \int_0^{\theta} d\theta
+\]</div>
+<div class="arithmatex">\[
+\ln \frac{T_2}{T_1} = \mu \theta \;\;\Longrightarrow\;\; \frac{T_2}{T_1} = e^{\mu \theta}
+\]</div>
+<pre class="mermaid"><code>flowchart LR
+    A[低張力 T1] --&gt;|巻き付き角 θ| B[高張力 T2]</code></pre>
+<h2 id="3">3. 数値感覚</h2>
+<p>巻き付き角 180°（= <span class="arithmatex">\(\pi\)</span> rad）の Sラップを想定し、<span class="arithmatex">\(\mu\)</span> を変えると：</p>
+<table>
+<thead>
+<tr>
+<th>摩擦係数 μ</th>
+<th><span class="arithmatex">\(e^{\mu \pi}\)</span></th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.05</td>
+<td>1.17</td>
+<td>ほぼ滑る。低摩擦フィルム</td>
+</tr>
+<tr>
+<td>0.10</td>
+<td>1.37</td>
+<td>フィルム平均</td>
+</tr>
+<tr>
+<td>0.20</td>
+<td>1.87</td>
+<td>ゴムロール上のフィルム</td>
+</tr>
+<tr>
+<td>0.30</td>
+<td>2.57</td>
+<td>良好</td>
+</tr>
+<tr>
+<td>0.50</td>
+<td>4.81</td>
+<td>ニップに近い</td>
+</tr>
+<tr>
+<td>1.00</td>
+<td>23.1</td>
+<td>ほぼ滑らない</td>
+</tr>
+</tbody>
+</table>
+<p>このため <strong>ドライブロールには高摩擦ゴム被覆</strong>、巻き付き角を稼ぐためにSラップ・ダブルラップを採用する。</p>
+<h2 id="4">4. ウェブ・ロール間の摩擦係数</h2>
+<p>実測の代表値（理想条件、参考値）：</p>
+<table>
+<thead>
+<tr>
+<th>ウェブ</th>
+<th>ロール表面</th>
+<th>μ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PET</td>
+<td>鏡面クロム</td>
+<td>0.15〜0.25</td>
+</tr>
+<tr>
+<td>PET</td>
+<td>梨地クロム</td>
+<td>0.20〜0.35</td>
+</tr>
+<tr>
+<td>PET</td>
+<td>NBR ゴム HS70</td>
+<td>0.30〜0.50</td>
+</tr>
+<tr>
+<td>OPP</td>
+<td>クロム</td>
+<td>0.20〜0.30</td>
+</tr>
+<tr>
+<td>アルミ箔</td>
+<td>クロム</td>
+<td>0.10〜0.25</td>
+</tr>
+<tr>
+<td>紙</td>
+<td>鋳鉄</td>
+<td>0.20〜0.40</td>
+</tr>
+<tr>
+<td>紙</td>
+<td>ゴム</td>
+<td>0.30〜0.60</td>
+</tr>
+</tbody>
+</table>
+<p>注意点：</p>
+<ul>
+<li>速度依存性あり：高速ほど <strong>空気同伴</strong> で μ が低下する（後述）。</li>
+<li>湿度・温度で大きく変化。</li>
+<li>油分・離型剤がフィルムに残ると一桁低下することも。</li>
+</ul>
+<h2 id="5-air-entrainment">5. 空気同伴（air entrainment）</h2>
+<p>高速ウェブはロール表面との隙間にエアを引き込み、エア層に乗ってしまう。</p>
+<div class="arithmatex">\[
+h_\text{air} = c \cdot R \left( \frac{\eta V}{T/w} \right)^{2/3}
+\]</div>
+<p>これは弾性流体潤滑（EHL）解析からの近似で、<span class="arithmatex">\(\eta\)</span> は空気粘度、<span class="arithmatex">\(V\)</span> は搬送速度、<span class="arithmatex">\(R\)</span> はロール半径、<span class="arithmatex">\(c \approx 0.643\)</span>（Knox-Sweeney 1977）。</p>
+<p>空気層厚 <span class="arithmatex">\(h_\text{air}\)</span> がロール・ウェブの表面粗さの合計より大きくなると、実効摩擦係数 <span class="arithmatex">\(\mu_\text{eff}\)</span> が急減し、オイラー式の保持力が崩れる。
+高速対策：</p>
+<ul>
+<li><strong>溝付きロール</strong>（マクロ溝で空気排出）</li>
+<li><strong>粗面化ロール</strong>（接触点を確保）</li>
+<li><strong>ニップロール</strong>（強制接触）</li>
+<li><strong>真空サクションロール</strong>（ロールに穴・真空源）</li>
+</ul>
+<h2 id="6-wrap">6. 滑りの判定と「巻き付け（wrap）張力」</h2>
+<p>ロール前後で実際に発生する張力差 <span class="arithmatex">\(T_2 / T_1\)</span> が <span class="arithmatex">\(e^{\mu \theta}\)</span> を超えると <strong>巨視的滑り</strong> が起こり、駆動ロールであれば搬送速度を失う。
+これを避けるための実用設計：</p>
+<div class="arithmatex">\[
+\frac{T_\text{high}}{T_\text{low}} \le \frac{e^{\mu \theta}}{SF}
+\]</div>
+<p>ここで <span class="arithmatex">\(SF\)</span> は安全率（典型 1.5〜2.0）。</p>
+<h2 id="7">7. 応用：駆動ロールの設計</h2>
+<p>ドライブロールがスリップせずにライン速度を決めるための条件：</p>
+<ol>
+<li>巻き付き角 <span class="arithmatex">\(\theta\)</span> をできるだけ大きく取る（Sラップ、ダブルラップ）。</li>
+<li>ロール表面の <span class="arithmatex">\(\mu\)</span> を高くする（ゴム被覆、粗面、セラミックなど）。</li>
+<li>必要ならニップロールでメカニカルに挟む。</li>
+<li>入口・出口の張力比をオイラー式で照査する。</li>
+</ol>
+<h2 id="8">8. 応用：アンチスリップ計算例</h2>
+<p>例：PET 12 μm、ライン速度 100 m/min、巻き付き角 180°、<span class="arithmatex">\(\mu = 0.2\)</span>、入口張力 100 N/m、出口張力？</p>
+<p>オイラー式より <span class="arithmatex">\(T_2/T_1 \le e^{0.2 \pi} = 1.87\)</span>。
+よって出口張力上限 <span class="arithmatex">\(T_2 \le 187\,\text{N/m}\)</span>。安全率 1.5 を見込むと実用上限 <span class="arithmatex">\(\approx 125\,\text{N/m}\)</span>。
+これを超える張力差を作りたければ、巻き付き角を増やすか、ニップを併用する。</p>
+<h2 id="_2">参考文献</h2>
+<ul>
+<li>橋本 巨『入門 ウェブハンドリング』第4章「ウェブハンドリングのトライボロジー」、特に第3節「アモントン・クーロンの摩擦法則」、第4節「オイラーのベルト公式」, 加工技術研究会, 2010.</li>
+<li>橋本 巨『ウェブハンドリングの基礎理論と応用』第2章4節「固体間の摩擦特性」、第4章「有効摩擦係数の予測理論」、第5章「ウェブのスリップ開始速度の予測」, 加工技術研究会.</li>
+<li>D. R. Roisum, <em>The Mechanics of Web Handling</em>, TAPPI Press, 1996, Ch. 2.</li>
+<li>T. Knox, K. L. Sweeney, "Fluid Effects Associated with Web Handling", <em>Ind. Eng. Chem. Prod. Res. Dev.</em>, 1977.</li>
+</ul>
 
 
 
@@ -1310,10 +1622,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
